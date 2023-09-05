@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dashbord</title>
+    <link rel="stylesheet" href="./assets/css/index.css">
+    <link rel="stylesheet" href="./assets/css/navBar.css">
+    <link rel="stylesheet" href="./assets/css/newarticle.css">
+    <script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script>
+</head>
+
+<body>
+    <!------------------nav bar start------------------>
+
+    <nav class="nav-bar">
+        <img class="left-arrow" src="./assets/images/arrow-left.svg">
+
+        <div class="logo">
+            <img src="./assets/images/logo.svg" >
+            <h1>Mountain Breeze Resort</h1>
+        </div>
+
+
+        <ul class="menu">
+            <li class="active"><a href="./index.html"><span></span><img src="./assets/images/blog.svg">Blogs</a></li>
+            <li><a href="./gallery.html"><span></span><img src="./assets/images/gallrey.svg" >Gallery</a></li>
+            <li><a href="./rooms.html"><span></span><img src="./assets/images/rooms.svg" >Rooms</a></li>
+            <li><a href="./booking.html"><span></span><img src="./assets/images/booking.svg" >Booking</a></li>
+            <li><a href="./explore.html"><span></span><img src="./assets/images/explore.svg" >Explore</a></li>
+            <li><a href="./food.html"><span></span><img src="./assets/images/food.svg" >Food</a></li>
+            <li><a href="./inbox.html"><span></span><img src="./assets/images/inbox.svg">Inbox</a></li>
+            
+        </ul>
+
+    </nav>
+
+    <!------------------nav bar end------------------>
+
+    <!------------------blogs section start------------------>
+        <section class="blogs">
+            
+            <header>
+                <img class="right-arrow" src="./assets/images/arrow-right-white.svg">
+                <nav class="nav-blogs">
+                    <h1>Blogs / Edit Article</h1>
+                    <ul class="admin-setting" >
+                        <li><img src="./assets/images/notification.svg" ></li>
+                        <li><img src="./assets/images/profile-circle.svg" ></li>
+                        <li>Admin name</li>
+                    </ul>
+                </nav>
+            </header>
+        <div class="hero">
+            <form>
+                
+                <div class="container-image">
+                    <label class="cover">Article Cover <span>*</span></label>
+                    <div class="image">
+                        <img class="added-img" src="">
+                        <img class="add" src="./assets/images/add-circle.svg">
+                        <input class="add-img" type="file" accept="image/jpg, image/jpeg, image/png" id="input-img"
+                            required>
+                    </div>
+                    <div class="edit">
+                        <img src="./assets/images/edit-gray.svg">
+                        <span class="edit-text">Edit Cover Image</span>
+                    </div>
+                </div>
+
+                <div class="detils">
+                    
+                    <input class="input-title" id="input-title" type="text" required>
+                    <label class="title-lable" for="input-title">Title<span>*</span></label>
+                    <div class="container-date" style="position: relative; width: 30.51881993896236%;" >
+                        <!-- <span class="left">/</span>
+                        <span class="right">/</span> -->
+                        <input id="input-date" type="date" value="date">
+                        <label class="date" for="input-date">Date:</label>
+                    </div>
+                </div>
+                <div class="container-tags">
+                    
+                    <select id="tags" class="tags" required>
+                        <option></option>
+                    </select>
+                    <label class="label-tags" for="tags">Tags<span>*</span></label>
+                </div>
+
+                <div>
+                    <label class="desc" for="desc">Description</label>
+                    <textarea id="desc" class="description" rows="5"></textarea>
+                </div>
+                <div class="add-photo-videos">
+                    <div class="cont-add">
+                        <div class="first-add-btn">
+                            <img src="./assets/images/gallery-add.svg">
+                            <span>Add photo/video</span>
+                        </div>
+                        <input id="input-photo" type="file" accept="image/jpg, image/jpeg, image/png , video/mp4">
+                    </div>
+
+                    <div class="container">
+                        <span>Photos</span>
+                        <div style="display: flex; flex-direction: row-reverse;">
+                            <div class="add-btn">
+                                <img src="./assets/images/add-circle2.svg">
+                            </div>
+                            <div class="container-add">
+                                <!-- <div class="added-photo" >
+                                    <img class="photo" src="./assets/images/article.png" >
+                                    <div class="trash" >
+                                        <img class="delet" src="./assets/images/bag.png" >
+                                    </div>
+                                </div>
+                                <div class="added-photo" >
+                                    <video class="photo" src="./assets/images/VID-20201225-WA0005.mp4" ></video>
+                                    <div class="trash" >
+                                        <img class="delet" src="./assets/images/bag.png" >
+                                    </div>
+                                </div> -->
+
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+                <div class="btns">
+                    <button class="cancel">Cancel</button>
+                    <input class="add-a" type="submit" value="Add Article">
+                </div>
+            </form>
+
+        </div>
+    </section>
+    <!------------------blogs section end------------------>
+
+    <script src="./assets/javascript/navbar.js" ></script>
+    <script src="./assets/javascript/new.js"></script>
+    <script src="./assets/javascript/addGroubPhotoVideo.js"></script>
+    <script>
+        ClassicEditor
+                .create( document.querySelector( '#desc' ) )
+                .then( desc => {
+                        console.log( desc );
+                } )
+                .catch( error => {
+                        console.error( error );
+                } );
+    </script>
+
+</body>
+
+</html>

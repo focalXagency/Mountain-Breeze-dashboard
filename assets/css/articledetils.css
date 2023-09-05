@@ -1,0 +1,149 @@
+/* ------article-detils styling--------- */
+.hero .article-detils {
+    width: 91.95509822263798%;
+}
+
+.hero .cover-photo {
+    width: 100%;
+    border-radius: 16px;
+}
+
+.hero .head {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+}
+
+.hero .head .icons {
+    display: flex;
+    gap: 13px;
+}
+
+.hero .head .icons img {
+    width: 24px;
+    height: 24px;
+}
+
+.hero .article-detils .date {
+    font-size: 16px;
+    font-weight: 400;
+    color: #928C8C;
+}
+
+.hero .article-detils .description {
+    font-size: 16px;
+    font-weight: 400;
+    padding-top: 20px;
+    line-height: 24px;
+}
+
+.hero .article-detils .tagss {
+    color: #928C8C;
+    font-size: 16px;
+    font-weight: 400;
+    padding-top: 10px;
+}
+
+.hero .article-detils .container {
+    width: 100%;
+    background-color: white;
+    height: 145px;
+    border-radius: 8px;
+    margin-top: 20px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.container-add::-webkit-scrollbar {
+    width: 0px;
+    cursor: pointer;
+}
+.container-add::-webkit-scrollbar-track{
+    background-color: white;
+}
+.container-add::-webkit-scrollbar-thumb{
+    background-color: #004f6bcb;
+    border-radius: 8px;
+    
+}
+.container-add::-webkit-scrollbar-thumb:hover{
+    background-color: #004e6b;
+    
+}
+.hero .article-detils .container span {
+    font-size: 10px;
+    font-weight: 400;
+    color: #282828;
+}
+
+.hero .article-detils .container .container-add {
+    display: flex;
+    align-items: center;
+    /* justify-content: end; */
+    padding-top: 5px;
+    padding-right: 10px;
+    gap: 15px;
+    overflow-x: auto;
+}
+
+.hero .article-detils .container .container-add .added-photo .photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+}
+
+/* Start Responsive */
+@media (max-width: 1350px) {
+    .hero .article-detils .container .container-add .added-photo .photo {
+        width: 85px;
+        height: 85px;
+    }
+
+    .hero .article-detils .container .container-add {
+        gap: 5px;
+    }
+
+    .hero .article-detils .container .container-add {
+        padding-right: 0;
+    }
+}
+
+@media (max-width: 1100px) {
+    .hero .article-detils .container .container-add .added-photo .photo {
+        width: 100px;
+        height: 100px;
+    }
+
+    .hero .article-detils .container .container-add {
+        gap: 10px;
+    }
+
+    .hero .article-detils {
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 1016px) {
+    .hero .article-detils .container .container-add .added-photo .photo {
+        width: 100px;
+        height: 100px;
+    }
+
+    .hero .article-detils .container .container-add {
+        gap: 5px;
+    }
+}
+
+@media (max-width: 970px) {
+    .hero .article-detils .container .container-add .added-photo .photo {
+        width: 70px;
+        height: 70px;
+    }
+
+    .hero .article-detils .container .container-add {
+        gap: 10px;
+    }
+}
+
+/* End Responsive */

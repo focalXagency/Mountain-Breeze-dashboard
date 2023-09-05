@@ -1,0 +1,161 @@
+.new-food{
+    width: 78.2576867%;
+    max-height: 100%;
+}
+.detils{
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.category-container{
+    width: 28.0636109%;
+    position: relative;
+}
+.category{
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid black;
+    background-color: transparent;
+    padding-bottom: 5px;
+    font-size: 20px;
+    font-weight: 400;
+    cursor: pointer;
+}
+.category:focus{
+    outline: none;
+}
+
+.label-category{
+    color: red;
+    position: absolute;
+    right: 157px;
+    font-size: 20px;
+    font-weight: 400;
+}
+.description-container{
+    width: 100%;
+    position: relative;
+}
+.description-food{
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid black;
+    background-color: transparent;
+    font-size: 20px;
+    font-weight: 400;
+    padding-bottom: 5px;
+    padding-top: 20px;
+}
+label span{
+    color: red;
+}
+.label-description{
+    font-size: 20px;
+    /* left: 0;
+    position: absolute; */
+    font-weight: 400;
+    Line-height:24.38px;
+    transition: 0.7s ease;
+    color: black;
+    cursor: pointer;
+    display: block;
+    margin-bottom: 5px;
+    /* bottom: 2px; */
+}
+.label-category {
+    font-size: 20px;
+    left: 0;
+    position: absolute;
+    font-weight: 400;
+    Line-height:24.38px;
+    transition: 0.7s ease;
+    color: black;
+    cursor: pointer;
+    bottom: 2px;
+}
+.title-food {
+    position: relative;
+    width: 619px;
+    padding-top: 6px;
+}
+.title-lable {
+    bottom: 2px;
+}
+.title-in-food {
+    width: 619px !important;
+}
+.label-description.active-label ,.label-category.active-label ,.title-lable.active-label {
+    font-size: 12px;
+    bottom: 30px;
+    left: -2px;
+}
+.bottom-form{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+.bottom-form .image-size{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.bottom-form .image-size p{
+  font-size: 20px;
+  font-weight: 400;   
+}
+.bottom-form .image-size .size{
+    border: 1px solid #928C8C;
+    color: #928C8C;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 34px;
+    height: 36px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    transition: 0.7s ease;
+}
+.bottom-form .image-size .size:hover{
+    border: 1px solid #004E6B;
+    color: #004E6B;
+    width: 31px;
+    height: 36px;
+    cursor: pointer;
+}
+.chossen-size{
+    border: 1px solid #004E6B!important;
+    color: #004E6B!important;
+    width: 31px!important;
+}
+.bottom-form .btns{
+    margin-bottom: 1.5rem;
+}
+.btns{
+    width: 234px;
+}
+.btns :nth-child(1){
+    width: 50%!important;
+}
+.btns :nth-child(2){
+    width: 40%!important;
+}
+#input-title:focus + .title-lable{
+    font-size: 12px!important;
+    bottom: 70px!important;
+}
+/* Start Responsive */
+@media (max-width: 1100px) {
+    .new-food {
+        width: 100%;
+        position: relative;
+    }
+    .category {
+        width: 100%;
+        font-size: 18px;
+    }
+    .hero form .detils input {
+        font-size: 18px;
+    }
+}
+/* End Responsive */

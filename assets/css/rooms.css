@@ -1,0 +1,116 @@
+.rooms{
+    width: 78.2576867%;
+    max-height: 100%;
+}
+.article-continer{
+    width: 69.50420954162769%!important;
+}
+.article{
+    height: 339.45px!important;
+    
+}
+.article .head .desc{
+    font-size: 13.26px;
+    font-weight: 400;
+}
+.article .detils{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px!important;
+}
+.article .article-img{
+    width:41.90578734858681%!important;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+.article .icons{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.article .icons img , .article .icons a {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+.edit{
+    text-decoration: none;
+}
+.article .descrabtion{
+    font-size: 12.06px!important;
+    Line-height:16.03px;
+}
+.article .services{
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    padding-top: 20px;
+}
+.article .services .service{
+    display: flex;
+    flex-direction: column;
+    font-size: 9.65px;
+    font-weight: 400;
+    text-align: center;
+}
+.article .services .service .room-ser{
+    padding-top: 5px;
+}
+.article .services .service .bed{
+    padding-top: 8px;
+}
+.article .services .service .tv{
+    padding-top: 2px;
+}
+.article .services .service img{
+    padding-top: 5px;
+}
+.article .footer{
+    position: relative;
+}
+.article .footer .price{
+    font-weight: 600;
+    font-size:33.76px ;
+    color: #004E6B;
+}
+.article .footer span{
+    position: absolute;
+    font-size: 13.36px;
+    font-weight: 400;
+    left: 90px;
+    bottom: 5px;
+}
+.deleted-room a{
+    border-bottom: 1px solid #E76A6A;
+    color: #E76A6A;
+    
+}
+/* Start Responsive */
+@media (max-width: 1100px) {
+    .rooms {
+        position: relative;
+        width: 100%;
+    }
+    .rooms .article .article-img-md {
+        width: 35.90578734858681% !important;
+    }
+    .hero .Category-setting .filter {
+        font-size: 18px;
+    }
+    .hero .Category-setting .category,
+    .deleted-room a {
+        font-size: 14px;
+    }
+    /* .article .services .service img {
+        padding-bottom: 1rem;
+    } */
+    .detils .footer {
+        padding: 0;
+    }
+    /* .article .services .service p {
+        padding-top: 15px;
+    } */
+}
+
+/* End Responsive */

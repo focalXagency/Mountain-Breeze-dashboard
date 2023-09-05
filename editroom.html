@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dashbord</title>
+    <link rel="stylesheet" href="./assets/css/index.css" >
+    <link rel="stylesheet" href="./assets/css/navBar.css">
+    <link rel="stylesheet" href="./assets/css/newarticle.css" >
+    <link rel="stylesheet" href="./assets/css/newroom.css" >
+    <script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script>
+</head>
+<body>
+      <!------------------nav bar start------------------>
+
+      <nav class="nav-bar">
+        <img class="left-arrow" src="./assets/images/arrow-left.svg">
+
+        <div class="logo">
+            <img src="./assets/images/logo.svg" >
+            <h1>Mountain Breeze Resort</h1>
+        </div>
+
+
+        <ul class="menu">
+            <li ><a href="./index.html"><span></span><img src="./assets/images/blog.svg">Blogs</a></li>
+            <li><a href="./gallery.html"><span></span><img src="./assets/images/gallrey.svg" >Gallery</a></li>
+            <li class="active" ><a href="./rooms.html"><span></span><img src="./assets/images/rooms.svg" >Rooms</a></li>
+            <li><a href="./booking.html"><span></span><img src="./assets/images/booking.svg" >Booking</a></li>
+            <li><a href="./explore.html"><span></span><img src="./assets/images/explore.svg" >Explore</a></li>
+            <li><a href="./food.html"><span></span><img src="./assets/images/food.svg" >Food</a></li>
+            <li><a href="./inbox.html"><span></span><img src="./assets/images/inbox.svg">Inbox</a></li>
+            
+        </ul>
+        </ul>
+    </nav>
+
+<!------------------nav bar end------------------>
+
+<!------------------blogs section start------------------>
+    <section class="blogs">
+        <header>
+            <img class="right-arrow" src="./assets/images/arrow-right-white.svg">
+            <nav class="nav-blogs">
+                <h1>Rooms / Edit Room</h1>
+                <ul class="admin-setting" >
+                    <li><img src="./assets/images/notification.svg" ></li>
+                    <li><img src="./assets/images/profile-circle.svg" ></li>
+                    <li>Admin name</li>
+                </ul>
+            </nav>
+        </header>
+         
+        <div class="hero" >
+            <form>            
+                <div class="detils" >
+                    <div class="input" >
+                        
+                        <input class="name" id="input-name" type="text" required>
+                        <label class="lable-name" for="input-name" >Room Name<span>*</span></label>
+                    </div>
+
+                    <div class="input">
+                        
+                        <select id="type" class="Type" required>
+                            <option></option>
+                        </select>
+                        <label class="label-type" for="type">Room Type<span>*</span></label>
+                    </div>
+
+                    <div class="input">
+                        
+                        <select id="number" class="guests" required>
+                            <option></option>
+                        </select>
+                        <label class="label-number" for="number">guests Number<span>*</span></label>
+                    </div>
+                    
+                    <div class="input">
+                        
+                        <input class="price" id="input-price" type="text" required>
+                        <label class="lable-price" for="input-price" >Room Price<span>*</span></label>
+
+                    </div>
+
+                </div>
+                
+                <div>
+                    <label for="desc" class="description-label" >Description</label>
+                    <textarea id="desc" class="description" >
+
+                </textarea>
+                </div>
+                <div class="add-photo-videos" >
+                        
+                    <div class="container" >
+                        <span>Photos</span>
+                        <div style="display: flex; flex-direction: row-reverse;" >
+                            <div class="add-btn" >
+                                <input class="new-add" id="input-photo" type="file" accept="image/jpg, image/jpeg, image/png , video/mp4" >
+                                <img src="./assets/images/add-circle2.svg">
+                            </div>
+                            <div class="container-add" >
+                                <!-- <div class="added-photo" >
+                                    <img class="photo" src="./assets/images/article.png" >
+                                    <div class="trash" >
+                                        <img class="delet" src="./assets/images/bag.png" >
+                                    </div>
+                                </div>
+                                <div class="added-photo" >
+                                    <video class="photo" src="./assets/images/VID-20201225-WA0005.mp4" ></video>
+                                    <div class="trash" >
+                                        <img class="delet" src="./assets/images/bag.png" >
+                                    </div>
+                                </div> -->
+                               
+                            </div>
+                        </div>
+                        
+                        
+                    </div>
+                    
+                </div>
+                <div class="btns">
+                    <button class="cancel" >Cancel</button>
+                    <input class="add-a" type="submit" value="Add Room">
+                </div> 
+            </form>
+               
+        </div>
+    </section>
+    <!------------------blogs section end------------------>
+    <script src="./assets/javascript/navbar.js" ></script>
+    <script src="./assets/javascript/addGroubPhotoVideo.js"></script>
+    <script>
+        ClassicEditor
+                .create( document.querySelector( '#desc' ) )
+                .then( desc => {
+                        console.log( desc );
+                } )
+                .catch( error => {
+                        console.error( error );
+                } );
+    </script> 
+    
+</body>
+</html>

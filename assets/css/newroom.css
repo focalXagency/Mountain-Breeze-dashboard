@@ -1,0 +1,86 @@
+.detils{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding-top: 10px;
+    user-select: none;
+}
+.input{
+    width: 45%;
+    position: relative;
+    
+}
+.detils input{
+    width: 100%!important;
+    padding-left: 0!important;
+    border-bottom: 1px solid #8c8c8c!important;
+    padding-bottom: 5px;
+}
+input::-webkit-input-placeholder{
+    color: black;
+    font-size: 20px;
+    font-weight: 400;
+    
+}
+.Type , .guests{
+    width: 100%;
+    padding-left: 0!important;
+    padding-right: 5px!important;
+    border-bottom: 1px solid #8c8c8c!important;
+    font-size: 20px;
+    font-weight: 400;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+.Type:focus , .guests:focus{
+    outline: none;
+}
+
+.add-btn{
+    position: relative;
+}
+#input-photo{
+    position: absolute;
+    opacity: 0;
+    width: 100px;
+}
+.new-add{
+    top: 37px!important;
+    left: 5%!important;
+}
+.container{
+    display: flex!important;
+}
+.description-label{
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 5px;
+    display: block;
+}
+
+
+
+label span{
+    color: red;
+}
+.lable-price , .label-number , .label-type ,  .lable-name{
+    font-size: 20px;
+    left: 0;
+    position: absolute;
+    font-weight: 400;
+    Line-height:24.38px;
+    transition: 0.7s ease;
+    color: black;
+    cursor: pointer;
+    bottom: 5px;
+}
+
+.lable-name.active-label,
+.label-type.active-label  ,  
+.label-number.active-label,
+.lable-price.active-label{
+    font-size: 12px;
+    bottom: 30px;
+    left: -2px;
+}

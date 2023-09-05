@@ -1,0 +1,397 @@
+input:focus{
+    outline: none
+}
+/* -----------start form styling------------ */
+input[type="date"]::-webkit-calendar-picker-indicator{
+    cursor: pointer;
+}
+form{  
+    width: 91.95509822263798%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.hero form .cover{
+    font-size: 20px;
+    font-weight: 400;
+    padding-bottom: 5px;
+}
+
+.hero form .cover span{
+    color:red;
+}
+.container-image{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+.hero form .image{
+    background-color: #004e6b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 16px;
+    height: 398px;
+    width: 100%;
+    position: relative;
+}
+
+.hero form .image .add{
+    position: absolute;
+    cursor: pointer;
+}
+
+.hero form .image .added-img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius:16px ;
+    z-index: 3;
+    display: none;
+    border-radius: 10px;
+}
+
+.hero form .image .img-add{
+    display: block;
+}
+.hero form .image .add-img{
+    position: absolute;
+    z-index: 9;
+    left: 32%;
+    opacity: 0;
+    cursor: pointer;
+}
+.edit{
+    display: none;
+    align-items: center;
+    position: relative;
+    gap: 5px;
+    padding-top: 10px;
+}
+.edit .edit-text{
+    color: #282828;
+    border-bottom: 1px solid #282828;
+}
+.edit input{
+    position: absolute;
+    left: 25px;
+    width: 100px;
+    cursor: pointer;
+    opacity: 0;
+}
+.add-img-after-add{
+    bottom: -31px!important;
+    left: 24px!important;
+}
+input::-webkit-file-upload-button{
+    cursor: pointer;
+}
+.hero form .detils{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    
+}
+.hero form .detils .date{
+    position: absolute;
+    left: 0px;
+    font-size: 14px;
+    color: #928C8C;
+    font-weight: 400;
+}
+.hero form .detils input{
+    border: none;
+    border-bottom: 1px solid black;
+    background-color: transparent;
+    color: #000;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+
+label span{
+    color: red;
+}
+.title-lable , .label-tags{
+    font-size: 20px;
+    left: 0;
+    bottom: 3px;
+    position: absolute;
+    font-weight: 400;
+    Line-height:24.38px;
+    transition: 0.7s ease;
+    cursor: pointer;
+}
+.label-tags.active-label ,.title-lable.active-label{
+    font-size: 11px;
+    bottom: 30px;
+    left: -2px;
+}
+
+#input-title{
+    width: 62.970498474059%;
+}
+#input-date{
+    padding-left: 2.8rem;
+    font-size: 16px;
+    font-weight: 400;
+    width: 100%;
+}
+/* .hero form .detils input[type="date"]::-webkit-datetime-edit-year-field{
+    position: absolute !important;
+    padding: 2px;
+    color:#000;
+    right: 200px;
+    bottom: 20%;
+}
+.hero form .detils input[type="date"]::-webkit-datetime-edit-month-field{
+    position: absolute !important;
+    padding: 2px;
+    color:#000;
+    right: 171px;
+    bottom: 20%;
+}
+.hero form .detils input[type="date"]::-webkit-datetime-edit-day-field{
+    position: absolute !important;
+    color:#000;
+    padding: 2px;
+    right: 145px;
+    bottom: 20%;
+    
+}
+.hero form .detils input[type="date"]::-webkit-datetime-edit{
+    color: #f0f0f0;
+} */
+.hero form .detils .left , .hero .detils .right{
+    position: absolute;
+    font-size: 16px;
+    font-weight: 400;
+} 
+.hero form .detils .left{
+    right: 20.8%;
+}
+.hero form .detils .right{
+    right: 17.8%;
+}
+.container-tags{
+    position: relative;
+}
+.hero form .tags{
+    cursor: pointer;
+    border: none;
+    border-bottom: 1px solid black;
+    width: 100%;
+    background-color: transparent;
+    font-size: 20px;
+}
+
+
+.hero form .tags:focus {
+    outline: none;
+}
+.hero form .desc{
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 5px;
+    display: block;
+}
+.ck.ck-editor__main>.ck-editor__editable {
+    width: 100%;
+    height: 266px;
+}
+.ck.ck-editor__editable_inline {
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+/* -----------end form styling------------ */
+
+/* -----------start add photo video styling------------ */
+.hero .add-photo-videos .cont-add{
+    position: relative;
+    padding-top: -20px;
+}
+.hero .add-photo-videos .cont-add input[type="file"]{
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    top: 1px;
+    left: 32px
+    
+}
+.hero .add-photo-videos .cont-add input[type="file"]::-webkit-file-upload-button{
+    cursor: pointer;
+}
+.hero .add-photo-videos .cont-add .first-add-btn{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.hero .add-photo-videos .cont-add .first-add-btn span{
+    border-bottom: 1px solid #004e6b;
+    color: #004e6b;
+    font-size: 20px;
+    font-weight: 500;
+}
+.hero .add-photo-videos .container{
+    width: 100%;
+    background-color: white;
+    height: fit-content;
+    border-radius: 8px;
+    margin-top: 20px;
+    padding: 10px;
+    display: none;
+    flex-direction: column;
+}
+
+.show{
+    display: flex!important;
+}
+.hidden{
+    display: none!important;
+}
+.new-add{
+    top: 83px!important;
+    left: 89%!important;
+    width: 100px;
+}
+.main{
+    display: flex;
+    justify-content: end;
+}
+.hero .add-photo-videos .container span{
+    font-size: 10px;
+    font-weight: 400;
+    color: #282828;
+}
+.hero .add-photo-videos .container-add{
+   display: flex;
+   align-items: center;
+   flex-direction: row-reverse;
+   padding-top: 1px;
+   padding-right: 10px;
+   gap: 15px;
+   overflow-x: auto;
+}
+.container-add::-webkit-scrollbar {
+    width: 0px;
+    cursor: pointer;
+}
+.container-add::-webkit-scrollbar-track{
+    background-color: white;
+}
+.container-add::-webkit-scrollbar-thumb{
+    background-color: #004f6bcb;
+    border-radius: 8px;
+    
+}
+.container-add::-webkit-scrollbar-thumb:hover{
+    background-color: #004e6b;
+    
+}
+.hero .add-photo-videos .add-btn{
+    min-width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #004e6b;
+}
+.hero .add-photo-videos .container-add .added-photo{
+    position: relative;
+}
+.hero .add-photo-videos .container-add .added-photo .photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.hero .add-photo-videos .container-add .added-photo:hover .trash{
+    display: flex;
+}
+.hero .add-photo-videos .container-add .added-photo .trash{
+    cursor: pointer;
+    width: 100%;
+    height: 96%;
+    position: absolute;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    bottom: 0;
+    border-radius: 10px;
+    background-color:#000000BF;
+    transition: 0.7s ease;
+}
+.hero .add-photo-videos .container-add .added-photo .trash .delet{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+}
+
+/* -----------end add photo video styling------------ */
+
+
+/* -----------start buttons cancel and add------------ */
+.hero form .btns{
+    gap: 8px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: end;
+    float: right;
+}
+.hero form .btns .cancel{
+    border: 1px solid #004e6b;
+    color: #004e6b;
+    background-color: transparent;
+    border-radius: 8px;
+    padding: 8px;
+    width: 10.7577174929841%;
+}
+.hero form .btns .add-a{
+    border-radius: 8px;
+    padding: 8px;
+    border: none;
+    background-color: #004e6b;
+    color: white;
+    width: 10.7577174929841%;
+}
+
+
+/* -----------end buttons cancel and add------------ */
+
+/* Start Responsive */
+@media (max-width: 1100px) {
+
+    form{
+        margin: 0 auto;
+    }
+
+    .container-date{
+        width: 50.51881993896236%!important;
+    }
+
+    #input-title {
+        width: 42.970498474059%;
+        font-size: 18px;
+    }
+
+    #input-date {
+        font-size: 14px;
+    }
+
+    .hero form .tags,
+    .hero form .desc {
+        font-size: 18px;
+    }
+
+    .hero form .btns .add-a { 
+        width: 13.7577174929841%;
+    }
+
+}
+/* End Responsive */

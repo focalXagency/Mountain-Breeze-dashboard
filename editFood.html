@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dashbord</title>
+    <link rel="stylesheet" href="./assets/css/index.css" >
+    <link rel="stylesheet" href="./assets/css/navBar.css">
+    <link rel="stylesheet" href="./assets/css/newarticle.css" >
+    <link rel="stylesheet" href="./assets/css/newfood.css" >
+    <script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script>
+</head>
+<body>
+      <!------------------nav bar start------------------>
+
+      <nav class="nav-bar">
+        <img class="left-arrow" src="./assets/images/arrow-left.svg">
+
+        <div class="logo">
+            <img src="./assets/images/logo.svg" >
+            <h1>Mountain Breeze Resort</h1>
+        </div>
+
+
+        <ul class="menu">
+            <li ><a href="./index.html"><span></span><img src="./assets/images/blog.svg">Blogs</a></li>
+            <li><a href="./gallery.html"><span></span><img src="./assets/images/gallrey.svg" >Gallery</a></li>
+            <li><a href="./rooms.html"><span></span><img src="./assets/images/rooms.svg" >Rooms</a></li>
+            <li><a href="./booking.html"><span></span><img src="./assets/images/booking.svg" >Booking</a></li>
+            <li><a href="./explore.html"><span></span><img src="./assets/images/explore.svg" >Explore</a></li>
+            <li class="active"><a href="./food.html"><span></span><img src="./assets/images/food.svg" >Food</a></li>
+            <li><a href="./inbox.html"><span></span><img src="./assets/images/inbox.svg">Inbox</a></li>
+            
+        </ul>
+
+    </nav>
+
+    <!------------------nav bar end------------------>
+
+    <!------------------blogs section start------------------>
+        <section class="food">
+            <header>
+                <img class="right-arrow" src="./assets/images/arrow-right-white.svg">
+                <nav class="nav-blogs">
+                    <h1>Food / Edit Food</h1>
+                    <ul class="admin-setting" >
+                        <li><img src="./assets/images/notification.svg" ></li>
+                        <li><img src="./assets/images/profile-circle.svg" ></li>
+                        <li>Admin name</li>
+                    </ul>
+                </nav>
+            </header>
+        <div class="hero" >
+            
+            
+            <form>
+                <div class="image">
+                    <img class="added-img" src="" >
+                    <img  class="add" src="./assets/images/add-circle.svg" >
+                    <input class="add-img" type="file"  accept="image/jpg, image/jpeg, image/png" id="input-img" required>
+                </div>
+                <div class="detils" >
+                    <div class="title-food">
+                        <label class="title-lable" for="input-title" >Title<span>*</span></label>
+                        <input id="input-title" class="title-in-food" type="text" required>
+                    </div>
+                        <div class="category-container" >
+                        <select id="category" class="category" required>
+                            <option></option>
+                        </select>
+                        <label class="label-category" for="category">Category<span>*</span></label>
+                    </div>
+                    
+                    <div class="description-container">
+                        <label class="label-description" for="description-food">Description<span>*</span></label>
+                        <input class="description-food" id="desc" type="text" >
+                    
+                    </div>
+                    
+                </div>
+              <div class="bottom-form">
+                <div class="image-size" >
+                    <p>Image size:</p>
+                    <span class="size chossen-size">x1</span>
+                    <span class="size">x3</span>
+                </div>
+                <div class="btns">
+                    <button class="cancel" >Cancel</button>
+                    <input class="add-a" type="submit" value="Add Article">
+                </div> 
+              </div>
+                
+            </form>
+               
+        </div>
+    </section>
+    <!------------------blogs section end------------------>
+    
+    <script src="./assets/javascript/navbar.js" ></script>
+    <script src="./assets/javascript/new.js" ></script>
+    <script src="./assets/javascript/newFood.js"></script>
+    <script>
+        ClassicEditor
+                .create( document.querySelector( '#desc' ) )
+                .then( desc => {
+                        console.log( desc );
+                } )
+                .catch( error => {
+                        console.error( error );
+                } );
+    </script>
+</body>
+</html>

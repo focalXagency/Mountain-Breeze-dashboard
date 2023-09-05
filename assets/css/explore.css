@@ -1,0 +1,45 @@
+.explore{
+    width: 78.2576867%;
+    max-height: 100%;
+}
+.add{
+    margin-right: 3rem;
+}
+.articles{
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0px 20px 20px;
+    width: 100%;
+}
+a{
+    text-decoration: none;
+}
+.carousel-article{
+    width: 100%;
+}
+.wrapper{
+    display: flex!important;
+    padding-bottom: 20px;
+}
+.slider{
+    width: 95%!important;
+    padding-right: 10px;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 20px;
+}
+.head .menu .cont-add{
+    padding-right:25px!important;
+}
+.arrws{
+    padding-right: 4rem;
+}
+
+/* Start Responsive */
+@media (max-width: 1100px) {
+    .explore {
+        width: 100%;
+        position: relative;
+    }
+}
+/* End Responsive */

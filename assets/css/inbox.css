@@ -1,0 +1,364 @@
+.inbox {
+    width: 78.2576867%;
+    max-height: 100%;
+}
+.inbox .hero-inbox {
+    background-color: #f0f0f0;
+    max-width: 100%;
+    max-height: 100%;
+}
+.inbox .hero-inbox .icon-line {
+    padding: 2rem 0 0.2rem;
+    border-bottom: 1px solid #004E6B33;;
+}
+.inbox .hero-inbox .icon-container {
+    width: 32.5799812909261%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1.5rem;
+    align-items: center;
+}
+.inbox .hero-inbox .icon-line {
+    padding: 2rem 0 0.2rem;
+    border-bottom: 1px solid #004E6B33;;
+}
+.inbox .hero-inbox .icon-container .left-icons {
+    display: flex;
+}
+.inbox .hero-inbox .icon-container .left-icons img,
+.inbox .hero-inbox .icon-container .right-icons img {
+    cursor: pointer;
+}
+.inbox .hero-inbox .inbox-settings {
+    display: flex;
+
+}
+.inbox .hero-inbox .inbox-settings .chats-container {
+    width: 32.5799812909261%;
+    padding: 1.5rem 1rem;
+    border-right: 1px solid #004E6B33;
+    position: relative;
+    height: 580px;
+    overflow-y: auto;
+    
+}
+.inbox .chats-container::-webkit-scrollbar {
+    width: 5px;
+}
+.inbox .chats-container::-webkit-scrollbar-track {
+    background-color: #eee;
+}
+.inbox .chats-container::-webkit-scrollbar-thumb {
+    background-color: #004e6b;
+    border-radius: 10px;
+  }
+.inbox .hero-inbox .inbox-settings .conver-container {
+    width: 63.50420954162769%;
+}
+.inbox .hero-inbox .chats-box {
+    background-color: white;
+    border-radius: 16.2px;
+    padding: 1.5rem 0;
+    min-height: 580px;
+}
+.inbox .hero-inbox .chats-box .single-chat-container {
+    border-bottom: 1px solid #004E6B33;
+}
+.inbox .hero-inbox .chats-box .single-chat {
+    display: flex;
+    padding: 1rem 0.5rem;
+    cursor: pointer;
+}
+.inbox .hero-inbox .chats-box .single-chat.active {
+    border-left: 3px solid #004e6b;
+}
+.inbox .hero-inbox .chats-box .first-box {
+    display: flex;
+    height: 14px;
+    align-items: center;
+}
+.inbox .hero-inbox .rectangle-span-inbox {
+    display: block;
+    width: 14px;
+    height: 14px;
+    border: 1px solid ;
+    border-color: #282828B2;
+    margin-right: 4px;
+}
+.inbox .hero-inbox .chats-box .single-chat.active .first-box .circle-inbox {
+    width: 3px;
+    height: 3px;
+    background-color: blue;
+    border-radius: 50%;
+}
+.inbox .hero-inbox .chats-box .middle-box {
+    margin-left: 4px;
+}
+.inbox .hero-inbox .chats-box .middle-box .name {
+    font-size: 13px;
+    font-weight: 600;
+    color: #282828B2;
+}
+.inbox .hero-inbox .chats-box .middle-box .title{
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 18.29px;
+    color: #282828;
+    margin: 6px 0;
+}
+.inbox .hero-inbox .chats-box .middle-box .description {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14.63px;
+    color: #282828;
+    white-space: nowrap;
+}
+.inbox .hero-inbox .chats-box .last-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: auto;
+}
+.inbox .hero-inbox .chats-box .last-box .date {
+    font-size: 12px;
+    font-weight: 400;
+    white-space: nowrap;
+}
+.inbox .hero-inbox .chats-box .last-box img {
+    width: 24px;
+    height: 24px;
+    margin-left: auto;
+    cursor: pointer;
+}
+.inbox .inbox-settings .conver-container .no-conver {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.inbox .inbox-settings .conver-container .no-conver-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.inbox .inbox-settings .conver-container .no-conver-box .conver-title {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 28px;
+    color: #282828;
+    margin-top: 25px;
+}
+.inbox .conver-container .exist-conver {
+    padding: 1.5rem 3rem;
+    display: none;
+}
+.inbox .conver-container .exist-conver .message-inbox {
+    background-color: white;
+    border-radius: 16.2px;
+    padding: 2.5rem 1.5rem;
+}
+.inbox .conver-container .exist-conver .first-msg-inbox .user-name {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 14.63px;
+    color: #282828;
+}
+.inbox .conver-container .exist-conver .first-msg-inbox {
+    display: flex;
+    justify-content: space-between;
+    height: 70px;
+}
+.inbox .conver-container .exist-conver .first-msg-inbox .user-email {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 14.63px;
+    color: #282828;
+}
+.inbox .date-msg-box .msg-date {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 14.63px;
+}
+.inbox .date-msg-box .remove-msg {
+  margin: 0 7px;
+  cursor: pointer;
+}
+.inbox .date-msg-box .settings-msg {
+    cursor: pointer;
+  }
+.inbox .second-msg-inbox {
+    height: 90px;
+}
+.inbox .second-msg-inbox .msg-title-inbox {
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 18.29px;
+    padding-bottom: 0.2rem;
+}
+.inbox .second-msg-inbox .msg-desc-inbox {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14.63px;
+    color: #282828;
+}
+.inbox .third-msg-inbox {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.inbox .third-msg-inbox .attach-inbox {
+    display: flex;
+    align-items: center;
+}
+.inbox .third-msg-inbox span {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 14.63px;
+    color: #282828;
+}
+.inbox .third-msg-inbox img {
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+.inbox .download-inbox {
+    display: flex;
+}
+.inbox .download-inbox .download-para {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 14.63px;
+    color: #282828;
+    padding-right: 0.3rem;
+}
+.inbox .fourth-msg-inbox {
+    display: flex;
+    gap: 1rem;
+}
+.inbox .reply-line {
+    display: flex;
+    align-items: center;
+    padding: 1rem 0;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 14.63px;
+}
+.inbox .reply-line:before, .inbox .reply-line:after {
+    color:white;
+    content:'';
+    flex:1;
+    border-bottom: 1px solid #004E6B33;
+  }
+  .inbox .reply-line:before {
+    margin-right: 15px;
+  }
+  .inbox .reply-line::after {
+    margin-left: 15px;
+  }
+  .inbox .response-box {
+    background-color: white;
+    border-radius: 16.2px;
+    padding: 1.5rem;
+    height: 155px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+.inbox .response-box .response-desc {
+  
+    border: none;
+    width: 100%;
+    padding: 10px;
+}
+  .inbox .response-box .response-desc-label{
+    position: absolute;
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 12.19px;
+    color: #282828B2;
+    left: 1.5rem;
+    top: 2rem;
+  }
+  .inbox .response-box .response-desc:focus + .response-desc-label{
+    display: none;
+  }
+  .active-desc{
+    display: none;
+  }
+  .inbox .response-box .response-desc:focus{
+    outline: none;
+  }
+  /* .inbox .response-box .response-desc span {
+    color: #004E6B;
+  } */
+  .inbox .first-response-box  img {
+    width: 2.5px;
+    height: 10px;
+    cursor: pointer;
+  }
+  .inbox .response-box  .first-response-box {
+    display: flex;
+    justify-content: space-between;
+  }
+  .inbox .second-response-box {
+    display: flex;
+    justify-content: space-between;
+  }
+  .inbox .second-response-box .left-icons .msg-attach-res {
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
+  }
+  .inbox .second-response-box .left-icons .msg-gallery-res {
+    cursor: pointer;
+  }
+  .inbox .second-response-box .send-btn-res {
+    border: none;
+    font-weight: 500;
+    background-color: #004E6B;
+    color: #FFFFFF;
+    padding: 8px 20px;
+    border-radius: 7px;
+    cursor: pointer;
+  }
+
+  /* Start Responsive */
+  @media (max-width: 1300px) {
+    .chats-box .middle-box .description {
+        font-size: 11px;
+    }
+  }
+  @media (max-width: 1300px) {
+    .inbox {
+        width: 100%;
+        position: relative;
+      }
+      .inbox .hero-inbox .icon-container {
+        width: 44.5799812909261%;
+      }
+      .inbox .hero-inbox .inbox-settings .chats-container {
+        width: 44.5799812909261%;
+      }
+      .inbox .hero-inbox .inbox-settings .conver-container {
+        width: 54.50420954162769%;
+    }
+      .inbox .hero-inbox .chats-box .last-box {
+        margin-left: auto;
+      }
+      .inbox .fourth-msg-inbox {
+        gap: 0.5rem;
+      }
+      .inbox .conver-container .exist-conver {
+        padding: 1.5rem;
+      }
+      .inbox .second-msg-inbox {
+        height: 100px;
+      }
+      .inbox .response-box {
+        padding: 1rem;
+      }
+  }
+  
+  /* End Responsive */
