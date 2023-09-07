@@ -53,7 +53,7 @@
                 </nav>
             </header>
         <div class="hero">
-            <form>
+            <form class="new-article-form">
                 
                 <div class="container-image">
                     <label class="cover">Article Cover <span>*</span></label>
@@ -76,7 +76,7 @@
                     <div class="container-date" style="position: relative; width: 30.51881993896236%;" >
                         <!-- <span class="left">/</span>
                         <span class="right">/</span> -->
-                        <input id="input-date" type="date" value="date">
+                        <input id="input-date" type="date" >
                         <label class="date" for="input-date">Date:</label>
                     </div>
                 </div>
@@ -137,20 +137,29 @@
         </div>
     </section>
     <!------------------blogs section end------------------>
+    
+    <script>
+       let descData;
+ClassicEditor
+        .create( document.querySelector( '#desc' ) )
+        .then( desc => {
+                 console.log( desc );
+                 desc.model.document.on( 'change:data', (e) => {
+                 descData = desc.getData();
+                 console.log(descData);
+               } );
+                
+        } )
+        .catch( error => {
+                console.error( error );
+        } );
+    </script>
 
     <script src="./assets/javascript/navbar.js" ></script>
     <script src="./assets/javascript/new.js"></script>
     <script src="./assets/javascript/addGroubPhotoVideo.js"></script>
-    <script>
-        ClassicEditor
-                .create( document.querySelector( '#desc' ) )
-                .then( desc => {
-                        console.log( desc );
-                } )
-                .catch( error => {
-                        console.error( error );
-                } );
-    </script>
+    <script src="assets/javascript//newArticle.js"></script>
+ 
 
 </body>
 
