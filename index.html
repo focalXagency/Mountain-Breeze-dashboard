@@ -1,177 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>dashbord</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-        <link rel="stylesheet" href="./assets/css/index.css" >
-        <link rel="stylesheet" href="./assets/css/navBar.css">
-    </head>
-    <body>
-    <!------------------nav bar start------------------>
-    
-        
-    <nav class="nav-bar">
-        <img class="left-arrow" src="./assets/images/arrow-left.svg">
-
-        <div class="logo">
-            <img src="./assets/images/logo.svg" >
-            <h1>Mountain Breeze Resort</h1>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dashbord</title>
+    <link rel="stylesheet" href="./assets/css/index.css" >
+    <link rel="stylesheet" href="./assets/css/login.css" >
+</head>
+<body>
+    <section class="login">
+        <div class="left-login">
+            <div class="left-container">
+                <div class="logo">
+                    <img src="./assets/images/logo.svg" >
+                    <h1>Mountain Breeze Resort</h1>
+                </div>
+                <p>This section is dedicated to admin</p>
+                <form onsubmit="handleLogin(event)" class="login-form">
+                    <input type="text" placeholder="User name" id="user">
+                    <input type="text" placeholder="Password" id="pass">
+                    <button type="submit">submit</button>
+                </form>
+            </div> <!-- End left-container -->
         </div>
 
-
-        <ul class="menu">
-            <li class="active"><a href="./index.html"><span></span><img src="./assets/images/blog.svg">Blogs</a></li>
-            <li><a href="./gallery.html"><span></span><img src="./assets/images/gallrey.svg" >Gallery</a></li>
-            <li><a href="./rooms.html"><span></span><img src="./assets/images/rooms.svg" >Rooms</a></li>
-            <li><a href="./booking.html"><span></span><img src="./assets/images/booking.svg" >Booking</a></li>
-            <li><a href="./explore.html"><span></span><img src="./assets/images/explore.svg" >Explore</a></li>
-            <li><a href="./food.html"><span></span><img src="./assets/images/food.svg" >Food</a></li>
-            <li><a href="./inbox.html"><span></span><img src="./assets/images/inbox.svg">Inbox</a></li>
-            
-        </ul>
-
-    </nav>
-
-    <!------------------nav bar end------------------>
-
-    <!------------------blogs section start------------------>
-        <section class="blogs">
-            
-            <header>
-                <img class="right-arrow" src="./assets/images/arrow-right-white.svg">
-                <nav class="nav-blogs">
-                    <h1>Blogs</h1>
-                    <ul class="admin-setting" >
-                        <li><img src="./assets/images/notification.svg" ></li>
-                        <li><img src="./assets/images/profile-circle.svg" ></li>
-                        <li>Admin name</li>
-                    </ul>
-                </nav>
-            </header>
-            <div class="hero" >
-                    <button class="btn-article" ><img src="./assets/images/add-circle1.svg"><a href="newarticle.html" >New Article</a></button>
-                    <div class="article-setting">
-                            <div class="article-continer">
-                                <div class="article">
-                                    <img class="article-img" src="./assets/images/article.png" alt=""/>
-                                    <div class="detils">
-                                        <div class="head">
-                                            <h1 class="article-name" >Article Name1</h1>
-                                            <span class="date" >July 17, 2023</span>
-                                        </div>
-                                        <p class="descrabtion">Dicta modi id optio est rerum repellat ea magnam sunt. Rerum ab dolores tempore. Eveniet odit at quia voluptates facilis ipsa.</p>
-                                        <p class="hashtack">#Syria, #Mountain_Breeze</p>
-                                        <div class="footer">
-                                            <div class="icons">
-                                                <a href="./editArticle.html" ><img src="./assets/images/edit.svg" ></a>
-                                                <img class="del-article" src="./assets/images/trash.svg" >
-                                            </div>
-                                            <a class="arrowlink" href="./articledetils.html" >
-                                                <img src="./assets/images/arrow-right-white.svg" class="arrow">
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="article">
-                                    <img class="article-img" src="./assets/images/article.png" alt=""/>
-                                    <div class="detils">
-                                        <div class="head">
-                                            <h1 class="article-name" >Article Name1</h1>
-                                            <span class="date" >July 17, 2023</span>
-                                        </div>
-                                        <p class="descrabtion">Dicta modi id optio est rerum repellat ea magnam sunt. Rerum ab dolores tempore. Eveniet odit at quia voluptates facilis ipsa.</p>
-                                        <p class="hashtack">#Syria, #Mountain_Breeze</p>
-                                        <div class="footer">
-                                            <div class="icons">
-                                                <a href="./editArticle.html" ><img src="./assets/images/edit.svg" ></a>
-                                                <img class="del-article" src="./assets/images/trash.svg" >
-                                            </div>
-                                            <a class="arrowlink" href="./articledetils.html" >
-                                                <img src="./assets/images/arrow-right-white.svg" class="arrow">
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="article">
-                                    <img class="article-img" src="./assets/images/article.png" alt=""/>
-                                    <div class="detils">
-                                        <div class="head">
-                                            <h1 class="article-name" >Article Name1</h1>
-                                            <span class="date" >July 17, 2023</span>
-                                        </div>
-                                        <p class="descrabtion">Dicta modi id optio est rerum repellat ea magnam sunt. Rerum ab dolores tempore. Eveniet odit at quia voluptates facilis ipsa.</p>
-                                        <p class="hashtack">#Syria, #Mountain_Breeze</p>
-                                        <div class="footer">
-                                            <div class="icons">
-                                                <a href="./editArticle.html" ><img src="./assets/images/edit.svg" ></a>
-                                                <img class="del-article" src="./assets/images/trash.svg" >
-                                            </div>
-                                            <a class="arrowlink" href="./articledetils.html" >
-                                                <img src="./assets/images/arrow-right-white.svg" class="arrow">
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                               
-                        
-                            </div>
-                            <div class="Category-setting">
-                                <span class="filter" >Filter by</span>
-                                <select class="category" >
-                                    <option value="Category">Category</option>
-                                </select>
-                                <div class="date-container">
-                                    <svg class="calender-icon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
-                                        <path d="M5.5332 1.81445V3.81445" stroke="black" stroke-opacity="0.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M10.8652 1.81445V3.81445" stroke="black" stroke-opacity="0.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M2.5332 6.54102H13.8665" stroke="black" stroke-opacity="0.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M14.1992 6.14779V11.8145C14.1992 13.8145 13.1992 15.1478 10.8659 15.1478H5.53255C3.19922 15.1478 2.19922 13.8145 2.19922 11.8145V6.14779C2.19922 4.14779 3.19922 2.81445 5.53255 2.81445H10.8659C13.1992 2.81445 14.1992 4.14779 14.1992 6.14779Z" stroke="black" stroke-opacity="0.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M10.6617 9.61263H10.6677" stroke="black" stroke-opacity="0.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M10.6617 11.6126H10.6677" stroke="black" stroke-opacity="0.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M8.19491 9.61263H8.20089" stroke="black" stroke-opacity="0.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M8.19491 11.6126H8.20089" stroke="black" stroke-opacity="0.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M5.73006 9.61263H5.73605" stroke="black" stroke-opacity="0.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M5.73006 11.6126H5.73605" stroke="black" stroke-opacity="0.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                    <input type="text" id="myDatePicker">
-                                    <svg class="empty-input-icon" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none">
-                                        <path d="M7.80013 13.3132C11.0085 13.3132 13.6335 10.6882 13.6335 7.47982C13.6335 4.27148 11.0085 1.64648 7.80013 1.64648C4.5918 1.64648 1.9668 4.27148 1.9668 7.47982C1.9668 10.6882 4.5918 13.3132 7.80013 13.3132Z" stroke="black" stroke-opacity="0.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M6.15039 9.13174L9.45206 5.83008" stroke="black" stroke-opacity="0.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M9.45206 9.13174L6.15039 5.83008" stroke="black" stroke-opacity="0.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </div>
-                                <span class="deleted-article" ><a href="./deletedarticle.html" >Deleted articles</a></span>
-                            </div>    
-                    </div>
-
-            </div>
-            
-        </section>
-    <!------------------blogs section end------------------>
-
-    <div class="div-popup-delet" >
-        <div class="blur" >
-
+        <div class="right-login">
+            <img src="./assets/images/login-bg.png" alt="login-bg">
+            <div class="overlay"></div>
         </div>
-        <div class="popup-delet" >
-            <p>Delete the article?</p>
-            <span>You can be able to recover it</span>
-            <div class="delet-btns" >
-                <button class="cancel">Cancel</button>
-                <button class="delet">Delelte Article</button>
-            </div>
-        </div>
-    </div>
+    </section>
+</body>
 
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-    <script src="./assets/javascript/navbar.js"></script>
-    <script src="./assets/javascript/delete.js" ></script>    
-    <script src="./assets/javascript/js.js"></script>
-        
-    </body>
+<script src="./assets/javascript/login.js"></script>
 </html>

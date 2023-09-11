@@ -1,0 +1,96 @@
+.login {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
+.login .left-login {
+    width: 36.6032210835%;
+    background-color: #004E6B;
+    height: 100vh;
+}
+.login .left-login .left-container {
+    padding: 4rem 2rem 0;
+}
+.login .right-login {
+    width: 63.3967789165%;
+}
+.login .right-login img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.login .left-login .left-container .logo {
+    text-align: center;
+}
+.login .left-login .left-container .logo h1 {
+    color: #FFFDFD;
+    padding-top: 0.5rem;
+}
+.login .left-login .left-container p {
+    color: #FFFDFD;
+   text-align: center;
+   padding-top: 1.5rem;
+}
+.login .left-login .login-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 6rem;
+    width: 318px;
+    margin: 0 auto;
+}
+.login .left-login .login-form input {
+    margin-bottom: 1.5rem;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #ffffff;
+    padding: 0.5rem;
+    color: #FFFDFD;
+}
+.login .left-login .login-form input::placeholder {
+    color: #FFFDFD;;
+  }
+  .login .left-login .login-form input:focus {
+    outline: none;
+    color: #FFFDFD;
+  }
+  .login .left-login .login-form button {
+    padding: 1rem;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+  }
+  @media (max-width: 1100px) {
+    .login .right-login {
+        position: absolute;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+    }
+    .login .right-login img {
+        max-width: 100vw;
+        height: 100vh;
+    }
+    .login .left-login {
+        position: relative;
+        display: flex;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: transparent;
+        align-items: center;
+        min-width: 36.6032210835%;
+    }
+    .login .left-login .left-container {
+        padding: 0;
+    }
+    .overlay {
+        width: 100%;
+        height: 100%;
+        background-color: #010101;
+        opacity: 0.5;
+        position: absolute;
+        top: 0;
+        z-index: 1;
+    }
+  
+  }
