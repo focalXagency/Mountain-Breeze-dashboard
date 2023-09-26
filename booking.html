@@ -25,7 +25,7 @@
 
 
         <ul class="menu">
-            <li ><a href="./index.html"><span></span><img src="./assets/images/blog.svg">Blogs</a></li>
+            <li ><a href="./Blogs.html"><span></span><img src="./assets/images/blog.svg">Blogs</a></li>
             <li><a href="./gallery.html"><span></span><img src="./assets/images/gallrey.svg" >Gallery</a></li>
             <li><a href="./rooms.html"><span></span><img src="./assets/images/rooms.svg" >Rooms</a></li>
             <li class="active"><a href="./booking.html"><span></span><img src="./assets/images/booking.svg" >Booking</a></li>
@@ -57,7 +57,7 @@
             <div class="hero" >
                 <div class="article-setting">
                         <div class="article-continer">
-                            <div class="article">
+                            <!-- <div class="article">
                                 <div class="head">
                                     <h1 class="article-name" >Ali Saleh</h1>
                                     <span class="date" >July 17, 2023</span>
@@ -104,6 +104,7 @@
                                     </p>
                                 </div>
                             </div>
+
                             <div class="article">
                                 <div class="head">
                                     <h1 class="article-name" >Ali Saleh</h1>
@@ -150,19 +151,22 @@
                                     Dicta modi id optio est rerum repellat ea magnam sunt. Rerum ab dolores tempore. Eveniet odit at quia voluptates facilis ipsa.
                                     </p>
                                 </div>
-                            </div>
+                            </div> -->
                            
                             
                     
                         </div>
                         <div class="Category-setting">
                             <span class="filter" >Filter by</span>
-                            <select class="category" >
-                                <option value="Room Type">Room Type</option>
+                            <select class="category room-type" >
+                                <option value="Room Type" selected>Room Type</option>
+                                <option value="Delux">Delux</option>
+                                <option value="VIP">VIP</option>
                             </select>
-                            <select class="category" >
+                            <!-- <select class="category" >
                                 <option value="guests Number">guests Number</option>
-                            </select>
+                            </select> -->
+                            <input class="category guests-number" type =text placeholder="Enter guests Number"/>
                             <div class="date-container">
                                 <svg class="calender-icon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
                                     <path d="M5.5332 1.81445V3.81445" stroke="black" stroke-opacity="0.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
@@ -199,6 +203,7 @@
     <script src="./assets/javascript/navbar.js" ></script>
     <script src="./assets/javascript/delete.js" ></script>    
     <script src="./assets/javascript/booking.js"></script>
+    <script src="./assets//javascript/showBookingData.js"></script>
     
     </body>
 </html>

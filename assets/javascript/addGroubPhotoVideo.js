@@ -57,39 +57,42 @@ addPhoto.addEventListener("change", () => {
    }
 });
 
-const nameInput = document.querySelector("#input-name");
-const nameLabel = document.querySelector("label.lable-name");
-nameInput.onfocus = () => {
-   nameLabel.classList.add("active-label");
-}
-nameInput.onblur = () => {
-   if(nameInput.value === "")
-   nameLabel.classList.remove("active-label");
-}
-const priceInput = document.querySelector("#input-price");
-const priceLabel = document.querySelector("label.lable-price");
-priceInput.onfocus = () => {
-   priceLabel.classList.add("active-label");
-}
-priceInput.onblur = () => {
-   if(priceInput.value === "")
-   priceLabel.classList.remove("active-label");
-}
-const typeInput = document.querySelector("#type");
-const typeLabel = document.querySelector("label.label-type");
-typeInput.onfocus = () => {
-   typeLabel.classList.add("active-label");
-}
-typeInput.onblur = () => {
-   if(typeInput.value === "")
-   typeLabel.classList.remove("active-label");
-}
-const guestInput = document.querySelector("#number");
-const guestLabel = document.querySelector("label.label-number");
-guestInput.onfocus = () => {
-   guestLabel.classList.add("active-label");
-}
-guestInput.onblur = () => {
-   if(guestInput.value === "")
-   guestLabel.classList.remove("active-label");
-}
+// const nameInput = document.querySelector("#input-name");
+// const nameLabel = document.querySelector("label.lable-name");
+// nameInput.onfocus = () => {
+//    nameLabel.classList.add("active-label");
+// }
+// nameInput.onblur = () => {
+//    if(nameInput.value === "")
+//    nameLabel.classList.remove("active-label");
+// }
+
+// const priceInput = document.querySelector("#input-price");
+// const priceLabel = document.querySelector("label.lable-price");
+// priceInput.onfocus = () => {
+//    priceLabel.classList.add("active-label");
+// }
+// priceInput.onblur = () => {
+//    if(priceInput.value === "")
+//    priceLabel.classList.remove("active-label");
+// }
+
+// const typeInput = document.querySelector("#type");
+// const typeLabel = document.querySelector("label.label-type");
+// typeInput.onfocus = () => {
+//    typeLabel.classList.add("active-label");
+// }
+// typeInput.onblur = () => {
+//    if(typeInput.value === "")
+//    typeLabel.classList.remove("active-label");
+// }
+// const guestInput = document.querySelector("#number");
+// const guestLabel = document.querySelector("label.label-number");
+// guestInput.onfocus = () => {
+//    guestLabel.classList.add("active-label");
+// }
+// guestInput.onblur = () => {
+//    if(guestInput.value === "")
+//    guestLabel.classList.remove("active-label");
+// }
+

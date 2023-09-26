@@ -1,58 +1,151 @@
-const addImage = document.querySelector('#input-img');
-const title = document.querySelector('#input-title');
-//const selectedDate = document.querySelector('#input-date');
+
+const inputImage = document.querySelector('#input-img');
+const inputTitle = document.querySelector('#input-title');
+const inputTitleAr = document.querySelector('.arabic-title .input-title');
 const tag = document.querySelector('#tags');
-const desc = document.querySelector('#desc');
-const photo = document.querySelector('#input-photo');
+const multiplePhoto = document.querySelector('#input-photo');
 const addArticle = document.querySelector('.add-a');
-const newArticleForm = document.querySelector('.new-article-form');
+const addBtn = document.querySelector('.add-a');
+const categorySelect = document.querySelector("#category")
+const subtitleEn = document.querySelector('.subtitle-en')
+const subtitleAr = document.querySelector('.subtitle-ar')
+const contentEn = document.querySelector('#desc')
+const videoInput = document.querySelector(".video-link")
+//console.log(contentEn)
 
-let json_addImage;
-let json_title;
-let dateArticle;
-let  json_desc;
-
-addImage.addEventListener("input", () => {
-   if (addImage.files.length) {
-    let json_addImage = addImage.files[0].name;
-     console.log(addImage.files[0])
-   } else {
-    console.log('Please add an image')
-   }
+//get article-cover value
+let inputImageVal;
+inputImage.addEventListener("input", () => {
+   if (inputImage.files.length) {
+     inputImageVal = inputImage.files[0];
+     console.log(inputImageVal)
+   } 
 })
 
-title.addEventListener('input', () => {
-    json_title = title.value;
-    // console.log(title.value)
+//get title-en value
+let inputTitleVal;
+inputTitle.addEventListener('change', () => {
+    inputTitleVal = inputTitle.value;
+    console.log(inputTitleVal)
 })
 
+//get title-ar value
+let inputTitleArVal
+inputTitleAr.addEventListener('change', () => {
+    inputTitleArVal = inputTitleAr.value;
+    console.log(inputTitleArVal)
+})
 
+//get subtitle-en value 
+let subtitleEnVal
+subtitleEn.addEventListener("change", () => {
+    subtitleEnVal = subtitleEn.value
+    console.log(subtitleEnVal)
+})
 
+//get subtitle-ar value 
+let subtitleArVal
+subtitleAr.addEventListener("change", () => {
+    subtitleArVal = subtitleAr.value
+    console.log(subtitleArVal)
+})
+
+//get category select value
+let selectVal
+categorySelect.addEventListener('change', (event) => {
+    selectVal = event.target.value
+    console.log(selectVal)
+})
+
+//get Date value
 let date = new Date();
+let currdate;
 document.querySelector('#input-date').value = date;
 inputDate.addEventListener('input', () => {
-     dateArticle = new Date(inputDate.value);
-    console.log(dateArticle);
+    let dateArticle = new Date(inputDate.value);
+      currdate = JSON.stringify(dateArticle)
+     currdate = currdate.slice(1,11)
+     console.log(currdate)
 })
 
-let files = [];
-photo.addEventListener("change", () => {
-    files.push(photo.files[0])
-    console.log(files)
-//    const selectedFiles = [...photo.files];
-//    console.log(selectedFiles)
- })
+//move video label
+const videoLabel =document.querySelector(".link-label")
+videoInput.onfocus = () => {
+    videoLabel.classList.add("active-label");
+ }
+ videoInput.onblur = () => {
+     if(videoInput.value === "")
+     videoLabel.classList.remove("active-label");
+  }
+
+//get video link value
+let videoVal
+videoInput.addEventListener('change', () => {
+    videoVal = videoInput.value
+    console.log(videoVal)
+})
+
+//get photos group value
+let filelist = [];
+multiplePhoto.addEventListener("change", function(event) {
+    filelist = [];
+    for(let i= 0; i < multiplePhoto.files.length; i++) {
+        filelist.push(multiplePhoto.files[i])
+    }
+    console.log(filelist)
+})
+
+const tagsArr = ['#AAA', '#BBB']
 
 
-// photo.addEventListener("input", () => {
-//     if (photo.files.length) {
-//      let json_photos = photo.files[0].name;
-//      console.log(photo.files)
-//     } else {
-//      console.log('Please add an image')
-//     }
-//  })
 
+let descDataEn;
+ClassicEditor
+ .create( document.querySelector( '#desc' ) )
+ .then( desc =>  descDataEn = desc )
+ .catch( error =>  console.error( error ) );
 
-//console.log('descData', descData)
+ let descDataAr;
+ClassicEditor
+ .create( document.querySelector( '#ardesc' ) )
+ .then( ardesc => descDataAr = ardesc)
+ .catch( error => console.error( error ));
 
+addBtn.addEventListener('click', function(e) {
+    e.preventDefault()
+    console.log('post req')
+
+    let authToken = localStorage.getItem("token");
+    console.log(authToken)
+
+     let newdescDataEn = descDataEn.getData()
+     let newdescDataAr = descDataAr.getData()
+    
+    const userFile = document.querySelector('#input-img').files[0]
+    const multiFiles = document.querySelector('#input-photo').files
+    let videoLink = document.querySelector(".video-link").value
+    
+    const formData = new FormData();
+    
+    formData.append('article_cover', userFile)
+    formData.append('category', selectVal)
+    formData.append('title_en', inputTitleVal)
+    formData.append('title_ar', inputTitleArVal)
+    formData.append('content_en', newdescDataEn)
+    formData.append('content_ar', newdescDataAr)
+    formData.append('date', currdate)
+    formData.append('videos[0]', videoLink)
+    formData.append('images[0]', multiplePhoto.files[0])
+    formData.append('tags', tagsArr)
+    formData.append('sub_title_en', subtitleEnVal)
+    formData.append('sub_title_ar', subtitleArVal)
+
+    fetch('https://mountain.lavetro-agency.com/api/dashboard/articles',{
+        method: 'POST',
+        headers: { AUTHORIZATION: `Bearer ${authToken}` },
+        body: formData,
+    })
+    .then(res => res.json())
+    .then(result => console.log(result))
+    .catch(error => console.log(error))
+})

@@ -122,8 +122,12 @@ a{
     display: flex;
     justify-content: center;
     align-items: center;
+    border: none
 }
-
+.edit-link {
+border: none;
+background-color: transparent;
+}
 .detils .footer .del-article{
     cursor: pointer;
 }

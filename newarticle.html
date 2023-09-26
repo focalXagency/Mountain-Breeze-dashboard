@@ -24,7 +24,7 @@
 
 
         <ul class="menu">
-            <li class="active"><a href="./index.html"><span></span><img src="./assets/images/blog.svg">Blogs</a></li>
+            <li class="active"><a href="./Blogs.html"><span></span><img src="./assets/images/blog.svg">Blogs</a></li>
             <li><a href="./gallery.html"><span></span><img src="./assets/images/gallrey.svg" >Gallery</a></li>
             <li><a href="./rooms.html"><span></span><img src="./assets/images/rooms.svg" >Rooms</a></li>
             <li><a href="./booking.html"><span></span><img src="./assets/images/booking.svg" >Booking</a></li>
@@ -80,25 +80,65 @@
                         <label class="date" for="input-date">Date:</label>
                     </div>
                 </div>
+                <div class="arabic-title">
+                    <input class="input-title" id="input-title" type="text" required>
+                    <label class="title-lable" for="input-title">العنوان<span>*</span></label>
+                </div>
+
+                <div class="arabic-title">
+                    <input class="input-title subtitle-en" id="input-title" type="text" required>
+                    <label class="title-lable" for="input-title">Subtitle<span>*</span></label>
+                </div>
+
+                <div class="arabic-title">
+                    <input class="input-title subtitle-ar" id="input-title" type="text" required>
+                    <label class="title-lable" for="input-title">العنوان الفرعي<span>*</span></label>
+                </div>
+
+                <div class="container-tags">
+                    <select class="tags" id="category" required>
+                                    <option  value="null">Select a Category</option>
+                                    <option value="Restaurant">Restaurant</option>
+                                    <option value="Chalet">Chalet</option>
+                                    <option value="Activity">Activity</option>
+                                    <option value="Nature">Nature</option>
+                                    <option value="Pool">Pool</option>
+                                    <option value="Events">Events</option>
+                    </select>
+                    <!-- <label class="label-tags" for="tags"><span>*</span></label> -->
+                </div>
+                <!-- <div class="container-tags">
+                    <select class="tags" >
+                        <option value="الصنف">الصنف</option>
+                    </select>
+                </div> -->
                 <div class="container-tags">
                     
-                    <select id="tags" class="tags" required>
-                        <option></option>
+                    <select id="tags" class="tags"     >
+                        <!-- <option></option> -->
                     </select>
-                    <label class="label-tags" for="tags">Tags<span>*</span></label>
+                    <label class="label-tags" for="tags"><span>*</span></label>
                 </div>
 
                 <div>
                     <label class="desc" for="desc">Description</label>
-                    <textarea id="desc" class="description" rows="5"></textarea>
+                    <textarea id="desc" class="description" rows="5" ></textarea>
+                </div>
+                <div>
+                    <label class="desc" for="desc">المحتوى</label>
+                    <textarea id="ardesc" class="description" rows="5" ></textarea>
+                </div>
+                <div class="video-container">
+                    <input id="video" class="video-link" type="text" />
+                    <label class="link-label" for="video">Enter a youtube link</label>
                 </div>
                 <div class="add-photo-videos">
                     <div class="cont-add">
                         <div class="first-add-btn">
                             <img src="./assets/images/gallery-add.svg">
-                            <span>Add photo/video</span>
+                            <span>Add photos</span>
                         </div>
-                        <input id="input-photo" type="file" accept="image/jpg, image/jpeg, image/png , video/mp4">
+                        <input id="input-photo" type="file" accept="image/jpg, image/jpeg, image/png " multiple>
                     </div>
 
                     <div class="container">
@@ -138,22 +178,7 @@
     </section>
     <!------------------blogs section end------------------>
     
-    <script>
-       let descData;
-ClassicEditor
-        .create( document.querySelector( '#desc' ) )
-        .then( desc => {
-                 console.log( desc );
-                 desc.model.document.on( 'change:data', (e) => {
-                 descData = desc.getData();
-                 console.log(descData);
-               } );
-                
-        } )
-        .catch( error => {
-                console.error( error );
-        } );
-    </script>
+  
 
     <script src="./assets/javascript/navbar.js" ></script>
     <script src="./assets/javascript/new.js"></script>
@@ -164,3 +189,18 @@ ClassicEditor
 </body>
 
 </html>
+
+
+<!-- <script>
+    let descDataEn;
+    ClassicEditor
+     .create( document.querySelector( '#desc' ) )
+     .then( desc =>  descDataEn = desc )
+     .catch( error =>  console.error( error ) );
+
+     let descDataAr;
+    ClassicEditor
+     .create( document.querySelector( '#ardesc' ) )
+     .then( ardesc => descDataAr = ardesc)
+     .catch( error => console.error( error ));
+  </script> -->

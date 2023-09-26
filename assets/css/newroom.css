@@ -22,6 +22,16 @@ input::-webkit-input-placeholder{
     font-weight: 400;
     
 }
+.detils .checkbox-div{
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid black;
+}
+.detils .checkbox-div .checkbox-input{
+    width: unset !important;
+    margin-right: 5px;
+}
+
 .Type , .guests{
     width: 100%;
     padding-left: 0!important;
@@ -64,7 +74,7 @@ input::-webkit-input-placeholder{
 label span{
     color: red;
 }
-.lable-price , .label-number , .label-type ,  .lable-name{
+.lable-price , .label-number , .label-type ,  .lable-name, .lable-floor{
     font-size: 20px;
     left: 0;
     position: absolute;
@@ -79,7 +89,8 @@ label span{
 .lable-name.active-label,
 .label-type.active-label  ,  
 .label-number.active-label,
-.lable-price.active-label{
+.lable-price.active-label,
+.lable-floor.active-label {
     font-size: 12px;
     bottom: 30px;
     left: -2px;

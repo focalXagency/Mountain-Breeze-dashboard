@@ -33,6 +33,7 @@ inputDate.valueAsDate = new Date();
 //     coverLabel.style = 'display:none'
 // })
 const labels = document.querySelectorAll(".title-lable");
+//console.log(labels)
 const inputs = document.querySelectorAll(".input-title");
 for (let i = 0 ; i < inputs.length ; i++) {
    inputs[i].onfocus = () => {

@@ -125,12 +125,16 @@ label span{
     transition: 0.7s ease;
     cursor: pointer;
 }
-.label-tags.active-label ,.title-lable.active-label{
+.label-tags.active-label ,.title-lable.active-label, .link-label.active-label{
     font-size: 11px;
     bottom: 30px;
     left: -2px;
 }
-
+/* .ed-label {
+    font-size: 11px;
+    bottom: 30px;
+    left: -2px;
+} */
 #input-title{
     width: 62.970498474059%;
 }
@@ -139,6 +143,17 @@ label span{
     font-size: 16px;
     font-weight: 400;
     width: 100%;
+}
+.arabic-title {
+    position: relative;
+}
+.arabic-title .input-title {
+    border: none;
+    border-bottom: 1px solid black;
+    background-color: transparent;
+    color: #000;
+    font-size: 20px;
+    font-weight: 400;
 }
 /* .hero form .detils input[type="date"]::-webkit-datetime-edit-year-field{
     position: absolute !important;
@@ -205,6 +220,31 @@ label span{
 .ck.ck-editor__editable_inline {
     padding-bottom: 15px;
     padding-top: 15px;
+}
+input.video-link {
+    border: none;
+    border-bottom: 1px solid black;
+    background-color: transparent;
+    color: #000;
+    font-size: 20px;
+    font-weight: 400;
+    width: 62.970498474059%;
+}
+.video-container {
+    position: relative;
+}
+.link-label {
+    /* font-size: 20px; */
+    left: 0;
+    bottom: 3px;
+    position: absolute;
+    font-weight: 400;
+    Line-height: 24.38px;
+    transition: 0.7s ease;
+    cursor: pointer;
+    font-size: 11px;
+    /* bottom: 30px;
+    left: -2px; */
 }
 /* -----------end form styling------------ */
 

@@ -23,7 +23,7 @@
 
 
         <ul class="menu">
-            <li ><a href="./index.html"><span></span><img src="./assets/images/blog.svg">Blogs</a></li>
+            <li ><a href="./Blogs.html"><span></span><img src="./assets/images/blog.svg">Blogs</a></li>
             <li><a href="./gallery.html"><span></span><img src="./assets/images/gallrey.svg" >Gallery</a></li>
             <li class="active" ><a href="./rooms.html"><span></span><img src="./assets/images/rooms.svg" >Rooms</a></li>
             <li><a href="./booking.html"><span></span><img src="./assets/images/booking.svg" >Booking</a></li>
@@ -56,30 +56,82 @@
                 <div class="detils" >
                     <div class="input" >
                         
-                        <input class="name" id="input-name" type="text" required>
-                        <label class="lable-name" for="input-name" >Room Name<span>*</span></label>
+                        <input class="name room-name" id="input-name" type="text" required>
+                        <label class="lable-name name-en-label" for="input-name" >Room Name<span>*</span></label>
+                    </div>
+
+                    <div class="input" >
+                        
+                        <input class="name room-name-ar" id="room-name-ar" type="text" required>
+                        <label class="lable-name roomName-label" for="room-name-ar" >اسم الغرفة<span>*</span></label>
+                    </div>
+
+                    <div class="input" >
+                        
+                        <input class="name subtitle-en" id="subtitle-en" type="text" required>
+                        <label class="lable-name subtitle-labelEn" for="subtitle-en" >SubTilte<span>*</span></label>
+                    </div>
+
+                    <div class="input" >
+                        
+                        <input class="name subtitle-ar" id="subtitle-ar" type="text" required>
+                        <label class="lable-name subtitle-labelAr" for="subtitle-ar" >العنوان الفرعي<span>*</span></label>
                     </div>
 
                     <div class="input">
                         
                         <select id="type" class="Type" required>
-                            <option></option>
-                        </select>
-                        <label class="label-type" for="type">Room Type<span>*</span></label>
+                            <option value="Room Type" selected>Room Type</option>
+                            <option value="VIP">VIP</option>
+                            <option value="Delux">Delux</option>
+                        </select> 
+                        <!-- <label class="label-type" for="type">Room Type<span>*</span></label> -->
                     </div>
 
                     <div class="input">
                         
-                        <select id="number" class="guests" required>
+                        <!-- <select id="number" class="guests"       >
                             <option></option>
-                        </select>
+                        </select> -->
+                        <input class="name guests" id="number" type="text" required>
                         <label class="label-number" for="number">guests Number<span>*</span></label>
                     </div>
                     
                     <div class="input">
                         
-                        <input class="price" id="input-price" type="text" required>
+                        <input class="name price" id="input-price" type="text" required>
                         <label class="lable-price" for="input-price" >Room Price<span>*</span></label>
+
+                    </div>
+
+                    <div class="input">
+                        
+                        <input class="name floor" id="input-floor" type="text" required>
+                        <label class="lable-floor" for="input-floor" >Floor<span>*</span></label>
+
+                    </div>
+
+                    <div class="input">
+                        
+                        <select id="bedType" class="Type" required>
+                            <option value="Bed Type" selected>Bed Type</option>
+                            <option value="kingsize">kingsize</option>
+                        </select> 
+                        <!-- <label class="label-type" for="type">Room Type<span>*</span></label> -->
+                    </div>
+
+
+                    <div class="input checkbox-div">
+                        
+                        <input type="checkbox" id="room-services"   class="checkbox-input" required>
+                        <label for="room-services" >Room Services</label>
+
+                    </div>
+
+                    <div class="input checkbox-div">
+                        
+                        <input type="checkbox" id="tv"  value="TV" class="checkbox-input" required>
+                        <label for="tv" >TV</label>
 
                     </div>
 
@@ -87,9 +139,11 @@
                 
                 <div>
                     <label for="desc" class="description-label" >Description</label>
-                    <textarea id="desc" class="description" >
-
-                </textarea>
+                    <textarea id="desc" class="description" ></textarea>
+                </div>
+                <div>
+                    <label class="desc" for="desc">المحتوى</label>
+                    <textarea id="ardesc" class="description" rows="5" onchange=''></textarea>
                 </div>
                 <div class="add-photo-videos" >
                         
@@ -97,7 +151,7 @@
                         <span>Photos</span>
                         <div style="display: flex; flex-direction: row-reverse;" >
                             <div class="add-btn" >
-                                <input class="new-add" id="input-photo" type="file" accept="image/jpg, image/jpeg, image/png , video/mp4" >
+                                <input class="new-add" id="input-photo" type="file" accept="image/jpg, image/jpeg, image/png , video/mp4" multiple>
                                 <img src="./assets/images/add-circle2.svg">
                             </div>
                             <div class="container-add" >
@@ -132,16 +186,27 @@
     <!------------------blogs section end------------------>
     <script src="./assets/javascript/navbar.js" ></script>
     <script src="./assets/javascript/addGroubPhotoVideo.js"></script>
-    <script>
-        ClassicEditor
-                .create( document.querySelector( '#desc' ) )
-                .then( desc => {
-                        console.log( desc );
-                } )
-                .catch( error => {
-                        console.error( error );
-                } );
-    </script> 
+    <script src="./assets/javascript/newroom.js"></script>
+    
     
 </body>
 </html>
+
+
+<!-- <script>
+    let dataContentEn
+    ClassicEditor
+            .create( document.querySelector( '#desc' ) )
+            .then( desc => dataContentEn = desc )
+            .catch( error => {
+                    console.error( error );
+            } );
+
+    let dataContentAr
+   ClassicEditor
+    .create( document.querySelector( '#ardesc' ) )
+    .then( ardesc => dataContentAr = ardesc )
+    .catch( error => {
+            console.error( error );
+    } );
+</script>  -->
