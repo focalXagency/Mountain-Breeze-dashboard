@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dashbord</title>
+    <link rel="stylesheet" href="./assets/css/index.css">
+    <link rel="stylesheet" href="./assets/css/navBar.css">
+    <link rel="stylesheet" href="./assets/css/newarticle.css">
+    <link rel="stylesheet" href="./assets/css/newexolore.css">
+    <script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script>
+</head>
+
+<body>
+    <!------------------nav bar start------------------>
+
+    <nav class="nav-bar">
+        <img class="left-arrow" src="./assets/images/arrow-left.svg">
+
+        <div class="logo">
+            <img src="./assets/images/logo.svg" >
+            <h1>Mountain Breeze Resort</h1>
+        </div>
+
+
+        <ul class="menu">
+            <li ><a href="./Blogs.html"><span></span><img src="./assets/images/blog.svg">Blogs</a></li>
+            <li><a href="./gallery.html"><span></span><img src="./assets/images/gallrey.svg" >Gallery</a></li>
+            <li><a href="./rooms.html"><span></span><img src="./assets/images/rooms.svg" >Rooms</a></li>
+            <li><a href="./booking.html"><span></span><img src="./assets/images/booking.svg" >Booking</a></li>
+            <li class="active"><a href="./explore.html"><span></span><img src="./assets/images/explore.svg" >Explore</a></li>
+            <li><a href="./food.html"><span></span><img src="./assets/images/food.svg" >Food</a></li>
+            <li><a href="./inbox.html"><span></span><img src="./assets/images/inbox.svg">Inbox</a></li>
+            
+        </ul>
+
+    </nav>
+
+    <!------------------nav bar end------------------>
+
+    <!------------------blogs section start------------------>
+        <section class="blogs">
+            
+            <header>
+                <img class="right-arrow" src="./assets/images/arrow-right-white.svg">
+                <nav class="nav-blogs">
+                    <h1>Explore / Edit Article</h1>
+                    <ul class="admin-setting" >
+                        <li><img src="./assets/images/notification.svg" ></li>
+                        <li><img src="./assets/images/profile-circle.svg" ></li>
+                        <li>Admin name</li>
+                    </ul>
+                </nav>
+            </header>
+        <div class="hero">
+            <form class="new-article-form">
+                
+                <div class="container-image">
+                    <label class="cover">Article Cover <span>*</span></label>
+                    <div class="image">
+                        <img class="added-img show" src="">
+                        <input class="add-img add-img-after-add" type="file" accept="image/jpg, image/jpeg, image/png" id="input-img"
+                            required>
+                    </div>
+                    <div class="edit show">
+                        <img src="./assets/images/edit-gray.svg">
+                        <span class="edit-text">Edit Cover Image</span>
+                    </div>
+                </div>
+
+                <div class="detils">
+                    <div class="title">
+                        <div class="en" >
+                            <input class="input-title-en" id="input-title" type="text" required>
+                            <label class="title-lable active-label" for="input-title">Title<span>*</span></label>
+                        </div>
+                        <div class="ar" >
+                            <input class="input-title-ar" id="input-title" type="text" required>
+                            <label class="title-lable active-label" for="input-title">العنوان<span>*</span></label>
+                        </div>
+                        
+                    </div>
+                   
+                    
+                    <div class="container-date" style="position: relative; width: 30.51881993896236%;" >
+                        <!-- <span class="left">/</span>
+                        <span class="right">/</span> -->
+                        <input id="input-date" type="date" >
+                        <label class="date" for="input-date">Date:</label>
+                    </div>
+                </div>
+                <div class="sub-title" style="width: 100%;">
+                    <div class="en" >
+                        <input class="input-title-en" id="input-title" type="text" required>
+                        <label class="title-lable active-label" for="input-title">Sub Title<span>*</span></label>
+                    </div>
+                    <div class="ar" >
+                        <input class="input-title-ar" id="input-title" type="text" required>
+                        <label class="title-lable active-label" for="input-title">العنوان الفرعي<span>*</span></label>
+                    </div>
+                    
+                </div>
+                <div class="container-tags">
+                    
+                    <select id="tags" class="tags" required>
+                        <option></option>
+                        <option value="Restaurant" >#Restaurant</option>
+                        <option value="Chalet">#Chalet</option>
+                        <option value="Activity">#Activity</option>
+                        <option value="Nature">#Nature</option>
+                        <option value="Pool">#Pool</option>
+                        <option value="Events">#Events</option>
+                    </select>
+                    <label class="label-tags active-label" for="tags">Tags<span>*</span></label>
+                </div>
+
+                <div>
+                    <label class="desc" for="desc">Description</label>
+                    <textarea id="desc" class="description" rows="5"></textarea>
+                    <label class="desc" for="desc">الوصف</label>
+                    <textarea id="desc-ar" class="description" rows="5"></textarea>
+                </div>
+
+                
+                    <div class="add-btnvideo">
+                        <img src="./assets/images/gallery-add.svg">
+                        <input id="add-video"  type="url" placeholder="Add youtube link">
+                    </div>
+                    
+                <div class="add-photo-videos">
+                    <div class="cont-add">
+                        <div class="first-add-btn">
+                            <img src="./assets/images/gallery-add.svg">
+                            <span>Add photo</span>
+                        </div>
+                        <input class="new-add-edit" id="input-photo" type="file" accept="image/jpg, image/jpeg, image/png , video/mp4">
+                    </div>
+
+                    <div class="container show">
+                        <span>Photos</span>
+                        <div style="display: flex; flex-direction: row-reverse;">
+                            <div class="add-btn">
+                                <img src="./assets/images/add-circle2.svg">
+                            </div>
+                            <div class="container-add">
+                                <!-- <div class="added-photo" >
+                                    <img class="photo" src="./assets/images/article.png" >
+                                    <div class="trash" >
+                                        <img class="delet" src="./assets/images/bag.png" >
+                                    </div>
+                                </div> -->
+
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+                <div class="btns">
+                    <button class="cancel">Cancel</button>
+                    <input class="add-a" type="submit" value="Add Article">
+                </div>
+            </form>
+
+        </div>
+    </section>
+    <!------------------blogs section end------------------>
+    
+    <script>
+
+    </script>
+
+    <script src="./assets/javascript/navbar.js" ></script>
+    <script src="assets/javascript/editArticleExplore.js"></script>
+
+ 
+
+</body>
+
+</html>

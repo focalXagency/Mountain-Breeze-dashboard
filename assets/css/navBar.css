@@ -7,7 +7,6 @@
     padding: 1.5rem;
     position: relative;
     display: inline-block;
-    position: relative; /* Batoul */
 }
 .nav-bar .logo{
     padding-top: 1.5rem;
@@ -71,6 +70,8 @@
 .open{
     transform: translateX(0.2%)!important;
     box-shadow: 3px 1px 20px 0px rgba(255, 255, 255, 0.616);
+    position: absolute;
+    z-index:3;
 }
 
 
