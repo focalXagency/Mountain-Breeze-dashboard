@@ -23,15 +23,15 @@ async function getMassegs() {
     .catch(error => console.log('error', error));
 
   console.log(massegs)
+  let msg = "";
   massegs.forEach(ele => {
     let newContent;
     if (ele.content.length > 34) {
       newContent = ele.content.slice(0, 28) + "..";
-      console.log(newContent);
     }
-    let msg = "";
+
     msg += `<div class="single-chat-container">
-      <div class="single-chat">
+      <div class="single-chat" id=${ele.id}>
               <div class="first-box">
                   <span class="rectangle-span-inbox"></span>
                   <span class="circle-inbox"></span>
@@ -49,14 +49,18 @@ async function getMassegs() {
   </div>
 
       `
+
     chatsBox.innerHTML = msg;
   })
-  const chatItems = document.querySelectorAll(".single-chat-container .single-chat");
+
+
+
+  const chatItems = document.querySelectorAll(".single-chat");
   const noConver = document.querySelector(".conver-container .no-conver");
   const existConver = document.querySelector(".conver-container .exist-conver");
   const messageInbox = document.querySelector(".message-inbox");
   const span = document.querySelector(".inbox .hero-inbox .chats-box .first-box .circle-inbox")
-  console.log(span.parentElement.parentElement)
+
   for (let i = 0; i < chatItems.length; i++) {
 
     chatItems[i].addEventListener('click', () => {
@@ -93,23 +97,64 @@ async function getMassegs() {
       messageInbox.setAttribute('id', massegs[i].id);
       messageInbox.innerHTML = detilsMsg;
       const deleteMsg = document.querySelector("#remove-one");
-    console.log(deleteMsg);
-    deleteMsg.addEventListener('click' , () => {
-      console.log(messageInbox.getAttribute('id'));
-      let idMsg=parseInt(messageInbox.getAttribute('id'));
-      removeMsg(idMsg);
+      deleteMsg.addEventListener('click', () => {
+        let idMsg = parseInt(messageInbox.getAttribute('id'));
+        removeMsg(idMsg);
+      })
     })
-    })
-    
+
   }
-  
-  function resetItems() {
-    chatItems.forEach(item => {
-      item.classList.remove("active")
+
+
+  const toSet = document.querySelectorAll(".rectangle-span-inbox")
+
+  let deletedMsg = [];
+
+  for (let i = 0; i < toSet.length; i++) {
+    toSet[i].addEventListener('click', () => {
+      toSet[i].classList.add('done');
+      let id = parseInt(chatItems[i - 1].getAttribute('id'));
+      console.log(id)
+      deletedMsg.push(id);
     })
+
+
+    function resetItems() {
+      chatItems.forEach(item => {
+        item.classList.remove("active")
+      })
+    }
+  }
+  const all = document.querySelector("#deleteAll");
+  console.log(all)
+  all.addEventListener('click', () => {
+    console.log(deletedMsg)
+    deleteMulti(deletedMsg);
+  })
+  async function deleteMulti(deletedMsg) {
+
+    var myHeaders = new Headers();
+    myHeaders.append("Accept", "application/json");
+    let raw = {
+      ids: deletedMsg
+    };
+    
+    var requestOptions = {
+      method: 'DELETE',
+      headers: {
+        'Content-type': 'application/x-www-form-urlencoded',
+        Authorization: `Bearer Token${token}`
+      },
+      body: raw,
+      redirect: 'follow'
+    };
+    await fetch("https://mountain.lavetro-agency.com/api/dashboard/contact/multiRecords", requestOptions)
+      .then(response => response.json())
+      .then(result => console.log(result))
+      .catch(error => console.log('error', error));
+
   }
 }
-
 async function removeMsg(id) {
 
   var myHeaders = new Headers();
@@ -132,17 +177,5 @@ async function removeMsg(id) {
 
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 

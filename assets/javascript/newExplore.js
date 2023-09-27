@@ -132,20 +132,8 @@ subTitleAr.addEventListener("click", () => {
 
 const add = document.querySelector(".add-a");
 
-async function addNewArticle(data) {
+const tags = document.querySelector('.tags');
 
-        // var requestOptions = {
-        //         method: 'POST',
-        //         headers: {
-        //                 "Content-Type": "application/json",
-        //                 AUTHORIZATION: `Bearer ${token}`
-        //         },
-        //         body: JSON.stringify(data),
-
-        // };
-        
-
-}
 const addVideo = document.querySelector('#add-video');
 let newVideo = "";
 addVideo.addEventListener('change', () => {
@@ -157,12 +145,12 @@ addVideo.addEventListener('change', () => {
 
 add.addEventListener('click', async (event) => {
         event.preventDefault();
-        console.log(type);
+        console.log(tags.value);
         let newdescDataEn = descDataEn.getData();
         let newdescDataAr = descDataAr.getData();
        
         var formdata = new FormData();
-        console.log(inputDate.value);
+
         
         formdata.append("article_cover", coverPhotoValue);
         formdata.append("category", type);
@@ -173,6 +161,7 @@ add.addEventListener('click', async (event) => {
         formdata.append("content_en", newdescDataEn);
         formdata.append("content_ar", newdescDataAr);
         formdata.append("date", inputDate.value);
+        formdata.append("tags[0]", tags.value);
         if (newVideo !=="") {
                 formdata.append("videos[0]", newVideo);
         }

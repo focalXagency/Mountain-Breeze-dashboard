@@ -1,34 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>dashboard</title>
-    <link rel="stylesheet" href="./assets/css/index.css" >
-    <link rel="stylesheet" href="./assets/css/navBar.css" >
-    <link rel="stylesheet" href="./assets/css/inbox.css" >
+    <link rel="stylesheet" href="./assets/css/index.css">
+    <link rel="stylesheet" href="./assets/css/navBar.css">
+    <link rel="stylesheet" href="./assets/css/inbox.css">
 </head>
+
 <body>
-    
+
     <!------------------nav bar start------------------>
     <nav class="nav-bar">
         <img class="left-arrow" src="./assets/images/arrow-left.svg">
 
         <div class="logo">
-            <img src="./assets/images/logo.svg" >
+            <img src="./assets/images/logo.svg">
             <h1>Mountain Breeze Resort</h1>
         </div>
 
 
         <ul class="menu">
-            <li ><a href="./Blogs.html"><span></span><img src="./assets/images/blog.svg">Blogs</a></li>
-            <li><a href="./gallery.html"><span></span><img src="./assets/images/gallrey.svg" >Gallery</a></li>
-            <li><a href="./rooms.html"><span></span><img src="./assets/images/rooms.svg" >Rooms</a></li>
-            <li><a href="./booking.html"><span></span><img src="./assets/images/booking.svg" >Booking</a></li>
-            <li><a href="./explore.html"><span></span><img src="./assets/images/explore.svg" >Explore</a></li>
-            <li ><a href="./food.html"><span></span><img src="./assets/images/food.svg" >Food</a></li>
+            <li><a href="./Blogs.html"><span></span><img src="./assets/images/blog.svg">Blogs</a></li>
+            <li><a href="./gallery.html"><span></span><img src="./assets/images/gallrey.svg">Gallery</a></li>
+            <li><a href="./rooms.html"><span></span><img src="./assets/images/rooms.svg">Rooms</a></li>
+            <li><a href="./booking.html"><span></span><img src="./assets/images/booking.svg">Booking</a></li>
+            <li><a href="./explore.html"><span></span><img src="./assets/images/explore.svg">Explore</a></li>
+            <li><a href="./food.html"><span></span><img src="./assets/images/food.svg">Food</a></li>
             <li class="active"><a href="./inbox.html"><span></span><img src="./assets/images/inbox.svg">Inbox</a></li>
-            
+
         </ul>
 
     </nav>
@@ -40,15 +42,15 @@
             <img class="right-arrow" src="./assets/images/arrow-right-white.svg">
             <nav class="nav-blogs">
                 <h1>Inbox</h1>
-                <ul class="admin-setting" >
-                    <li><img src="./assets/images/notification.svg" ></li>
-                    <li><img src="./assets/images/profile-circle.svg" ></li>
+                <ul class="admin-setting">
+                    <li><img src="./assets/images/notification.svg"></li>
+                    <li><img src="./assets/images/profile-circle.svg"></li>
                     <li>Admin name</li>
                 </ul>
             </nav>
         </header>
 
-        <div class="hero-inbox" >
+        <div class="hero-inbox">
 
             <div class="icon-line">
                 <div class="icon-container">
@@ -57,41 +59,21 @@
                         <img src="./assets/images/frame-inbox.svg" alt="frame-inbox">
                     </div>
                     <div class="right-icons">
-                        <img src="./assets/images/black-trash.svg" alt="black-trash">
+                        <img id="deleteAll" src="./assets/images/black-trash.svg" alt="black-trash">
                     </div>
                 </div> <!--End icon-container -->
                 <span></span>
             </div> <!-- End icon-line -->
 
-            <div class="inbox-settings">
+            <div style="display: flex;">
+                <div class="inbox-settings" style="width: 32.5799812909261%;">
 
-                <div class="chats-container">
-                    <div class="chats-box">
+                    <div class="chats-container">
+                        <div class="chats-box">
 
-                        <!-- <div class="single-chat-container">
-                            <div class="single-chat">
-                                    <div class="first-box">
-                                        <span class="rectangle-span-inbox"></span>
-                                        <span class="circle-inbox"></span>
-                                    </div>  
-                                        <div class="middle-box">
-                                            <h3 class="name">Ola Abdulrahman</h3>
-                                            <h1 class="title">Photos for the project</h1>
-                                            <p class="description">Hello, Here're some photos to f.. </p>
-                                        </div>  
-                                         <div class="last-box">
-                                            <span class="date">July 17, 2023</span>
-                                            <img src="./assets//images/attachsquare.svg" alt="attachsquare">
-                                        </div>
-                            </div> 
-                        </div>   -->
+                        </div>
 
-                      
-
-                         
-               
-                         
-                    </div>  <!--End chats-box -->
+                    </div> <!--End chats-box -->
                 </div> <!-- End chats-container -->
 
                 <div class="conver-container">
@@ -107,14 +89,15 @@
 
                         <div class="message-inbox active">
 
-                           
 
-                        </div> 
-<!-- End response-box -->
+
+                        </div>
+                        <!-- End response-box -->
                     </div> <!-- End exist-conver -->
 
                 </div> <!-- End conver-container -->
-            </div> <!-- End inbox-settings -->
+            </div>
+        </div> <!-- End inbox-settings -->
         </div> <!-- End hero-inbox-->
     </section>
     <!-- End inbox-section -->
@@ -123,4 +106,5 @@
     <script src="./assets//javascript/inbox.js"></script>
     <script src="./assets//javascript/contact.js"></script>
 </body>
+
 </html>

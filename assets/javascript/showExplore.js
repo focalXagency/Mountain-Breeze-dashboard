@@ -100,15 +100,14 @@ async function getArticles(type = "Restaurant") {
         slider.innerHTML = detils;
         }
         const articles = document.querySelectorAll(".article");
-        localStorage.setItem("idArticleExplore", i + 1);
         icons = document.querySelectorAll(".del-article");
         let editBtns = document.querySelectorAll("#edit")
         for (let i = 0; i < editBtns.length; i++) {
             editBtns[i].addEventListener("click", () => {
-                localStorage.setItem("idArticleExplore", parseInt(articles[i].getAttribute('id')));
+                localStorage.setItem("idArticleExplore", articles[i].getAttribute('id'));
             })
-
         }
+
         for (let i = 0; i < icons.length; i++) {
             icons[i].addEventListener("click", () => {
                 divDelet.classList.add("show");

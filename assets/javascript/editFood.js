@@ -6,7 +6,7 @@ idFood = localStorage.getItem('idFood');
 console.log(idFood)
 // ------add main photo function------
 inputImg.onchange = function () {
-    
+
     newImg.classList.add("img-add");
     editBtn.classList.add("show");
     newImg.src = URL.createObjectURL(inputImg.files[0]);
@@ -35,7 +35,7 @@ ClassicEditor
     .then(desc => descEn = desc)
     .catch(error => {
         console.error(error);
-    });    
+    });
 ClassicEditor
     .create(document.querySelector('#desc-ar'))
     .then(desc => descAr = desc)
@@ -129,16 +129,25 @@ function reomve() {
 const addBtn = document.querySelector(".add-a");
 addBtn.addEventListener('click', (event) => {
     event.preventDefault();
-    console.log(newTitleEn)
-    let dataFood = {
-        image: newImage,
-        category: categoryEnValue,
-        title_en: newTitleEn,
-        title_ar: newtitleAr,
-        content_en: descEn.getData(),
-        content_ar: descAr.getData(),
-        image_size: newSize
-    };
+    console.log(inputImg.files[0]);
+    const dataFood = new URLSearchParams();
+    // dataFood.append("image", inputImg.files[0]);
+    dataFood.append("category", categoryEn.value);
+    dataFood.append("title_en", newTitleEn);
+    dataFood.append("title_ar", newtitleAr);
+    dataFood.append("content_en", descEn.getData());
+    dataFood.append("content_ar", descAr.getData());
+    dataFood.append("image_size", newSize);
+    console.log(categoryEnValue);
+    // let dataFood = {
+    //     image: newImage,
+    //     category: categoryEnValue,
+    //     title_en: newTitleEn,
+    //     title_ar: newtitleAr,
+    //     content_en: descEn.getData(),
+    //     content_ar: descAr.getData(),
+    //     image_size: newSize
+    // };
 
     updateFood(dataFood);
 })
@@ -147,18 +156,18 @@ addBtn.addEventListener('click', (event) => {
 async function updateFood(data) {
     const token = localStorage.getItem('token');
     var myHeaders = new Headers();
-    myHeaders.append("Accept", "application/json");
+    myHeaders.append("Content-type", "application/json; charset=UTF-8");
     console.log(data);
-    var requestOptions = {
+    // var requestOptions = ;
+
+    await fetch(`https://mountain.lavetro-agency.com/api/dashboard/foods/${idFood}`, {
         method: 'PUT',
         headers: {
-            myHeaders,
-            AUTHORIZATION: `Bearer ${token}`
+            AUTHORIZATION: `Bearer ${token}`,
+            // 'Content-type': 'charset=UTF-8',
         },
-        body: JSON.stringify(data),
-    };
-
-    await fetch(`https://mountain.lavetro-agency.com/api/dashboard/foods/${idFood}`, requestOptions)
+        body: data,
+    })
         .then(res => res.json())
         .then(res => console.log(res))
         .catch(error => console.log('error', error));
@@ -183,36 +192,36 @@ async function getDetilsFood() {
         .then(res => res.json())
         .then(res => detils = res.data)
         .catch(error => console.log('error', error));
-        console.log(detils)
-        newImg.src = detils.image;
-        inputImg.classList.add("add-img-after-add");
-        newImg.classList.add("img-add");
-        editBtn.classList.add("show");
-        titleEn.value=detils.title.en;
-        titleAr.value=detils.title.ar;
-        categoryEn.value=detils.category;
-        descEn.setData(detils.content.en)
-        descAr.setData(detils.content.ar)
-        detils.image_size !== null? newSize=detils.image_size : null;
-        sizeImg.forEach(element => {
-            reomve();
-            if (element.innerText == detils.image_size) {
-                element.classList.add('chossen-size');
-            }
-        });
+    console.log(detils)
+    newImg.src = detils.image;
+    inputImg.classList.add("add-img-after-add");
+    newImg.classList.add("img-add");
+    editBtn.classList.add("show");
+    titleEn.value = detils.title.en;
+    titleAr.value = detils.title.ar;
+    categoryEn.value = detils.category;
+    descEn.setData(detils.content.en)
+    descAr.setData(detils.content.ar)
+    detils.image_size !== null ? newSize = detils.image_size : null;
+    sizeImg.forEach(element => {
+        if (element.innerText === detils.image_size) {
+            console.log(element)
+            element.classList.add('chossen-size');
+        }
+    });
 
-               
+
 }
 
-function removeLabel(){
-    
+function removeLabel() {
+
     titleLabel.forEach(element => {
         element.classList.add("active-label");
-    
+
     });
     categoryLabel.forEach(element => {
         element.classList.add("active");
-        
+
     });
 
 }
@@ -220,25 +229,25 @@ function removeLabel(){
 
 const cancel = document.querySelector(".cancel");
 
-cancel.addEventListener('click' , (e) => {
+cancel.addEventListener('click', (e) => {
     e.preventDefault()
-    categoryEn.value= "";
+    categoryEn.value = "";
     newImg.src = "";
-    titleEn.value= "";
-    titleAr.value="";
+    titleEn.value = "";
+    titleAr.value = "";
     titleLabel.forEach(element => {
         element.classList.remove("active-label");
-    
+
     });
     categoryLabel.forEach(element => {
         element.classList.remove("active");
-        
+
     });
     descEn.setData("");
     descAr.setData("");
     reomve();
-    newSize="";
+    newSize = "";
 })
-   
+
 
 
