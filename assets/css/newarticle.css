@@ -130,11 +130,7 @@ label span{
     bottom: 30px;
     left: -2px;
 }
-/* .ed-label {
-    font-size: 11px;
-    bottom: 30px;
-    left: -2px;
-} */
+
 #input-title{
     width: 62.970498474059%;
 }
@@ -235,16 +231,16 @@ input.video-link {
 }
 .link-label {
     /* font-size: 20px; */
-    left: 0;
-    bottom: 3px;
+    /* left: 0;
+    bottom: 3px; */
     position: absolute;
     font-weight: 400;
     Line-height: 24.38px;
     transition: 0.7s ease;
     cursor: pointer;
     font-size: 11px;
-    /* bottom: 30px;
-    left: -2px; */
+    bottom: 30px;
+    left: -2px;
 }
 /* -----------end form styling------------ */
 

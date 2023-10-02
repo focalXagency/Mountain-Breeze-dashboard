@@ -28,7 +28,6 @@ async function getDeletedArticle() {
                 <p class="hashtack"></p>                        
                 <div class="footer">
                    <div class="icons">
-                     <button class="edit-link" id=${ele.id}><img src="./assets/images/edit-red.svg" ></button>
                      <img class="del-article" id=${ele.id} src="./assets/images/recovery-convert.svg" >
                    </div>
                    <button class="arrowlink" id=${ele.id}>
@@ -39,30 +38,7 @@ async function getDeletedArticle() {
         </div>
         `
 
-     
-    
-     //for (let i = 0; i < goEdit.length; i++) {}
-    //  goEdit.forEach(delItem => {
-    //       delItem.addEventListener('click', () => {
-    //             window.location.href = "./editArticle.html";
-    //             let idBtn = delItem.getAttribute('id');
-    //             console.log(idBtn)
-    //             localStorage.setItem('delItemId', idBtn)
-    //       })
-    //   })
-
     })
-
-    //go edit page
-    const goEdit = document.querySelectorAll(".edit-link")
-    for (let i = 0; i < goEdit.length; i++) {
-        goEdit[i].addEventListener('click', () => {
-            let editArticleId = goEdit[i].getAttribute('id')
-            window.location.href = "./editArticle.html";
-            localStorage.setItem("editArticleId", editArticleId)
-    
-        })
-    }
 
       //go restore
       const restorBtns = document.querySelectorAll(".del-article")
@@ -74,24 +50,13 @@ async function getDeletedArticle() {
         })
       })
     
-     //show article Details 
-     const allDetailsbtns = document.querySelectorAll(".arrowlink")
-     for (let i = 0; i < allDetailsbtns.length; i++) {
-        allDetailsbtns[i].addEventListener('click', () => {
-            let DeletedDetailId = allDetailsbtns[i].getAttribute('id')
-            window.location.href = "./articledetils.html";
-            localStorage.setItem('articleId', DeletedDetailId)
-        })
-     }
+   
     
 }
 
 getDeletedArticle();
 
-{/* <div class="icons">
-    <a href="./editArticle.html" ><img src="./assets/images/edit-red.svg" ></a>
-    <img src="./assets/images/recovery-convert.svg" >
-</div> */}
+
 
 async function restoreArticle(id) {
     let authToken = localStorage.getItem("token");
