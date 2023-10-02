@@ -10,6 +10,7 @@
 } */
 .slider{
     flex-direction: row!important;
+    display: flex!important;
     flex-wrap: wrap;
     justify-content: center;
     gap: 2rem;
@@ -37,12 +38,15 @@
 .slider .food-item p{
     font-size: 16px;
     font-weight: 400;
-    padding-top: 0.5rem;
+    padding: 0.5rem 0.5rem 0 0;
 }
 .arrws{
     margin: 2rem!important;
 }
-
+.disabled-arrow{
+    opacity: 0.3;
+    cursor: no-drop!important;
+}
 /* Start Responsive */
 @media (max-width: 1100px) {
     .food {
