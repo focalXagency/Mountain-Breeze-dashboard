@@ -1,37 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>dashbord</title>
-        <link rel="stylesheet" href="./assets/css/index.css" >
-        <link rel="stylesheet" href="./assets/css/navBar.css">
-        <link rel="stylesheet" href="./assets/css/gallrey.css" >
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dashbord</title>
+    <link rel="stylesheet" href="./assets/css/index.css">
+    <link rel="stylesheet" href="./assets/css/navBar.css">
+    <link rel="stylesheet" href="./assets/css/gallrey.css">
 
 
 
-    </head>
-    <body>
+</head>
+
+<body>
     <!------------------nav bar start------------------>
 
     <nav class="nav-bar">
         <img class="left-arrow" src="./assets/images/arrow-left.svg">
 
         <div class="logo">
-            <img src="./assets/images/logo.svg" >
+            <img src="./assets/images/logo.svg">
             <h1>Mountain Breeze Resort</h1>
         </div>
 
 
         <ul class="menu">
-            <li ><a href="./index.html"><span></span><img src="./assets/images/blog.svg">Blogs</a></li>
-            <li class="active" ><a href="./gallery.html"><span></span><img src="./assets/images/gallrey.svg" >Gallery</a></li>
-            <li><a href="./rooms.html"><span></span><img src="./assets/images/rooms.svg" >Rooms</a></li>
-            <li><a href="./booking.html"><span></span><img src="./assets/images/booking.svg" >Booking</a></li>
-            <li><a href="./explore.html"><span></span><img src="./assets/images/explore.svg" >Explore</a></li>
-            <li><a href="./food.html"><span></span><img src="./assets/images/food.svg" >Food</a></li>
+            <li><a href="./Blogs.html"><span></span><img src="./assets/images/blog.svg">Blogs</a></li>
+            <li class="active"><a href="./gallery.html"><span></span><img src="./assets/images/gallrey.svg">Gallery</a>
+            </li>
+            <li><a href="./rooms.html"><span></span><img src="./assets/images/rooms.svg">Rooms</a></li>
+            <li><a href="./booking.html"><span></span><img src="./assets/images/booking.svg">Booking</a></li>
+            <li><a href="./explore.html"><span></span><img src="./assets/images/explore.svg">Explore</a></li>
+            <li><a href="./food.html"><span></span><img src="./assets/images/food.svg">Food</a></li>
             <li><a href="./inbox.html"><span></span><img src="./assets/images/inbox.svg">Inbox</a></li>
-            
+
         </ul>
 
     </nav>
@@ -39,709 +42,189 @@
     <!------------------nav bar end------------------>
 
     <!------------------blogs section start------------------>
-        <section class="gallery-seaction">
-            <header>
-                <img class="right-arrow" src="./assets/images/arrow-right-white.svg">
-                <nav class="nav-blogs">
-                    <h1>Gallery</h1>
-                    <ul class="admin-setting" >
-                        <li><img src="./assets/images/notification.svg" ></li>
-                        <li><img src="./assets/images/profile-circle.svg" ></li>
-                        <li>Admin name</li>
-                    </ul>
-                </nav>
-            </header>
-            <div class="hero" >
-                    <div class="filter" >
-                        <ul class="menu" >
-                            <li class="active-filter">Restaurant<span class="line active-line-filter" ></span></li>
-                            <li>Chalet<span class="line" ></span></li>
-                            <li>Activity<span class="line" ></span></li>
-                            <li>Nature<span class="line" ></span></li>
-                            <li>Events<span class="line" ></span></li>
+    <section class="gallery-seaction">
+        <header>
+            <img class="right-arrow" src="./assets/images/arrow-right-white.svg">
+            <nav class="nav-blogs">
+                <h1>Gallery</h1>
+                <ul class="admin-setting">
+                    <li><img src="./assets/images/notification.svg"></li>
+                    <li><img src="./assets/images/profile-circle.svg"></li>
+                    <li>Admin name</li>
+                </ul>
+            </nav>
+        </header>
+        <div class="hero">
+            <div class="filter">
+                <ul class="menu">
+                    <li class="active-filter" id="Restaurant">Restaurant<span class="line active-line-filter"></span>
+                    </li>
+                    <li id="Chalet">Chalet<span class="line"></span></li>
+                    <li id="Activity">Activity<span class="line"></span></li>
+                    <li id="Nature">Nature<span class="line"></span></li>
+                    <li id="Events">Events<span class="line"></span></li>
+                </ul>
+            </div>
+            <div class="gallery">
+                <div class="images-gallery">
+                    <div class="head">
+                        <ul class="menu">
+                            <li class="img-name">Images</li>
+                            <li class="cont-add">
+                                <div class="first-add-btn">
+                                    <img src="./assets/images/gallery-add.svg">
+                                    <span>Add New Image</span>
+                                </div>
+                                <input class="input" id="input-photo" type="file" accept="image/*" multiple>
+                            </li>
                         </ul>
                     </div>
-                    <div class="gallery">
-                        <div class="images-gallery" >
-                            <div class="head" >
-                                <ul class="menu" >
-                                    <li class="img-name" >Images</li>
-                                    <li class="cont-add" >
-                                            <div class="first-add-btn">
-                                                <img src="./assets/images/gallery-add.svg" >
-                                                <span >Add New Image</span>
-                                            </div>
-                                            <input class="input" id="input-photo" type="file" accept="image/jpg, image/jpeg, image/png" >
-                                    </li>
-                                </ul>
+                    <div class="carousel">
+                        <div class="wrapper">
+                            <div class="slider">
+                                <!-- <div class="slide" id="slide1"> -->
+                                <!-- <div class="img1">
+                                                    <img class="photo-slide" src="./assets/images/Rectangle 82.png">
+                                                </div>                                              -->
+                                <!-- </div> -->
+                                <!-- <div class="slide" id="slide2"> -->
+                                <!-- <div class="img1">
+                                                    <img class="photo-slide" src="./assets/images/Rectangle 82.png">
+                                                </div> -->
+                                <!-- </div> -->
+
+
                             </div>
-                                <div class="carousel" >
-                                    <div class="wrapper">
-                                        <div class="slider" id="restaurant">
-                                            <div class="slide">
-                                                <div class="img1">
-                                                    <img class="photo-slide" src="./assets/images/Rectangle 82.png">
-                                                </div>
-                                                <div class="img2">
-                                                    <img class="photo-slide" src="./assets/images/Rectangle 84.png">
-                                                </div>
-                                                <div class="img3">
-                                                    <img class="photo-slide" src="./assets/images/Rectangle 88.png">
-                                                </div>
-                                                
-                                                <div class="img4">
-                                                   <img class="photo-slide" src="./assets/images/Rectangle 86.png">
-                                                </div>
-                                                
-                                                <div class="img5">
-                                                    <img class="photo-slide" src="./assets/images/Rectangle 8.png">
-                                                </div>
-                                                <div class="img6">
-                                                    <img class="photo-slide" src="./assets/images/Rectangle 87.png">
-                                                </div>
-                                                <div class="img7">
-                                                    <img class="photo-slide" src="./assets/images/Rectangle 89.png">
-                                                </div>
-                                              </div>
-                                            <div class="slide">
-                                                <div class="img1">
-                                                    <img class="photo-slide" src="./assets/images/Rectangle 82.png">
-                                                </div>
-                                                <div class="img2">
-                                                    <img class="photo-slide" src="./assets/images/Rectangle 84.png">
-                                                </div>
-                                                <div class="img3">
-                                                    <img class="photo-slide" src="./assets/images/Rectangle 88.png">
-                                                </div>
-                                                
-                                                <div class="img4">
-                                                   <img class="photo-slide" src="./assets/images/Rectangle 86.png">
-                                                </div>
-                                                
-                                                <div class="img5">
-                                                    <img class="photo-slide" src="./assets/images/Rectangle 8.png">
-                                                </div>
-                                                <div class="img6">
-                                                    <img class="photo-slide" src="./assets/images/Rectangle 87.png">
-                                                </div>
-                                                <div class="img7">
-                                                    <img class="photo-slide" src="./assets/images/Rectangle 89.png">
-                                                </div>
-                                              </div>
-        
-                                              
-                                        </div>
-                                        <div class="slider" id="restaurant">
-                                            <div class="slide">
-                                                <div class="img1">
-                                                    <img class="photo-slide" src="./assets/images/Rectangle 82.png">
-                                                </div>
-                                                <div class="img2">
-                                                    <img class="photo-slide" src="./assets/images/Rectangle 84.png">
-                                                </div>
-                                                <div class="img3">
-                                                    <img class="photo-slide" src="./assets/images/Rectangle 88.png">
-                                                </div>
-                                                
-                                                <div class="img4">
-                                                   <img class="photo-slide" src="./assets/images/Rectangle 86.png">
-                                                </div>
-                                                
-                                                <div class="img5">
-                                                    <img class="photo-slide" src="./assets/images/Rectangle 8.png">
-                                                </div>
-                                                <div class="img6">
-                                                    <img class="photo-slide" src="./assets/images/Rectangle 87.png">
-                                                </div>
-                                                <div class="img7">
-                                                    <img class="photo-slide" src="./assets/images/Rectangle 89.png">
-                                                </div>
-                                              </div>
-                                            <div class="slide">
-                                                <div class="img1">
-                                                    <img class="photo-slide" src="./assets/images/Rectangle 82.png">
-                                                </div>
-                                                <div class="img2">
-                                                    <img class="photo-slide" src="./assets/images/Rectangle 84.png">
-                                                </div>
-                                                <div class="img3">
-                                                    <img class="photo-slide" src="./assets/images/Rectangle 88.png">
-                                                </div>
-                                                
-                                                <div class="img4">
-                                                   <img class="photo-slide" src="./assets/images/Rectangle 86.png">
-                                                </div>
-                                                
-                                                <div class="img5">
-                                                    <img class="photo-slide" src="./assets/images/Rectangle 8.png">
-                                                </div>
-                                                <div class="img6">
-                                                    <img class="photo-slide" src="./assets/images/Rectangle 87.png">
-                                                </div>
-                                                <div class="img7">
-                                                    <img class="photo-slide" src="./assets/images/Rectangle 89.png">
-                                                </div>
-                                              </div>
-        
-                                              
-                                        </div>
-                                        <div class="slider" id="restaurant">
-                                            <div class="slide">
-                                                <div class="img1">
-                                                    <img class="photo-slide" src="./assets/images/Rectangle 82.png">
-                                                </div>
-                                                <div class="img2">
-                                                    <img class="photo-slide" src="./assets/images/Rectangle 84.png">
-                                                </div>
-                                                <div class="img3">
-                                                    <img class="photo-slide" src="./assets/images/Rectangle 88.png">
-                                                </div>
-                                                
-                                                <div class="img4">
-                                                   <img class="photo-slide" src="./assets/images/Rectangle 86.png">
-                                                </div>
-                                                
-                                                <div class="img5">
-                                                    <img class="photo-slide" src="./assets/images/Rectangle 8.png">
-                                                </div>
-                                                <div class="img6">
-                                                    <img class="photo-slide" src="./assets/images/Rectangle 87.png">
-                                                </div>
-                                                <div class="img7">
-                                                    <img class="photo-slide" src="./assets/images/Rectangle 89.png">
-                                                </div>
-                                              </div>
-                                            <div class="slide">
-                                                <div class="img1">
-                                                    <img class="photo-slide" src="./assets/images/Rectangle 82.png">
-                                                </div>
-                                                <div class="img2">
-                                                    <img class="photo-slide" src="./assets/images/Rectangle 84.png">
-                                                </div>
-                                                <div class="img3">
-                                                    <img class="photo-slide" src="./assets/images/Rectangle 88.png">
-                                                </div>
-                                                
-                                                <div class="img4">
-                                                   <img class="photo-slide" src="./assets/images/Rectangle 86.png">
-                                                </div>
-                                                
-                                                <div class="img5">
-                                                    <img class="photo-slide" src="./assets/images/Rectangle 8.png">
-                                                </div>
-                                                <div class="img6">
-                                                    <img class="photo-slide" src="./assets/images/Rectangle 87.png">
-                                                </div>
-                                                <div class="img7">
-                                                    <img class="photo-slide" src="./assets/images/Rectangle 89.png">
-                                                </div>
-                                              </div>
-        
-                                              
-                                        </div>
-                                        <div class="slider" id="restaurant">
-                                            <div class="slide">
-                                                <div class="img1">
-                                                    <img class="photo-slide" src="./assets/images/Rectangle 82.png">
-                                                </div>
-                                                <div class="img2">
-                                                    <img class="photo-slide" src="./assets/images/Rectangle 84.png">
-                                                </div>
-                                                <div class="img3">
-                                                    <img class="photo-slide" src="./assets/images/Rectangle 88.png">
-                                                </div>
-                                                
-                                                <div class="img4">
-                                                   <img class="photo-slide" src="./assets/images/Rectangle 86.png">
-                                                </div>
-                                                
-                                                <div class="img5">
-                                                    <img class="photo-slide" src="./assets/images/Rectangle 8.png">
-                                                </div>
-                                                <div class="img6">
-                                                    <img class="photo-slide" src="./assets/images/Rectangle 87.png">
-                                                </div>
-                                                <div class="img7">
-                                                    <img class="photo-slide" src="./assets/images/Rectangle 89.png">
-                                                </div>
-                                              </div>
-                                            <div class="slide">
-                                                <div class="img1">
-                                                    <img class="photo-slide" src="./assets/images/Rectangle 82.png">
-                                                </div>
-                                                <div class="img2">
-                                                    <img class="photo-slide" src="./assets/images/Rectangle 84.png">
-                                                </div>
-                                                <div class="img3">
-                                                    <img class="photo-slide" src="./assets/images/Rectangle 88.png">
-                                                </div>
-                                                
-                                                <div class="img4">
-                                                   <img class="photo-slide" src="./assets/images/Rectangle 86.png">
-                                                </div>
-                                                
-                                                <div class="img5">
-                                                    <img class="photo-slide" src="./assets/images/Rectangle 8.png">
-                                                </div>
-                                                <div class="img6">
-                                                    <img class="photo-slide" src="./assets/images/Rectangle 87.png">
-                                                </div>
-                                                <div class="img7">
-                                                    <img class="photo-slide" src="./assets/images/Rectangle 89.png">
-                                                </div>
-                                              </div>
-        
-                                              
-                                        </div>
-                                        <div class="slider" id="restaurant">
-                                            <div class="slide">
-                                                <div class="img1">
-                                                    <img class="photo-slide" src="./assets/images/Rectangle 82.png">
-                                                </div>
-                                                <div class="img2">
-                                                    <img class="photo-slide" src="./assets/images/Rectangle 84.png">
-                                                </div>
-                                                <div class="img3">
-                                                    <img class="photo-slide" src="./assets/images/Rectangle 88.png">
-                                                </div>
-                                                
-                                                <div class="img4">
-                                                   <img class="photo-slide" src="./assets/images/Rectangle 86.png">
-                                                </div>
-                                                
-                                                <div class="img5">
-                                                    <img class="photo-slide" src="./assets/images/Rectangle 8.png">
-                                                </div>
-                                                <div class="img6">
-                                                    <img class="photo-slide" src="./assets/images/Rectangle 87.png">
-                                                </div>
-                                                <div class="img7">
-                                                    <img class="photo-slide" src="./assets/images/Rectangle 89.png">
-                                                </div>
-                                              </div>
-                                            <div class="slide">
-                                                <div class="img1">
-                                                    <img class="photo-slide" src="./assets/images/Rectangle 82.png">
-                                                </div>
-                                                <div class="img2">
-                                                    <img class="photo-slide" src="./assets/images/Rectangle 84.png">
-                                                </div>
-                                                <div class="img3">
-                                                    <img class="photo-slide" src="./assets/images/Rectangle 88.png">
-                                                </div>
-                                                
-                                                <div class="img4">
-                                                   <img class="photo-slide" src="./assets/images/Rectangle 86.png">
-                                                </div>
-                                                
-                                                <div class="img5">
-                                                    <img class="photo-slide" src="./assets/images/Rectangle 8.png">
-                                                </div>
-                                                <div class="img6">
-                                                    <img class="photo-slide" src="./assets/images/Rectangle 87.png">
-                                                </div>
-                                                <div class="img7">
-                                                    <img class="photo-slide" src="./assets/images/Rectangle 89.png">
-                                                </div>
-                                              </div>
-        
-                                              
-                                        </div>
-                                       
-                                    </div>
-                                    <div class="arrws">
-                                        <div class="left ">
-                                            <img id="prev" src="./assets/images/arrow-left.svg" >
-                                        </div>
-                                        <ul class="index" id="index-ul" >
-                                            <!-- <li class="active">1</li>
-                                            <li>2</li>
-                                            <li>3</li> -->
-                                            
-                                        </ul>
-                                        <div class="right">
-                                            <img id="next" src="./assets/images/arrow-right.svg" >
-                                        </div>
-                                        
-                                    </div>   
-                                </div>
-                        
+
+
                         </div>
-                        <div class="video-gallery" >
-                            <div class="head" >
-                                <ul class="menu" >
-                                    <li class="img-name" >Videos</li>
-                                    <li class="cont-add" >
-                                            <div class="first-add-btn">
-                                                <img src="./assets/images/gallery-add.svg" >
-                                                <span >Add New Video</span>
-                                            </div>
-                                            <input class="input" id="input-photo" type="file" accept="video/mp4" >
-                                    </li>
-                                </ul>
+                        <div class="arrws">
+                            <div class="left ">
+                                <img id="prev-img" src="./assets/images/arrow-left.svg">
                             </div>
-                                <div class="carousel" >
-                                    <div class="wrapper-videos">
-                                        <div class="slider-video" id="restaurant">
-                                            <div class="slide">
-                                                <div class="img1">
-                                                    <img class="icon" src="./assets/images/play-video.svg" >
-                                                    <img class="cover-photo" src="./assets/images/Rectangle 82.png">
-                                                    <video controls>
-                                                        <source src="" type="video/mp4">
-                                                    </video>
-                                                </div>
-                                                <div class="img2">
-                                                    <img class="icon" src="./assets/images/play-video.svg" >
-                                                    <img class="cover-photo" src="./assets/images/Rectangle 84.png">
-                                                    <video style="width: 100%; height: 100%;" controls>
-                                                        <source src="" type="video/mp4">
-                                                    </video>
-                                                </div>
-                                                <div class="img3">
-                                                    <img class="icon" src="./assets/images/play-video.svg" >
-                                                    <img class="cover-photo" src="./assets/images/Rectangle 88.png">
-                                                    <video style="width: 100%; height: 100%;" controls>
-                                                        <source src="" type="video/mp4">
-                                                    </video>
-                                                </div>
-                                                <div class="img4">
-                                                    <img class="icon" src="./assets/images/play-video.svg" >
-                                                    <img class="cover-photo" src="./assets/images/Rectangle 86.png">
-                                                    <video style="width: 100%; height: 100%;" controls>
-                                                        <source src="" type="video/mp4">
-                                                    </video>
-                                                </div>
-                                                <div class="img5">
-                                                    <img class="icon" src="./assets/images/play-video.svg" >
-                                                    <img class="cover-photo" src="./assets/images/Rectangle 8.png">
-                                                    <video style="width: 100%; height: 100%;" controls>
-                                                        <source src="" type="video/mp4">
-                                                    </video>
-                                                </div>
-                                                <div class="img6">
-                                                    <img class="icon" src="./assets/images/play-video.svg" >
-                                                    <img class="cover-photo" src="./assets/images/Rectangle 87.png">
-                                                    <video style="width: 100%; height: 100%;" controls>
-                                                        <source src="" type="video/mp4">
-                                                    </video>
-                                                </div>
-                                                <div class="img7">
-                                                    <img class="icon" src="./assets/images/play-video.svg" >
-                                                    <img class="cover-photo" src="./assets/images/Rectangle 89.png">
-                                                    <video style="width: 100%; height: 100%;" controls>
-                                                        <source src="" type="video/mp4">
-                                                    </video>
-                                                </div>
-                                            </div>
-                                       
-                                        </div>
-                                        <div class="slider-video" id="restaurant">
-                                            <div class="slide">
-                                                <div class="img1">
-                                                    <img class="icon" src="./assets/images/play-video.svg" >
-                                                    <img class="cover-photo" src="./assets/images/Rectangle 82.png">
-                                                    <video controls>
-                                                        <source src="" type="video/mp4">
-                                                    </video>
-                                                </div>
-                                                <div class="img2">
-                                                    <img class="icon" src="./assets/images/play-video.svg" >
-                                                    <img class="cover-photo" src="./assets/images/Rectangle 84.png">
-                                                    <video style="width: 100%; height: 100%;" controls>
-                                                        <source src="" type="video/mp4">
-                                                    </video>
-                                                </div>
-                                                <div class="img3">
-                                                    <img class="icon" src="./assets/images/play-video.svg" >
-                                                    <img class="cover-photo" src="./assets/images/Rectangle 88.png">
-                                                    <video style="width: 100%; height: 100%;" controls>
-                                                        <source src="" type="video/mp4">
-                                                    </video>
-                                                </div>
-                                                <div class="img4">
-                                                    <img class="icon" src="./assets/images/play-video.svg" >
-                                                    <img class="cover-photo" src="./assets/images/Rectangle 86.png">
-                                                    <video style="width: 100%; height: 100%;" controls>
-                                                        <source src="" type="video/mp4">
-                                                    </video>
-                                                </div>
-                                                <div class="img5">
-                                                    <img class="icon" src="./assets/images/play-video.svg" >
-                                                    <img class="cover-photo" src="./assets/images/Rectangle 8.png">
-                                                    <video style="width: 100%; height: 100%;" controls>
-                                                        <source src="" type="video/mp4">
-                                                    </video>
-                                                </div>
-                                                <div class="img6">
-                                                    <img class="icon" src="./assets/images/play-video.svg" >
-                                                    <img class="cover-photo" src="./assets/images/Rectangle 87.png">
-                                                    <video style="width: 100%; height: 100%;" controls>
-                                                        <source src="" type="video/mp4">
-                                                    </video>
-                                                </div>
-                                                <div class="img7">
-                                                    <img class="icon" src="./assets/images/play-video.svg" >
-                                                    <img class="cover-photo" src="./assets/images/Rectangle 89.png">
-                                                    <video style="width: 100%; height: 100%;" controls>
-                                                        <source src="" type="video/mp4">
-                                                    </video>
-                                                </div>
-                                            </div>
-                                       
-                                        </div>
-                                        <div class="slider-video" id="restaurant">
-                                            <div class="slide">
-                                                <div class="img1">
-                                                    <img class="icon" src="./assets/images/play-video.svg" >
-                                                    <img class="cover-photo" src="./assets/images/Rectangle 82.png">
-                                                    <video controls>
-                                                        <source src="" type="video/mp4">
-                                                    </video>
-                                                </div>
-                                                <div class="img2">
-                                                    <img class="icon" src="./assets/images/play-video.svg" >
-                                                    <img class="cover-photo" src="./assets/images/Rectangle 84.png">
-                                                    <video style="width: 100%; height: 100%;" controls>
-                                                        <source src="" type="video/mp4">
-                                                    </video>
-                                                </div>
-                                                <div class="img3">
-                                                    <img class="icon" src="./assets/images/play-video.svg" >
-                                                    <img class="cover-photo" src="./assets/images/Rectangle 88.png">
-                                                    <video style="width: 100%; height: 100%;" controls>
-                                                        <source src="" type="video/mp4">
-                                                    </video>
-                                                </div>
-                                                <div class="img4">
-                                                    <img class="icon" src="./assets/images/play-video.svg" >
-                                                    <img class="cover-photo" src="./assets/images/Rectangle 86.png">
-                                                    <video style="width: 100%; height: 100%;" controls>
-                                                        <source src="" type="video/mp4">
-                                                    </video>
-                                                </div>
-                                                <div class="img5">
-                                                    <img class="icon" src="./assets/images/play-video.svg" >
-                                                    <img class="cover-photo" src="./assets/images/Rectangle 8.png">
-                                                    <video style="width: 100%; height: 100%;" controls>
-                                                        <source src="" type="video/mp4">
-                                                    </video>
-                                                </div>
-                                                <div class="img6">
-                                                    <img class="icon" src="./assets/images/play-video.svg" >
-                                                    <img class="cover-photo" src="./assets/images/Rectangle 87.png">
-                                                    <video style="width: 100%; height: 100%;" controls>
-                                                        <source src="" type="video/mp4">
-                                                    </video>
-                                                </div>
-                                                <div class="img7">
-                                                    <img class="icon" src="./assets/images/play-video.svg" >
-                                                    <img class="cover-photo" src="./assets/images/Rectangle 89.png">
-                                                    <video style="width: 100%; height: 100%;" controls>
-                                                        <source src="" type="video/mp4">
-                                                    </video>
-                                                </div>
-                                            </div>
-                                       
-                                        </div>
-                                        <div class="slider-video" id="restaurant">
-                                            <div class="slide">
-                                                <div class="img1">
-                                                    <img class="icon" src="./assets/images/play-video.svg" >
-                                                    <img class="cover-photo" src="./assets/images/Rectangle 82.png">
-                                                    <video controls>
-                                                        <source src="" type="video/mp4">
-                                                    </video>
-                                                </div>
-                                                <div class="img2">
-                                                    <img class="icon" src="./assets/images/play-video.svg" >
-                                                    <img class="cover-photo" src="./assets/images/Rectangle 84.png">
-                                                    <video style="width: 100%; height: 100%;" controls>
-                                                        <source src="" type="video/mp4">
-                                                    </video>
-                                                </div>
-                                                <div class="img3">
-                                                    <img class="icon" src="./assets/images/play-video.svg" >
-                                                    <img class="cover-photo" src="./assets/images/Rectangle 88.png">
-                                                    <video style="width: 100%; height: 100%;" controls>
-                                                        <source src="" type="video/mp4">
-                                                    </video>
-                                                </div>
-                                                <div class="img4">
-                                                    <img class="icon" src="./assets/images/play-video.svg" >
-                                                    <img class="cover-photo" src="./assets/images/Rectangle 86.png">
-                                                    <video style="width: 100%; height: 100%;" controls>
-                                                        <source src="" type="video/mp4">
-                                                    </video>
-                                                </div>
-                                                <div class="img5">
-                                                    <img class="icon" src="./assets/images/play-video.svg" >
-                                                    <img class="cover-photo" src="./assets/images/Rectangle 8.png">
-                                                    <video style="width: 100%; height: 100%;" controls>
-                                                        <source src="" type="video/mp4">
-                                                    </video>
-                                                </div>
-                                                <div class="img6">
-                                                    <img class="icon" src="./assets/images/play-video.svg" >
-                                                    <img class="cover-photo" src="./assets/images/Rectangle 87.png">
-                                                    <video style="width: 100%; height: 100%;" controls>
-                                                        <source src="" type="video/mp4">
-                                                    </video>
-                                                </div>
-                                                <div class="img7">
-                                                    <img class="icon" src="./assets/images/play-video.svg" >
-                                                    <img class="cover-photo" src="./assets/images/Rectangle 89.png">
-                                                    <video style="width: 100%; height: 100%;" controls>
-                                                        <source src="" type="video/mp4">
-                                                    </video>
-                                                </div>
-                                            </div>
-                                       
-                                        </div>
-                                        <div class="slider-video" id="restaurant">
-                                            <div class="slide">
-                                                <div class="img1">
-                                                    <img class="icon" src="./assets/images/play-video.svg" >
-                                                    <img class="cover-photo" src="./assets/images/Rectangle 82.png">
-                                                    <video controls>
-                                                        <source src="" type="video/mp4">
-                                                    </video>
-                                                </div>
-                                                <div class="img2">
-                                                    <img class="icon" src="./assets/images/play-video.svg" >
-                                                    <img class="cover-photo" src="./assets/images/Rectangle 84.png">
-                                                    <video style="width: 100%; height: 100%;" controls>
-                                                        <source src="" type="video/mp4">
-                                                    </video>
-                                                </div>
-                                                <div class="img3">
-                                                    <img class="icon" src="./assets/images/play-video.svg" >
-                                                    <img class="cover-photo" src="./assets/images/Rectangle 88.png">
-                                                    <video style="width: 100%; height: 100%;" controls>
-                                                        <source src="" type="video/mp4">
-                                                    </video>
-                                                </div>
-                                                <div class="img4">
-                                                    <img class="icon" src="./assets/images/play-video.svg" >
-                                                    <img class="cover-photo" src="./assets/images/Rectangle 86.png">
-                                                    <video style="width: 100%; height: 100%;" controls>
-                                                        <source src="" type="video/mp4">
-                                                    </video>
-                                                </div>
-                                                <div class="img5">
-                                                    <img class="icon" src="./assets/images/play-video.svg" >
-                                                    <img class="cover-photo" src="./assets/images/Rectangle 8.png">
-                                                    <video style="width: 100%; height: 100%;" controls>
-                                                        <source src="" type="video/mp4">
-                                                    </video>
-                                                </div>
-                                                <div class="img6">
-                                                    <img class="icon" src="./assets/images/play-video.svg" >
-                                                    <img class="cover-photo" src="./assets/images/Rectangle 87.png">
-                                                    <video style="width: 100%; height: 100%;" controls>
-                                                        <source src="" type="video/mp4">
-                                                    </video>
-                                                </div>
-                                                <div class="img7">
-                                                    <img class="icon" src="./assets/images/play-video.svg" >
-                                                    <img class="cover-photo" src="./assets/images/Rectangle 89.png">
-                                                    <video style="width: 100%; height: 100%;" controls>
-                                                        <source src="" type="video/mp4">
-                                                    </video>
-                                                </div>
-                                            </div>
-                                       
-                                        </div>
-                                        <div class="slider-video" id="restaurant">
-                                            <div class="slide">
-                                                <div class="img1">
-                                                    <img class="icon" src="./assets/images/play-video.svg" >
-                                                    <img class="cover-photo" src="./assets/images/Rectangle 82.png">
-                                                    <video controls>
-                                                        <source src="" type="video/mp4">
-                                                    </video>
-                                                </div>
-                                                <div class="img2">
-                                                    <img class="icon" src="./assets/images/play-video.svg" >
-                                                    <img class="cover-photo" src="./assets/images/Rectangle 84.png">
-                                                    <video style="width: 100%; height: 100%;" controls>
-                                                        <source src="" type="video/mp4">
-                                                    </video>
-                                                </div>
-                                                <div class="img3">
-                                                    <img class="icon" src="./assets/images/play-video.svg" >
-                                                    <img class="cover-photo" src="./assets/images/Rectangle 88.png">
-                                                    <video style="width: 100%; height: 100%;" controls>
-                                                        <source src="" type="video/mp4">
-                                                    </video>
-                                                </div>
-                                                <div class="img4">
-                                                    <img class="icon" src="./assets/images/play-video.svg" >
-                                                    <img class="cover-photo" src="./assets/images/Rectangle 86.png">
-                                                    <video style="width: 100%; height: 100%;" controls>
-                                                        <source src="" type="video/mp4">
-                                                    </video>
-                                                </div>
-                                                <div class="img5">
-                                                    <img class="icon" src="./assets/images/play-video.svg" >
-                                                    <img class="cover-photo" src="./assets/images/Rectangle 8.png">
-                                                    <video style="width: 100%; height: 100%;" controls>
-                                                        <source src="" type="video/mp4">
-                                                    </video>
-                                                </div>
-                                                <div class="img6">
-                                                    <img class="icon" src="./assets/images/play-video.svg" >
-                                                    <img class="cover-photo" src="./assets/images/Rectangle 87.png">
-                                                    <video style="width: 100%; height: 100%;" controls>
-                                                        <source src="" type="video/mp4">
-                                                    </video>
-                                                </div>
-                                                <div class="img7">
-                                                    <img class="icon" src="./assets/images/play-video.svg" >
-                                                    <img class="cover-photo" src="./assets/images/Rectangle 89.png">
-                                                    <video style="width: 100%; height: 100%;" controls>
-                                                        <source src="" type="video/mp4">
-                                                    </video>
-                                                </div>
-                                            </div>
-                                       
-                                        </div>
-                                        
-                                      
-                                       
-                                       
-                                      
-                                       
-                                    </div>
-                                    <div class="arrws-videos">
-                                        <div class="left ">
-                                            <img id="prev-v" src="./assets/images/arrow-left.svg" >
-                                        </div>
-                                        <ul class="index-v" id="videos-ul" >
-                                            <!-- <li class="active">1</li>
+                            <ul class="index" id="index-ul">
+                                <!-- <li class="active">1</li>
                                             <li>2</li>
                                             <li>3</li> -->
-                                            
-                                        </ul>
-                                        <div class="right">
-                                            <img id="next-v" src="./assets/images/arrow-right.svg" >
-                                        </div>
-                                        
-                                    </div>   
-                                </div>
-                        
+
+                            </ul>
+                            <div class="right">
+                                <img id="next-img" src="./assets/images/arrow-right.svg">
+                            </div>
+
                         </div>
                     </div>
+
+                </div>
+                <div class="video-gallery">
+                    <div class="head">
+                        <ul class="menu">
+                            <li class="img-name">Videos</li>
+
+                            <li class="add-btn-v">
+                                <img src="./assets/images/gallery-add.svg">
+                                <input class="input-url" id="input-video" type="url"
+                                    placeholder="Add youtube link New Video">
+                                <button class="add-v">add</button>    
+                            </li>
+
+                        </ul>
+                    </div>
+                    <div class="carousel">
+                        <div class="wrapper-videos">
+                            <div class="slider-video" id="restaurant">
+                                <!-- <div class="slide"> -->
+                                <!-- <div class="img1">
+                                                    <img class="icon" src="./assets/images/play-video.svg" >
+                                                    <img class="cover-photo" src="./assets/images/Rectangle 82.png">
+                                                    <video controls>
+                                                        <source src="" type="video/mp4">
+                                                    </video>
+                                                </div>
+                                                <div class="img2">
+                                                    <img class="icon" src="./assets/images/play-video.svg" >
+                                                    <img class="cover-photo" src="./assets/images/Rectangle 84.png">
+                                                    <video style="width: 100%; height: 100%;" controls>
+                                                        <source src="" type="video/mp4">
+                                                    </video>
+                                                </div>
+                                                <div class="img3">
+                                                    <img class="icon" src="./assets/images/play-video.svg" >
+                                                    <img class="cover-photo" src="./assets/images/Rectangle 88.png">
+                                                    <video style="width: 100%; height: 100%;" controls>
+                                                        <source src="" type="video/mp4">
+                                                    </video>
+                                                </div>
+                                                <div class="img4">
+                                                    <img class="icon" src="./assets/images/play-video.svg" >
+                                                    <img class="cover-photo" src="./assets/images/Rectangle 86.png">
+                                                    <video style="width: 100%; height: 100%;" controls>
+                                                        <source src="" type="video/mp4">
+                                                    </video>
+                                                </div>
+                                                <div class="img5">
+                                                    <img class="icon" src="./assets/images/play-video.svg" >
+                                                    <img class="cover-photo" src="./assets/images/Rectangle 8.png">
+                                                    <video style="width: 100%; height: 100%;" controls>
+                                                        <source src="" type="video/mp4">
+                                                    </video>
+                                                </div>
+                                                <div class="img6">
+                                                    <img class="icon" src="./assets/images/play-video.svg" >
+                                                    <img class="cover-photo" src="./assets/images/Rectangle 87.png">
+                                                    <video style="width: 100%; height: 100%;" controls>
+                                                        <source src="" type="video/mp4">
+                                                    </video>
+                                                </div>
+                                                <div class="img7">
+                                                    <img class="icon" src="./assets/images/play-video.svg" >
+                                                    <img class="cover-photo" src="./assets/images/Rectangle 89.png">
+                                                    <video style="width: 100%; height: 100%;" controls>
+                                                        <source src="" type="video/mp4">
+                                                    </video>
+                                                </div> -->
+                                <!-- </div> -->
+
+                            </div>
+                            <!-- <iframe width="560" height="315" 
+                                            src="https://www.youtube.com/embed/jffKw_NMfnw?si=P-cOLpyjq3PdFgYR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen ></iframe> -->
+
+
+
+
+
+
+
+
+                        </div>
+                        <div class="arrws-videos">
+                            <div class="left ">
+                                <img id="prev-v" src="./assets/images/arrow-left.svg">
+                            </div>
+                            <ul class="index-v" id="videos-ul">
+
+
+                            </ul>
+                            <div class="right">
+                                <img id="next-v" src="./assets/images/arrow-right.svg">
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
             </div>
-        </section>
+        </div>
+    </section>
     <!------------------blogs section end------------------>
 
-    <script src="./assets/javascript/navbar.js" ></script>
-    <script src="./assets/javascript/slider.js" ></script>
+    <script src="./assets/javascript/navbar.js"></script>
+    <script src="./assets/javascript/sliderimages.js"></script>
     <script src="./assets/javascript/slidervideos.js"></script>
-    
+
     <!-- <script src="./assets/javascript/js.js"></script> -->
-    
-        
-    </body>
+
+
+</body>
+
 </html>

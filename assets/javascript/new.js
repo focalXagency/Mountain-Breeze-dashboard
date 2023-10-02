@@ -1,18 +1,5 @@
 
-const inputImg = document.getElementById("input-img");
-const newImg = document.querySelector(".added-img");
-const inputDate = document.getElementById("input-date");
 
-// ------add main photo function------
-inputImg.onchange = function () {
-   newImg.classList.add("img-add");
-   editBtn.classList.add("show");
-   newImg.src = URL.createObjectURL(inputImg.files[0]);
-   inputImg.classList.add("add-img-after-add");
-}
-
-//-----give the input date the current date------
-inputDate.valueAsDate = new Date();
 
 // const input = document.querySelector(".input-title");
 // const label = document.querySelector(".title-lable");
@@ -33,7 +20,7 @@ inputDate.valueAsDate = new Date();
 //     coverLabel.style = 'display:none'
 // })
 const labels = document.querySelectorAll(".title-lable");
-const inputs = document.querySelectorAll(".input-title");
+const inputs = document.querySelectorAll("#input-title");
 for (let i = 0 ; i < inputs.length ; i++) {
    inputs[i].onfocus = () => {
       labels[i].classList.add("active-label");
@@ -45,12 +32,15 @@ for (let i = 0 ; i < inputs.length ; i++) {
 }
 const labelsTags = document.querySelectorAll(".label-tags");
 const inputsTags = document.querySelectorAll(".tags");
+
 for (let i = 0 ; i < inputsTags.length ; i++) {
    inputsTags[i].onfocus = () => {
       labelsTags[i].classList.add("active-label");
+      console.log("focus")
    }
    inputsTags[i].onblur = () => {
-      if(inputs[i].value === "")
+      console.log("chosen");
+      if(inputsTags[i].value === "")
       labelsTags[i].classList.remove("active-label")
    }
 }
