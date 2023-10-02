@@ -30,7 +30,9 @@
             <li><a href="./inbox.html"><span></span><img src="./assets/images/inbox.svg">Inbox</a></li>
             
         </ul>
-
+        <button class="logout-btn">
+            <img src="./assets/images/logimg.png"> Logout
+       </button>
     </nav>
 
     <!------------------nav bar end------------------>
@@ -52,7 +54,60 @@
                     <button class="btn-article" ><img src="./assets/images/add-circle1.svg"><a href="newroom.html" >New Room</a></button>
                     <div class="article-setting">
                             <div class="article-continer">
-                                <div class="article">
+                                <!-- <div class="article">
+                                    <img class="article-img article-img-md" src="./assets/images/room.png" alt=""/>
+                                    <div class="detils">
+                                        <div class="head">
+                                            <div class="left-side" >
+                                                <h1 class="article-name" >Duplex Room</h1>
+                                                <span class="desc" >2 floors suitable for families</span>
+                                            </div>
+                                            <div class="icons">
+                                                <a class="edit" href="./editroom.html" ><img src="./assets/images/edit-gray.svg"></a>
+                                                <img class="del-article" src="./assets/images/trach-gray.svg" >
+                                            </div>
+                                        </div>
+                                        <p class="descrabtion">Newly refurnished luxury accommodation with finest quality
+                                            linen & quality decor. Air Conditioning Electric Blankets,
+                                            Ironing Boards, Mini Bar, Flat Screen & Free In house Movies,
+                                            WiFi and Housekeeping by request.</p>
+                                        <div class="services" >
+                                            
+                                            <div class="service">
+                                                <div>
+                                                    <img src="./assets/images/person.svg" >
+                                                </div>  
+                                                <p><span class="num-people">4 </span>Persons</p>
+                                            </div>
+                                            <div class="service">
+                                                <div>
+                                                    <img src="./assets/images/services.svg" >
+                                                </div>
+                                                
+                                                <p class="room-ser">Room Services</p>
+                                            </div>
+                                            <div class="service">
+                                                <div>
+                                                    <img src="./assets/images/bed.svg" > 
+                                                </div>
+                                                
+                                                <p class="bed">Kingsize Bed</p>
+                                            </div>
+                                            <div class="service">
+                                                <div>
+                                                    <img src="./assets/images/tv.svg" >
+                                                </div>
+                                               
+                                                <p class="tv">TV</p>
+                                            </div>
+                                        </div>
+                                        <div class="footer">
+                                            <p class="price" >$500</p>
+                                            <span>Per Night</span>
+                                        </div>
+                                    </div>
+                                </div> -->
+                                <!-- <div class="article">
                                     <img class="article-img article-img-md" src="./assets/images/room.png" alt=""/>
                                     <div class="detils">
                                         <div class="head">
@@ -105,75 +160,25 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="article">
-                                    <img class="article-img article-img-md" src="./assets/images/room.png" alt=""/>
-                                    <div class="detils">
-                                        <div class="head">
-                                            <div class="left-side" >
-                                                <h1 class="article-name" >Duplex Room</h1>
-                                                <span class="desc" >2 floors suitable for families</span>
-                                            </div>
-                                            <div class="icons">
-                                                <a class="edit" href="./editroom.html" ><img src="./assets/images/edit-gray.svg"></a>
-                                                <img class="del-article" src="./assets/images/trach-gray.svg" >
-                                            </div>
-                                        </div>
-                                        <p class="descrabtion">Newly refurnished luxury accommodation with finest quality
-                                            linen & quality decor. Air Conditioning Electric Blankets,
-                                            Ironing Boards, Mini Bar, Flat Screen & Free In house Movies,
-                                            WiFi and Housekeeping by request.</p>
-                                        <div class="services" >
-                                            
-                                            <div class="service">
-                                                <div>
-                                                    <img src="./assets/images/person.svg" >
-                                                </div>  
-                                                <p><span class="num-people">4 </span>Persons</p>
-                                            </div>
-                                            <div class="service">
-                                                <div>
-                                                    <img src="./assets/images/services.svg" >
-                                                </div>
-                                                
-                                                <p class="room-ser">Room Services</p>
-                                            </div>
-                                            <div class="service">
-                                                <div>
-                                                    <img src="./assets/images/bed.svg" > 
-                                                </div>
-                                                
-                                                <p class="bed">Kingsize Bed</p>
-                                            </div>
-                                            <div class="service">
-                                                <div>
-                                                    <img src="./assets/images/tv.svg" >
-                                                </div>
-                                               
-                                                <p class="tv">TV</p>
-                                            </div>
-                                        </div>
-                                        <div class="footer">
-                                            <p class="price" >$500</p>
-                                            <span>Per Night</span>
-                                        </div>
-                                    </div>
-                                </div>
-                               
+                                -->
                                 
                                
                         
                             </div>
                             <div class="Category-setting">
                                 <span class="filter" >Filter by</span>
-                                <select class="category" >
-                                    <option value="Category">Room Type</option>
+                                <select class="category type-room" >
+                                    <option value="Room Type" selected>Room Type</option>
+                                    <option value="VIP">VIP</option>
                                 </select>
-                                <select class="category" >
+                                <!-- <select class="category" >
                                     <option value="Category">guests Number</option>
-                                </select>
-                                <select class="category" >
+                                </select> -->
+                                <input class="category guests-number" type='text' placeholder="Enter guests Number"/>
+                                <!-- <select class="category" >
                                     <option value="Category">Room Price</option>
-                                </select>
+                                </select> -->
+                                <input class="category room-price" type='number' placeholder="Enter min price"/>
                                 <span class="deleted-room" ><a href="./deletedrooms.html" >Deleted rooms</a></span>
                             </div>    
                     </div>
@@ -191,13 +196,14 @@
             <span>You can be able to recover it</span>
             <div class="delet-btns" >
                 <button class="cancel">Cancel</button>
-                <button class="delet">Delelte Article</button>
+                <button class="delet">Delelte Room</button>
             </div>
         </div>
     </div> 
     
     <script src="./assets/javascript/navbar.js" ></script>
     <script src="./assets/javascript/delete.js" ></script>
+    <script src="./assets/javascript/rooms.js"></script>
         
     </body>
 </html>

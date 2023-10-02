@@ -17,7 +17,8 @@ const handleLogin = (event) => {
       .then(res => res.json())
       .then(res => {
         console.log(res)
-        localStorage.setItem('token', `Bearer ${res.authorization.token}`)
+        localStorage.setItem('token', res.authorization.token)
         window.location.href = "Blogs.html";
+        
       })
 }

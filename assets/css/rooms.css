@@ -29,6 +29,10 @@
     align-items: center;
     gap: 1rem;
 }
+button.edit {
+    border: none;
+    background-color: transparent;
+}
 .article .icons img , .article .icons a {
     width: 24px;
     height: 24px;
@@ -85,6 +89,10 @@
     border-bottom: 1px solid #E76A6A;
     color: #E76A6A;
     
+}
+.guests-number::placeholder,
+.room-price::placeholder {
+    color: black;
 }
 /* Start Responsive */
 @media (max-width: 1100px) {

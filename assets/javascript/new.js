@@ -20,7 +20,8 @@
 //     coverLabel.style = 'display:none'
 // })
 const labels = document.querySelectorAll(".title-lable");
-const inputs = document.querySelectorAll("#input-title");
+//console.log(labels)
+const inputs = document.querySelectorAll(".input-title");
 for (let i = 0 ; i < inputs.length ; i++) {
    inputs[i].onfocus = () => {
       labels[i].classList.add("active-label");
@@ -30,7 +31,7 @@ for (let i = 0 ; i < inputs.length ; i++) {
       labels[i].classList.remove("active-label")
    }
 }
-const labelsTags = document.querySelectorAll(".label-tags");
+/* const labelsTags = document.querySelectorAll(".label-tags");
 const inputsTags = document.querySelectorAll(".tags");
 
 for (let i = 0 ; i < inputsTags.length ; i++) {
@@ -44,3 +45,4 @@ for (let i = 0 ; i < inputsTags.length ; i++) {
       labelsTags[i].classList.remove("active-label")
    }
 }
+ */
