@@ -63,7 +63,6 @@ async function getDeletedArticle() {
     
         })
     }
-
       //go restore
       const restorBtns = document.querySelectorAll(".del-article")
       restorBtns.forEach(restorItem => {

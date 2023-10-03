@@ -26,3 +26,4 @@ window.onload = ()=> {
 emptyDateValue.onclick = ()=> {
     dateField.value = "";
 }
+
