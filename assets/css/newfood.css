@@ -2,39 +2,63 @@
     width: 78.2576867%;
     max-height: 100%;
 }
+
 .detils{
     flex-wrap: wrap;
     gap: 1rem;
 }
+
+.en{
+    position: relative;
+}
+
+.ar{
+    position: relative;
+    margin-top: 1rem;
+}
+
+.active-label{
+    bottom: 17px!important;
+}
+.active{
+    top: -17px;
+    font-size: 12px!important;
+}
+
 .category-container{
     width: 28.0636109%;
     position: relative;
 }
+
 .category{
+    margin-top: 1px;
     width: 100%;
     border: none;
     border-bottom: 1px solid black;
     background-color: transparent;
-    padding-bottom: 5px;
+    padding-bottom: 0.5px;
     font-size: 20px;
     font-weight: 400;
     cursor: pointer;
 }
+
 .category:focus{
+
     outline: none;
+
 }
 
 .label-category{
     color: red;
-    position: absolute;
-    right: 157px;
     font-size: 20px;
     font-weight: 400;
 }
+
 .description-container{
     width: 100%;
     position: relative;
 }
+
 .description-food{
     width: 100%;
     border: none;
@@ -45,13 +69,13 @@
     padding-bottom: 5px;
     padding-top: 20px;
 }
+
 label span{
     color: red;
 }
+
 .label-description{
     font-size: 20px;
-    /* left: 0;
-    position: absolute; */
     font-weight: 400;
     Line-height:24.38px;
     transition: 0.7s ease;
@@ -59,9 +83,10 @@ label span{
     cursor: pointer;
     display: block;
     margin-bottom: 5px;
-    /* bottom: 2px; */
 }
+
 .label-category {
+    margin-top: 1px;
     font-size: 20px;
     left: 0;
     position: absolute;
@@ -70,13 +95,15 @@ label span{
     transition: 0.7s ease;
     color: black;
     cursor: pointer;
-    bottom: 2px;
+    transition: 0.7s ease;
 }
+
 .title-food {
     position: relative;
     width: 619px;
     padding-top: 6px;
 }
+
 .title-lable {
     bottom: 2px;
 }
@@ -139,6 +166,10 @@ label span{
 }
 .btns :nth-child(2){
     width: 40%!important;
+    
+}
+.cancel{
+    cursor: pointer;
 }
 #input-title:focus + .title-lable{
     font-size: 12px!important;

@@ -71,6 +71,7 @@ a{
 }
 .article .detils{
     padding: 1.5rem;
+    width:68.90982503364738%;
 }
 .article .detils .head{
     display: flex;
@@ -96,21 +97,21 @@ a{
     font-weight: 400;
     padding-top: 1rem;
 }
-.detils .footer{
+.footer{
     display: flex;
     justify-content: space-between;
     padding-top: 1rem;
 }
-.detils .footer .icons {
+.footer .icons {
     display: flex;
     align-items: center;
     gap: 1.2rem;
 }
-.detils .footer .icons a{
+.footer .icons a{
     width: 24px;
     height: 24px;
 }
-.detils .footer .icons img , .detils .footer .icons a img{
+.footer .icons img , .detils .footer .icons a img{
     width: 24px;
     height: 24px;
 }

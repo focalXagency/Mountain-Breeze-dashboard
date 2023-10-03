@@ -34,7 +34,7 @@
 
 }
 .inbox .hero-inbox .inbox-settings .chats-container {
-    width: 32.5799812909261%;
+    width: 100%;
     padding: 1.5rem 1rem;
     border-right: 1px solid #004E6B33;
     position: relative;
@@ -84,6 +84,11 @@
     border: 1px solid ;
     border-color: #282828B2;
     margin-right: 4px;
+    cursor: pointer;
+}
+.done{
+  background-color: #004E6B;
+  border-color: #004E6B;
 }
 .inbox .hero-inbox .chats-box .single-chat.active .first-box .circle-inbox {
     width: 3px;
@@ -136,10 +141,18 @@
     align-items: center;
     height: 100%;
 }
-.inbox .inbox-settings .conver-container .no-conver-box {
+.conver-container{
+  position: relative;
+  width: 67.4200187090739%;
+}
+.no-conver-box {
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50% , -50%);
 }
 .inbox .inbox-settings .conver-container .no-conver-box .conver-title {
     font-size: 20px;
@@ -338,9 +351,10 @@
       .inbox .hero-inbox .icon-container {
         width: 44.5799812909261%;
       }
-      .inbox .hero-inbox .inbox-settings .chats-container {
-        width: 44.5799812909261%;
+      .inbox-settings{
+        width: 50%!important;
       }
+
       .inbox .hero-inbox .inbox-settings .conver-container {
         width: 54.50420954162769%;
     }

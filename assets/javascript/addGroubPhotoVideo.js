@@ -1,20 +1,16 @@
-
-
-
 //-----add group of photo and videos function------
 const addPhoto = document.getElementById("input-photo");
 const container = document.querySelector(".container");
 const containerAdd = document.querySelector(".container .container-add");
 const firstAddBtn = document.querySelector(".first-add-btn");
-const editBtn = document.querySelector(".edit");
+
+let images=[];
 
 addPhoto.addEventListener("change", () => {
-   console.log("change");
+   
    addPhoto.classList.contains("new-add")?  null : addPhoto.classList.add("new-add");
    container.classList.add("show");
    firstAddBtn? firstAddBtn.classList.add("hidden") : null;
-   
-
    let type = addPhoto.files[0].type;
    const addedPhoto = document.createElement('div');
    addedPhoto.classList.add("added-photo");
@@ -32,17 +28,7 @@ addPhoto.addEventListener("change", () => {
       element.src = `${URL.createObjectURL(addPhoto.files[0])}`;
       addedPhoto.appendChild(element);
 
-   } else if (type.startsWith("video/")) {
-
-      const element = document.createElement('video');
-      element.classList.add("photo");
-      element.setAttribute("controls", "true");
-      const elementSrc = document.createElement('source');
-      elementSrc.src = `${URL.createObjectURL(addPhoto.files[0])}`;
-      element.appendChild(elementSrc);
-      addedPhoto.appendChild(element);
-      
-   }
+   } 
    //delet image function--------------
    addedPhoto.appendChild(trash);
    containerAdd.appendChild(addedPhoto);
@@ -53,8 +39,12 @@ addPhoto.addEventListener("change", () => {
       deletImg[i].addEventListener("click", () => {
          console.log(elemnets[i]);
          containerAdd.removeChild(elemnets[i]);
+         images.pop(elemnets[i]);
       })
    }
+
+        images.push(addPhoto.files[0]);
+
 });
 
 // const nameInput = document.querySelector("#input-name");

@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>dashboard</title>
-    <link rel="stylesheet" href="./assets/css/index.css" >
-    <link rel="stylesheet" href="./assets/css/navBar.css" >
-    <link rel="stylesheet" href="./assets/css/inbox.css" >
+    <link rel="stylesheet" href="./assets/css/index.css">
+    <link rel="stylesheet" href="./assets/css/navBar.css">
+    <link rel="stylesheet" href="./assets/css/inbox.css">
 </head>
+
 <body>
-    
+
     <!------------------nav bar start------------------>
     <nav class="nav-bar">
         <img class="left-arrow" src="./assets/images/arrow-left.svg">
 
         <div class="logo">
-            <img src="./assets/images/logo.svg" >
+            <img src="./assets/images/logo.svg">
             <h1>Mountain Breeze Resort</h1>
         </div>
 
@@ -28,7 +30,11 @@
             <li><a href="./explore.html"><span></span><img src="./assets/images/explore.svg" >Explore</a></li>
             <li ><a href="./food.html"><span></span><img src="./assets/images/food.svg" >Food</a></li>
             <li class="active"><a href="./inbox.html"><span></span><img src="./assets/images/inbox.svg">Inbox</a></li>
+<<<<<<< HEAD
             
+=======
+
+>>>>>>> 5c37dd7822ef48e0c924ccfcba0638e85989cf01
         </ul>
         <button class="logout-btn">
             <img src="./assets/images/logimg.png"> Logout
@@ -42,15 +48,15 @@
             <img class="right-arrow" src="./assets/images/arrow-right-white.svg">
             <nav class="nav-blogs">
                 <h1>Inbox</h1>
-                <ul class="admin-setting" >
-                    <li><img src="./assets/images/notification.svg" ></li>
-                    <li><img src="./assets/images/profile-circle.svg" ></li>
+                <ul class="admin-setting">
+                    <li><img src="./assets/images/notification.svg"></li>
+                    <li><img src="./assets/images/profile-circle.svg"></li>
                     <li>Admin name</li>
                 </ul>
             </nav>
         </header>
 
-        <div class="hero-inbox" >
+        <div class="hero-inbox">
 
             <div class="icon-line">
                 <div class="icon-container">
@@ -59,148 +65,21 @@
                         <img src="./assets/images/frame-inbox.svg" alt="frame-inbox">
                     </div>
                     <div class="right-icons">
-                        <img src="./assets/images/black-trash.svg" alt="black-trash">
+                        <img id="deleteAll" src="./assets/images/black-trash.svg" alt="black-trash">
                     </div>
                 </div> <!--End icon-container -->
                 <span></span>
             </div> <!-- End icon-line -->
 
-            <div class="inbox-settings">
+            <div style="display: flex;">
+                <div class="inbox-settings" style="width: 32.5799812909261%;">
 
-                <div class="chats-container">
-                    <div class="chats-box">
+                    <div class="chats-container">
+                        <div class="chats-box">
 
-                        <div class="single-chat-container">
-                            <div class="single-chat">
-                                    <div class="first-box">
-                                        <span class="rectangle-span-inbox"></span>
-                                        <span class="circle-inbox"></span>
-                                    </div>  <!--End first-box -->
-                                        <div class="middle-box">
-                                            <h3 class="name">Ola Abdulrahman</h3>
-                                            <h1 class="title">Photos for the project</h1>
-                                            <p class="description">Hello, Here're some photos to f.. </p>
-                                        </div>  <!--End middle-box -->
-                                         <div class="last-box">
-                                            <span class="date">July 17, 2023</span>
-                                            <img src="./assets//images/attachsquare.svg" alt="attachsquare">
-                                        </div>
-                            </div> <!--End single-chat -->
-                        </div>  <!--End single-chat-container -->
+                        </div>
 
-                        <div class="single-chat-container">
-                            <div class="single-chat">
-                                <div class="first-box">
-                                    <span class="rectangle-span-inbox"></span> 
-                                    <span class="circle-inbox"></span>
-                                </div>  <!--End first-box -->
-                                <div class="middle-box">
-                                    <h3 class="name">Ola Abdulrahman</h3>
-                                    <h1 class="title">Photos for the project</h1>
-                                    <p class="description">Hello, Here're some photos to f.. </p>
-                                </div>  <!--End middle-box -->
-                                <div class="last-box">
-                                    <span class="date">July 17, 2023</span>
-                                    <img src="./assets//images/attachsquare.svg" alt="attachsquare">
-                                </div>
-                                <span class="side-line"></span>
-                            </div> <!--End single-chat -->
-                        </div>  <!--End single-chat-container -->
-                        <div class="single-chat-container">
-                            <div class="single-chat">
-                                <div class="first-box">
-                                    <span class="rectangle-span-inbox"></span> 
-                                    <span class="circle-inbox"></span>
-                                </div>  <!--End first-box -->
-                                <div class="middle-box">
-                                    <h3 class="name">Ola Abdulrahman</h3>
-                                    <h1 class="title">Photos for the project</h1>
-                                    <p class="description">Hello, Here're some photos to f.. </p>
-                                </div>  <!--End middle-box -->
-                                <div class="last-box">
-                                    <span class="date">July 17, 2023</span>
-                                    <img src="./assets//images/attachsquare.svg" alt="attachsquare">
-                                </div>
-                                <span class="side-line"></span>
-                            </div> <!--End single-chat -->
-                        </div>  <!--End single-chat-container -->
-                        <div class="single-chat-container">
-                            <div class="single-chat">
-                                <div class="first-box">
-                                    <span class="rectangle-span-inbox"></span> 
-                                    <span class="circle-inbox"></span>
-                                </div>  <!--End first-box -->
-                                <div class="middle-box">
-                                    <h3 class="name">Ola Abdulrahman</h3>
-                                    <h1 class="title">Photos for the project</h1>
-                                    <p class="description">Hello, Here're some photos to f.. </p>
-                                </div>  <!--End middle-box -->
-                                <div class="last-box">
-                                    <span class="date">July 17, 2023</span>
-                                    <img src="./assets//images/attachsquare.svg" alt="attachsquare">
-                                </div>
-                                <span class="side-line"></span>
-                            </div> <!--End single-chat -->
-                        </div>  <!--End single-chat-container -->
-                        <div class="single-chat-container">
-                            <div class="single-chat">
-                                <div class="first-box">
-                                    <span class="rectangle-span-inbox"></span> 
-                                    <span class="circle-inbox"></span>
-                                </div>  <!--End first-box -->
-                                <div class="middle-box">
-                                    <h3 class="name">Ola Abdulrahman</h3>
-                                    <h1 class="title">Photos for the project</h1>
-                                    <p class="description">Hello, Here're some photos to f.. </p>
-                                </div>  <!--End middle-box -->
-                                <div class="last-box">
-                                    <span class="date">July 17, 2023</span>
-                                    <img src="./assets//images/attachsquare.svg" alt="attachsquare">
-                                </div>
-                                <span class="side-line"></span>
-                            </div> <!--End single-chat -->
-                        </div>  <!--End single-chat-container -->
-                        <div class="single-chat-container">
-                            <div class="single-chat">
-                                <div class="first-box">
-                                    <span class="rectangle-span-inbox"></span> 
-                                    <span class="circle-inbox"></span>
-                                </div>  <!--End first-box -->
-                                <div class="middle-box">
-                                    <h3 class="name">Ola Abdulrahman</h3>
-                                    <h1 class="title">Photos for the project</h1>
-                                    <p class="description">Hello, Here're some photos to f.. </p>
-                                </div>  <!--End middle-box -->
-                                <div class="last-box">
-                                    <span class="date">July 17, 2023</span>
-                                    <img src="./assets//images/attachsquare.svg" alt="attachsquare">
-                                </div>
-                                <span class="side-line"></span>
-                            </div> <!--End single-chat -->
-                        </div>  <!--End single-chat-container -->
-                        <div class="single-chat-container">
-                            <div class="single-chat">
-                                <div class="first-box">
-                                    <span class="rectangle-span-inbox"></span> 
-                                    <span class="circle-inbox"></span>
-                                </div>  <!--End first-box -->
-                                <div class="middle-box">
-                                    <h3 class="name">Ola Abdulrahman</h3>
-                                    <h1 class="title">Photos for the project</h1>
-                                    <p class="description">Hello, Here're some photos to f.. </p>
-                                </div>  <!--End middle-box -->
-                                <div class="last-box">
-                                    <span class="date">July 17, 2023</span>
-                                    <img src="./assets//images/attachsquare.svg" alt="attachsquare">
-                                </div>
-                                <span class="side-line"></span>
-                            </div> <!--End single-chat -->
-                        </div>  <!--End single-chat-container -->
-
-                         
-               
-                         
-                    </div>  <!--End chats-box -->
+                    </div> <!--End chats-box -->
                 </div> <!-- End chats-container -->
 
                 <div class="conver-container">
@@ -214,77 +93,17 @@
 
                     <div class="exist-conver">
 
-                        <div class="message-inbox">
+                        <div class="message-inbox active">
 
-                            <div class="first-msg-inbox">
-                                <div class="user-info">
-                                    <h3 class="user-name">Ola Abdulrahman</h3>
-                                    <p class="user-email">abdaloosh@gmail.com</p>
-                                </div>  <!-- End user-info -->
-                                <div class="date-msg-box">
-                                    <span class="msg-date">July 17, 2023</span>
-                                    <img class="remove-msg" src="./assets/images/black-trash.svg" alt="black-trash">
-                                    <img class="settings-msg" src="./assets/images/Vector-msg.svg" alt="Vector-msg">
-                                </div>
-                            </div> <!-- End first-msg-box -->
 
-                            <div class="second-msg-inbox">
-                                <h3 class="msg-title-inbox">Photos for the project</h1>
-                                <p class="msg-desc-inbox">
-                                    Hi everyone! I have a sentence here that I really
-                                     should know how to say but I seem to be struggling
-                                      with it the more I think about it. Hi everyone! I have a sentence
-                                       here that I really should know how to say.
-                                </p> <!-- End msg-desc -->
-                            </div> <!-- End second-msg-box -->
 
-                            <div class="third-msg-inbox">
-                                <div class="attach-inbox">
-                                    <img src="./assets/images/attachsquare2.svg" alt="attachsquare">
-                                    <span>Attachments 6</span>
-                                </div>
-                                <div class="download-inbox">
-                                    <p class="download-para">Download all</p>
-                                    <img src="./assets//images/arrowcircledown2.svg" alt="arrowcircledown2">
-                                </div> <!-- End download-box -->
-                            </div> <!-- End third-msg-box -->
-
-                            <div class="fourth-msg-inbox">
-                                <img src="./assets/images/Rectangle 115.png" alt="Rectangle 115">
-                                <img src="./assets/images/Rectangle 115.png" alt="Rectangle 115">
-                                <img src="./assets/images/Rectangle 115.png" alt="Rectangle 115">
-                                <img src="./assets/images/Rectangle 115.png" alt="Rectangle 115">
-                            </div> <!-- End fourth-msg-box -->
-
-                        </div> <!-- End message-box -->
-
-                        <h4 class="reply-line">Reply</h4>
-
-                        <div class="response-box">
-
-                            <div class="first-response-box">
-                                
-                                <textarea id="response-desc" class="response-desc" cols="5" rows="5">          
-                                </textarea>
-                                <label for="response-desc" class="response-desc-label" >Start writing your <span style="color: #004E6B;">response</span> or <span style="color: #004E6B;">forward</span> me0ssage...</label>
-                                    
-                            </input>
-                                <img src="./assets/images/Vector-msg.svg" alt="Vector-msg">
-                            </div> <!-- End first-response-box -->
-
-                            <div class="second-response-box">
-                                <div class="left-icons">
-                                    <img class="msg-attach-res" src="./assets/images/attachsquare2.svg" alt="attachsquare">
-                                    <img class="msg-gallery-res" src="./assets/images/gallery-photo.svg" alt="gallery-msg">
-                                </div>
-                                <button class="send-btn-res">Send</button>
-                            </div> <!-- End second-response-box -->
-
-                        </div> <!-- End response-box -->
+                        </div>
+                        <!-- End response-box -->
                     </div> <!-- End exist-conver -->
 
                 </div> <!-- End conver-container -->
-            </div> <!-- End inbox-settings -->
+            </div>
+        </div> <!-- End inbox-settings -->
         </div> <!-- End hero-inbox-->
     </section>
     <!-- End inbox-section -->
@@ -292,5 +111,7 @@
     <script src="./assets//javascript/navbar.js"></script>
     <script src="./assets/javascript/logout.js" ></script>
     <script src="./assets//javascript/inbox.js"></script>
+    <script src="./assets//javascript/contact.js"></script>
 </body>
+
 </html>

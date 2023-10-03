@@ -19,12 +19,14 @@ a{
 }
 .wrapper{
     display: flex!important;
+    flex-direction: column;
     padding-bottom: 20px;
 }
 .slider{
     width: 95%!important;
     padding-right: 10px;
     flex-direction: column;
+    display: flex!important;
     gap: 20px;
     padding-top: 20px;
 }

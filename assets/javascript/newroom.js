@@ -133,8 +133,8 @@ selectType.addEventListener('change', () => {
 
 //get bed-type select value
 
- selectBedVal  = "0" ;
- console.log(selectBedVal)
+selectBedVal = '0'
+console.log(selectBedVal)
 selectBed.addEventListener('change', () => {
     if(selectBed.checked == true) {
         selectBedVal = '1'
@@ -165,6 +165,7 @@ floor.addEventListener("change", () => {
 })
 
 //get room-services value
+
 servicesVal = 0
 console.log(servicesVal)
 services.addEventListener('change', () => {
@@ -176,6 +177,7 @@ services.addEventListener('change', () => {
         console.log(servicesVal)
     }
 })
+
 
 tvVal = 0
 console.log(tvVal)

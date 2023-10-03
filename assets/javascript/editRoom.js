@@ -85,9 +85,13 @@ async function getRoomInfo() {
 
     editRoomPrice.value = roomInfo.price
 
+<<<<<<< HEAD
     let rmbedval = roomInfo.bed === '1' ? editSelectBed.checked  : editSelectBed 
     let rmroomser = roomInfo.room_services === 1 ? editRoomSer.checked  : editRoomSer
     let rmroomtv = roomInfo.TV === 1 ? editRoomTv.checked  : editRoomTv
+=======
+    //roomInfo.room_services === '1' ? editRoomSer.checked === true : editRoomSer.checked === false
+>>>>>>> 5c37dd7822ef48e0c924ccfcba0638e85989cf01
 
     contentEn.setData(roomInfo.content.en);
     contentAr.setData(roomInfo.content.ar);
@@ -245,9 +249,12 @@ editRoomBtn.addEventListener('click', function(e) {
     changeFloor !== ""? formData.append("floor", changeFloor) : formData.append("floor", editFloor.value) ;
    
     changePrice !== ""? formData.append("price", changePrice) : formData.append("price", editRoomPrice.value) ;
+<<<<<<< HEAD
     formData.append("bed", rmbedval) ;
     formData.append("TV", rmroomtv) ;
     formData.append("room_services", rmroomser) ;
+=======
+>>>>>>> 5c37dd7822ef48e0c924ccfcba0638e85989cf01
 
     formData.append('content_en', newContentEn)
     formData.append('content_en', newContentAr)
