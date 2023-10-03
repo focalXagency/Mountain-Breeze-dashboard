@@ -72,14 +72,34 @@
     transform: translateX(0.2%)!important;
     box-shadow: 3px 1px 20px 0px rgba(255, 255, 255, 0.616);
 }
-
+.logout-btn {
+    background-color: transparent;
+    border: none;
+    color: #FFFDFD;
+    padding: 4.5rem 0 0 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 20px;
+    font-weight: 500;
+    opacity: 0.5;
+    cursor: pointer;
+}
+.logout-btn img {
+    width: 34px;
+    background-color: #FFFDFD;
+    border-radius: 3px;
+}
+.logout-btn:hover {
+    opacity: 5;
+}
 
 /* Responsive Navbar */
 @media (max-width: 1100px) {
     .nav-bar {
         transform: translateX(-100%);
         position: absolute;
-        z-index: 3;
+        z-index: 56;
         transition: 0.7s ease;
     }
     .right-arrow {
@@ -106,6 +126,10 @@
     }
     .nav-blogs{
         padding-left: 4rem!important;
+    }
+    .logout-btn {
+        font-size: 16px;
+        padding: 4rem 0;
     }
    
 }

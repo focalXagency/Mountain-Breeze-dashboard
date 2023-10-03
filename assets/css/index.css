@@ -124,6 +124,11 @@ a{
     align-items: center;
     border: none
 }
+.rm_redtrash{
+    background-color: transparent; 
+    width: 28px;
+    height: 25px;
+}
 .edit-link {
 border: none;
 background-color: transparent;

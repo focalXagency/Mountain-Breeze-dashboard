@@ -8,7 +8,7 @@ const tv = document.querySelector('#tv')
 const subTitle = document.querySelector(".subtitle-en");
 const subTitleAr = document.querySelector(".subtitle-ar");
 const selectType = document.querySelector("#type")
-const selectBed = document.querySelector("#bedType");
+const selectBed = document.querySelector("#bed");
 const floor = document.querySelector('#input-floor')
 const inputImages = document.querySelector('.new-add');
 const createRoomBtn = document.querySelector(".add-a")
@@ -132,10 +132,19 @@ selectType.addEventListener('change', () => {
 })
 
 //get bed-type select value
+
+ selectBedVal  = "0" ;
+ console.log(selectBedVal)
 selectBed.addEventListener('change', () => {
-    selectBedVal = selectBed.options[selectBed.selectedIndex].text;
-    console.log(selectBedVal)
+    if(selectBed.checked == true) {
+        selectBedVal = '1'
+        console.log(selectBedVal)
+    } else {
+        selectBedVal = '0'
+        console.log(selectBedVal)
+    }
 })
+
 
 //get room-guests
 guestInput.addEventListener('input', () => {
@@ -156,22 +165,26 @@ floor.addEventListener("change", () => {
 })
 
 //get room-services value
-services.addEventListener('click', () => {
+servicesVal = 0
+console.log(servicesVal)
+services.addEventListener('change', () => {
     if(services.checked == true) {
-        servicesVal = true
+        servicesVal = 1
         console.log(servicesVal)
     } else {
-        servicesVal = false
+        servicesVal = 0
         console.log(servicesVal)
     }
 })
 
+tvVal = 0
+console.log(tvVal)
 tv.addEventListener('click', () => {
     if(tv.checked == true) {
-        tvVal = true
+        tvVal = 1
         console.log(tvVal)
     }else {
-        tvVal = false
+        tvVal = 0
         console.log(tvVal)
     }
 })
@@ -217,7 +230,7 @@ createRoomBtn.addEventListener('click', function(e) {
     formData.append('price', roomPriceVal)
     formData.append('content_en', roomContentEn)
     formData.append('content_ar', roomContentAr)
-    formData.append('images', roomImg)
+    formData.append('images[0]', roomImg)
     formData.append('bed', selectBedVal)
     formData.append('TV', tvVal)
     formData.append('floor', floorVal)

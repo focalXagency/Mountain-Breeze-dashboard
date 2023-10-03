@@ -18,7 +18,7 @@ let inputImageVal;
 inputImage.addEventListener("input", () => {
    if (inputImage.files.length) {
      inputImageVal = inputImage.files[0];
-     console.log(inputImageVal)
+   /*   console.log(inputImageVal) */
    } 
 })
 
@@ -88,10 +88,10 @@ videoInput.addEventListener('change', () => {
 //get photos group value
 let filelist = [];
 multiplePhoto.addEventListener("change", function(event) {
-    filelist = [];
-    for(let i= 0; i < multiplePhoto.files.length; i++) {
+    filelist = multiplePhoto.files;
+  /*   for(let i= 0; i < multiplePhoto.files.length; i++) {
         filelist.push(multiplePhoto.files[i])
-    }
+    } */
     console.log(filelist)
 })
 
@@ -118,24 +118,23 @@ addBtn.addEventListener('click', function(e) {
     let authToken = localStorage.getItem("token");
     console.log(authToken)
 
-     let newdescDataEn = descDataEn.getData()
-     let newdescDataAr = descDataAr.getData()
-    
-    const userFile = document.querySelector('#input-img').files[0]
+    /*  let newdescDataEn = descDataEn.getData() */
+    /*  let newdescDataAr = descDataAr.getData() */
+ /*    const userFile = document.querySelector('#input-img').files[0] */
     const multiFiles = document.querySelector('#input-photo').files
     let videoLink = document.querySelector(".video-link").value
     
     const formData = new FormData();
     
-    formData.append('article_cover', userFile)
+    formData.append('article_cover', inputImageVal)
     formData.append('category', selectVal)
     formData.append('title_en', inputTitleVal)
     formData.append('title_ar', inputTitleArVal)
-    formData.append('content_en', newdescDataEn)
-    formData.append('content_ar', newdescDataAr)
+    formData.append('content_en', descDataEn.getData())
+    formData.append('content_ar', descDataAr.getData())
     formData.append('date', currdate)
     formData.append('videos[0]', videoLink)
-    formData.append('images[0]', multiplePhoto.files[0])
+    formData.append('images[0]', multiplePhoto.files)
     formData.append('tags', tagsArr)
     formData.append('sub_title_en', subtitleEnVal)
     formData.append('sub_title_ar', subtitleArVal)
@@ -148,4 +147,5 @@ addBtn.addEventListener('click', function(e) {
     .then(res => res.json())
     .then(result => console.log(result))
     .catch(error => console.log(error))
-})
+ 
+} )

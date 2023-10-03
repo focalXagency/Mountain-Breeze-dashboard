@@ -32,7 +32,9 @@
             <li><a href="./inbox.html"><span></span><img src="./assets/images/inbox.svg">Inbox</a></li>
             
         </ul>
-        </ul>
+        <button class="logout-btn">
+            <img src="./assets/images/logimg.png"> Logout
+       </button>
     </nav>
 
 <!------------------nav bar end------------------>
@@ -57,25 +59,25 @@
                     <div class="input" >
                         
                         <input class="name room-name-en" id="input-name" type="text">
-                        <label class="lable-name roomEn-label" for="input-name" >Room Name<span>*</span></label>
+                        <label class="ed-label roomEn-label" for="input-name" >Room Name<span>*</span></label>
                     </div>
 
                     <div class="input" >
                         
                         <input class="name room-name-ar" id="room-name-ar" type="text">
-                        <label class="lable-name roomName-label" for="room-name-ar">اسم الغرفة<span>*</span></label>
+                        <label class="ed-label roomName-label" for="room-name-ar">اسم الغرفة<span>*</span></label>
                     </div>
 
                     <div class="input" >
                         
                         <input class="name subtitle-en" id="subtitle-en" type="text"       >
-                        <label class="lable-name subtitle-labelEn" for="subtitle-en" >SubTilte<span>*</span></label>
+                        <label class="ed-label subtitle-labelEn" for="subtitle-en" >SubTilte<span>*</span></label>
                     </div>
 
                     <div class="input" >
                         
                         <input class="name subtitle-ar" id="subtitle-ar" type="text"       >
-                        <label class="lable-name subtitle-labelAr" for="subtitle-ar" >العنوان الفرعي<span>*</span></label>
+                        <label class="ed-label subtitle-labelAr" for="subtitle-ar" >العنوان الفرعي<span>*</span></label>
                     </div>
 
                     <div class="input">
@@ -111,20 +113,21 @@
 
                     </div>
 
-                    <div class="input">
+                    <!-- <div class="input">
                         
                         <select id="bedType" class="Type">
                             <option value="Bed Type" selected>Bed Type</option>
                             <option value="kingsize">kingsize</option>
                         </select> 
                        
-                    </div>
-                    <!-- <div class="input checkbox-div">
-                        
-                        <input type="checkbox" id="bed"   class="checkbox-input">
-                        <label for="tv" >Bed</label>
-
                     </div> -->
+
+                    <div class="input checkbox-div">
+                        
+                        <input type="checkbox" id="bed"   class="checkbox-input" required>
+                        <label for="bed" >Bed</label>
+
+                    </div>
 
                     <div class="input checkbox-div">
                         
@@ -196,6 +199,7 @@
     <script src="./assets/javascript/navbar.js" ></script>
     <script src="./assets/javascript/addGroubPhotoVideo.js"></script>
     <script src="./assets/javascript/editRoom.js"></script>
+    <script src="./assets/javascript/logout.js" ></script>
 
 </body>
 </html>

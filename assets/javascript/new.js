@@ -44,7 +44,7 @@ for (let i = 0 ; i < inputs.length ; i++) {
       labels[i].classList.remove("active-label")
    }
 }
-const labelsTags = document.querySelectorAll(".label-tags");
+/* const labelsTags = document.querySelectorAll(".label-tags");
 const inputsTags = document.querySelectorAll(".tags");
 for (let i = 0 ; i < inputsTags.length ; i++) {
    inputsTags[i].onfocus = () => {
@@ -55,3 +55,4 @@ for (let i = 0 ; i < inputsTags.length ; i++) {
       labelsTags[i].classList.remove("active-label")
    }
 }
+ */

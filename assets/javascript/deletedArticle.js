@@ -28,41 +28,27 @@ async function getDeletedArticle() {
                 <p class="hashtack"></p>                        
                 <div class="footer">
                    <div class="icons">
-                     <button class="edit-link" id=${ele.id}><img src="./assets/images/edit-red.svg" ></button>
                      <img class="del-article" id=${ele.id} src="./assets/images/recovery-convert.svg" >
                    </div>
-                   <button class="arrowlink" id=${ele.id}>
-                        <img src="./assets/images/arrow-right-white.svg" class="arrow">
+                   <button class="arrowlink rm_redtrash" id=${ele.id}>
+                        <img src="./assets/images/radtrash.png" class="arrow rm_redtrash" id=${ele.id}>
                    </button>
                 </div>
             </div>
         </div>
         `
 
-     
-    
-     //for (let i = 0; i < goEdit.length; i++) {}
-    //  goEdit.forEach(delItem => {
-    //       delItem.addEventListener('click', () => {
-    //             window.location.href = "./editArticle.html";
-    //             let idBtn = delItem.getAttribute('id');
-    //             console.log(idBtn)
-    //             localStorage.setItem('delItemId', idBtn)
-    //       })
-    //   })
-
     })
 
-    //go edit page
-    const goEdit = document.querySelectorAll(".edit-link")
-    for (let i = 0; i < goEdit.length; i++) {
-        goEdit[i].addEventListener('click', () => {
-            let editArticleId = goEdit[i].getAttribute('id')
-            window.location.href = "./editArticle.html";
-            localStorage.setItem("editArticleId", editArticleId)
-    
-        })
-    }
+/* force delete */
+const alltrash = document.querySelectorAll(".arrow");
+alltrash.forEach(Elementtrash =>{
+    Elementtrash.addEventListener("click" , () =>{
+        let trashid = Elementtrash.getAttribute('id');
+        forceDelete(trashid);
+    })
+})
+
 
       //go restore
       const restorBtns = document.querySelectorAll(".del-article")
@@ -74,24 +60,13 @@ async function getDeletedArticle() {
         })
       })
     
-     //show article Details 
-     const allDetailsbtns = document.querySelectorAll(".arrowlink")
-     for (let i = 0; i < allDetailsbtns.length; i++) {
-        allDetailsbtns[i].addEventListener('click', () => {
-            let DeletedDetailId = allDetailsbtns[i].getAttribute('id')
-            window.location.href = "./articledetils.html";
-            localStorage.setItem('articleId', DeletedDetailId)
-        })
-     }
+   
     
 }
 
 getDeletedArticle();
 
-{/* <div class="icons">
-    <a href="./editArticle.html" ><img src="./assets/images/edit-red.svg" ></a>
-    <img src="./assets/images/recovery-convert.svg" >
-</div> */}
+
 
 async function restoreArticle(id) {
     let authToken = localStorage.getItem("token");
@@ -112,4 +87,17 @@ async function getDeletedItemDetails(id) {
     .then(res => itemDetailsData = res.data)
     .catch(error => console.log(error))
     console.log(itemDetailsData)
+}
+
+
+/* delete fun */
+async function forceDelete(id){
+    let authToken = localStorage.getItem("token");
+    console.log(authToken)
+    await fetch(`https://mountain.lavetro-agency.com/api/dashboard/articles/${id}` , {
+        method: 'DELETE',
+        headers: {AUTHORIZATION: `Bearer ${authToken}` }
+      })
+    .then(res => res.json())
+    .then(res => console.log(res))
 }
