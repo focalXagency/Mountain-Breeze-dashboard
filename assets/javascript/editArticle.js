@@ -39,14 +39,6 @@ inputImage.onchange = function () {
   newImgEd.src = "";
   newImgEd.src = URL.createObjectURL(inputImage.files[0]);
   changeNewInputImg = inputImage.files[0];
-<<<<<<< HEAD
-}
-console.log(inputImage);
-=======
-  //console.log(changeNewInputImg);
-}
-
->>>>>>> 5c37dd7822ef48e0c924ccfcba0638e85989cf01
 
 let articleInfo = []
 
@@ -133,14 +125,8 @@ let addPhotoName
   let newImages = [];
   addPhotos.addEventListener("change", () => {
     images.length !== 0 ? newImages = images : null;
-    newImages.push(addPhotos.files);
-<<<<<<< HEAD
-    let img = URL.createObjectURL(addPhotos.files)
-    imagesGroup(img)
-=======
     //let img = URL.createObjectURL(addPhotos.files)
     //imagesGroup(img)
->>>>>>> 5c37dd7822ef48e0c924ccfcba0638e85989cf01
   })
 
   function imagesGroup(img) {
@@ -236,8 +222,9 @@ const tagsArr = ['#AAA', '#BBB']
        let newDescEnEdited = newDescEn.getData()
        let newDescArEdited = newDescAr.getData()
 
-<<<<<<< HEAD
-       const formdata = new FormData();
+       let formdata = new FormData();
+
+       formdata.append("_method", 'PUT')
 
        changeNewInputImg !== "" ? formdata.append("article_cover", changeNewInputImg) : formdata.append("article_cover", newInputImg);
        //console.log('image is', changeNewInputImg)
@@ -252,34 +239,8 @@ const tagsArr = ['#AAA', '#BBB']
       
        changenewsubTitleAr !== "" ? formdata.append("sub_title_ar", changenewsubTitleAr) : formdata.append("sub_title_ar", editSubAr);
        
-       changenewDate !== "" ? formdata.append("date", changenewDate) : formdata.append("date", newDate);
-=======
-       let formdata = new FormData();
-
-       formdata.append("_method", 'PUT')
-
-       changeNewInputImg !== "" ? formdata.append("article_cover", changeNewInputImg)
-                                : formdata.append("article_cover", newInputImg);
-       console.log('image is', changeNewInputImg)
-       
-       changeCategory !== "" ?  formdata.append('category', changeCategory) 
-                             :  formdata.append('category', editCateory.value)
-    
-       changenewtitleEn !== ""? formdata.append("title_en", changenewtitleEn)
-                              : formdata.append("title_en", editTitle.value) ;
-       
-       changenewtitleAr !== "" ? formdata.append("title_ar", changenewtitleAr) 
-                               : formdata.append("title_ar", editTitleAr.value);
-    
-       changenewsubTitleEn !== "" ? formdata.append("sub_title_en", changenewsubTitleEn) 
-                                  : formdata.append("sub_title_en", editSubEn.value);
-
-       changenewsubTitleAr !== "" ? formdata.append("sub_title_ar", changenewsubTitleAr) 
-                                  : formdata.append("sub_title_ar", editSubAr.value);
-       
        changenewDate !== "" ? formdata.append("date", changenewDate) 
                             : formdata.append("date", newDate);
->>>>>>> 5c37dd7822ef48e0c924ccfcba0638e85989cf01
        
        formdata.append("content_en", newDescEnEdited);
 
@@ -303,23 +264,10 @@ const tagsArr = ['#AAA', '#BBB']
             formdata.append(`images[${i}]`, images[i]);
           }
       }
-<<<<<<< HEAD
+    }
 
        formdata.append('tags', tagsArr)
     }
-
-       fetch(`https://mountain.lavetro-agency.com/api/dashboard/articles/${editId}`,{
-        method: 'PUT',
-        headers: { AUTHORIZATION: `Bearer ${authToken}` ,
-        "Accept" : " application/json",
-        "Content-Type": "multipart/form-data"
-      },
-        body: formdata,"_method": "PUT"
-=======
-    }
-
-    formdata.append('tags', tagsArr)
-  
 
        fetch(`https://mountain.lavetro-agency.com/api/dashboard/articles/${editId}`,{
         method: 'PUT',
@@ -328,10 +276,9 @@ const tagsArr = ['#AAA', '#BBB']
           AUTHORIZATION: `Bearer ${authToken}`
        },
        body: formdata,
->>>>>>> 5c37dd7822ef48e0c924ccfcba0638e85989cf01
     })
     .then(res => res.json())
-    .then(res =>  console.log(res))
+    .then(res => console.log(res))
     .catch(error => console.log(error))
  })
    

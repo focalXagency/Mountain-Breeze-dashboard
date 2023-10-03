@@ -130,25 +130,16 @@ const addBtn = document.querySelector(".add-a");
 addBtn.addEventListener('click', (event) => {
     event.preventDefault();
     console.log(inputImg.files[0]);
-    const dataFood = new URLSearchParams();
-    // dataFood.append("image", inputImg.files[0]);
+    const dataFood = new FormData();
+    dataFood.append("_method" , "put")
+    dataFood.append("image", inputImg.files[0]);
     dataFood.append("category", categoryEn.value);
     dataFood.append("title_en", newTitleEn);
     dataFood.append("title_ar", newtitleAr);
     dataFood.append("content_en", descEn.getData());
     dataFood.append("content_ar", descAr.getData());
     dataFood.append("image_size", newSize);
-    console.log(categoryEnValue);
-    // let dataFood = {
-    //     image: newImage,
-    //     category: categoryEnValue,
-    //     title_en: newTitleEn,
-    //     title_ar: newtitleAr,
-    //     content_en: descEn.getData(),
-    //     content_ar: descAr.getData(),
-    //     image_size: newSize
-    // };
-
+    
     updateFood(dataFood);
 })
 
@@ -156,15 +147,15 @@ addBtn.addEventListener('click', (event) => {
 async function updateFood(data) {
     const token = localStorage.getItem('token');
     var myHeaders = new Headers();
-    myHeaders.append("Content-type", "application/json; charset=UTF-8");
+    myHeaders.append("Accept", "application/json");
     console.log(data);
-    // var requestOptions = ;
 
     await fetch(`https://mountain.lavetro-agency.com/api/dashboard/foods/${idFood}`, {
-        method: 'PUT',
+        method: 'post',
         headers: {
+            myHeaders,
+            "Content-Type": "multipart/form-data",
             AUTHORIZATION: `Bearer ${token}`,
-            // 'Content-type': 'charset=UTF-8',
         },
         body: data,
     })
