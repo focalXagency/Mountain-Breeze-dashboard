@@ -177,6 +177,7 @@ addBtn.addEventListener('click', async (event) => {
    await fetch("https://mountain.lavetro-agency.com/api/dashboard/foods", requestOptions)
       .then(res => res.json())
       .then(res => console.log(res))
+      .then(alert("the article food created"))
       .catch(error => console.log('error', error));
 })
 
