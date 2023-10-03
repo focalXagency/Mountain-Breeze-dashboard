@@ -26,7 +26,7 @@ async function getArticles() {
                            <div class="footer">
                               <div class="icons">
                                    <button class="edit-link" id=${ele.id}><img src="./assets/images/edit.svg" ></button>
-                                   <img class="del-article" src="./assets/images/trash.svg" >
+                                   <img class="del-article" id=${ele.id} src="./assets/images/trash.svg" >
                               </div>
                                    <button class="arrowlink" id=${ele.id}>
                                        <img src="./assets/images/arrow-right-white.svg" class="arrow">
@@ -49,12 +49,13 @@ async function getArticles() {
                     }
 
                     //delete button
-                    const article = document.querySelector(".article")
-                    let idArticle = article.getAttribute('id');
+                    // const article = document.querySelector(".article")
+                    // let idArticle = article.getAttribute('id');
                     icons = document.querySelectorAll(".del-article");
                     icons.forEach(ele => {
-                     ele.addEventListener('click', (event) => {
-                       //console.log(ele)
+                      let idArticle = ele.getAttribute('id')
+                      ele.addEventListener('click', (event) => {
+                       console.log(idArticle)
                        deletIcon.classList.add("show");
                        deletBtn.addEventListener('click', () => {
                         deleteArticle(idArticle);

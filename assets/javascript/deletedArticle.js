@@ -31,8 +31,8 @@ async function getDeletedArticle() {
                      <button class="edit-link" id=${ele.id}><img src="./assets/images/edit-red.svg" ></button>
                      <img class="del-article" id=${ele.id} src="./assets/images/recovery-convert.svg" >
                    </div>
-                   <button class="arrowlink" id=${ele.id}>
-                        <img src="./assets/images/arrow-right-white.svg" class="arrow">
+                   <button class="arrowlink rm_redtrash" id=${ele.id}>
+                        <img src="./assets/images/radtrash.png" class="arrow rm_redtrash" id=${ele.id}>
                    </button>
                 </div>
             </div>
@@ -53,7 +53,7 @@ async function getDeletedArticle() {
 
     })
 
-    //go edit page
+    // go edit page
     const goEdit = document.querySelectorAll(".edit-link")
     for (let i = 0; i < goEdit.length; i++) {
         goEdit[i].addEventListener('click', () => {
@@ -63,6 +63,14 @@ async function getDeletedArticle() {
     
         })
     }
+/* force delete */
+const alltrash = document.querySelectorAll(".arrow");
+alltrash.forEach(Elementtrash =>{
+    Elementtrash.addEventListener("click" , () =>{
+        let trashid = Elementtrash.getAttribute('id');
+        forceDelete(trashid);
+    })
+})
       //go restore
       const restorBtns = document.querySelectorAll(".del-article")
       restorBtns.forEach(restorItem => {
@@ -111,4 +119,17 @@ async function getDeletedItemDetails(id) {
     .then(res => itemDetailsData = res.data)
     .catch(error => console.log(error))
     console.log(itemDetailsData)
+}
+
+
+/* delete fun */
+async function forceDelete(id){
+    let authToken = localStorage.getItem("token");
+    console.log(authToken)
+    await fetch(`https://mountain.lavetro-agency.com/api/dashboard/articles/${id}` , {
+        method: 'DELETE',
+        headers: {AUTHORIZATION: `Bearer ${authToken}` }
+      })
+    .then(res => res.json())
+    .then(res => console.log(res))
 }
