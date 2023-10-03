@@ -39,8 +39,6 @@ inputImage.onchange = function () {
   newImgEd.src = "";
   newImgEd.src = URL.createObjectURL(inputImage.files[0]);
   changeNewInputImg = inputImage.files[0];
-}
-console.log(inputImage);
 
 let articleInfo = []
 
@@ -127,9 +125,8 @@ let addPhotoName
   let newImages = [];
   addPhotos.addEventListener("change", () => {
     images.length !== 0 ? newImages = images : null;
-    newImages.push(addPhotos.files[0]);
-    let img = URL.createObjectURL(addPhotos.files[0])
-    imagesGroup(img)
+    //let img = URL.createObjectURL(addPhotos.files)
+    //imagesGroup(img)
   })
 
   function imagesGroup(img) {
@@ -225,7 +222,9 @@ const tagsArr = ['#AAA', '#BBB']
        let newDescEnEdited = newDescEn.getData()
        let newDescArEdited = newDescAr.getData()
 
-       const formdata = new FormData();
+       let formdata = new FormData();
+
+       formdata.append("_method", 'PUT')
 
        changeNewInputImg !== "" ? formdata.append("article_cover", changeNewInputImg) : formdata.append("article_cover", newInputImg);
        //console.log('image is', changeNewInputImg)
@@ -240,7 +239,8 @@ const tagsArr = ['#AAA', '#BBB']
       
        changenewsubTitleAr !== "" ? formdata.append("sub_title_ar", changenewsubTitleAr) : formdata.append("sub_title_ar", editSubAr);
        
-       changenewDate !== "" ? formdata.append("date", changenewDate) : formdata.append("date", newDate);
+       changenewDate !== "" ? formdata.append("date", changenewDate) 
+                            : formdata.append("date", newDate);
        
        formdata.append("content_en", newDescEnEdited);
 
@@ -264,14 +264,18 @@ const tagsArr = ['#AAA', '#BBB']
             formdata.append(`images[${i}]`, images[i]);
           }
       }
+    }
 
        formdata.append('tags', tagsArr)
     }
 
        fetch(`https://mountain.lavetro-agency.com/api/dashboard/articles/${editId}`,{
         method: 'PUT',
-        headers: { AUTHORIZATION: `Bearer ${authToken}` },
-        body: formdata,
+        headers: { 
+          'Content-Type': 'multipart/form-data',
+          AUTHORIZATION: `Bearer ${authToken}`
+       },
+       body: formdata,
     })
     .then(res => res.json())
     .then(res => console.log(res))

@@ -12,7 +12,11 @@ const handleLogin = (event) => {
         headers: {
           "Content-Type": "application/json",
         },
+<<<<<<< HEAD
+        body : JSON.stringify(data)
+=======
         body: JSON.stringify(data),
+>>>>>>> 5c37dd7822ef48e0c924ccfcba0638e85989cf01
       })
       .then(res => res.json())
       .then(res => {

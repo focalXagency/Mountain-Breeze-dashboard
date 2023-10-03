@@ -15,7 +15,7 @@ async function ShowdeletedRooms()  {
     delRoomsData.forEach(roomItem => {
         roomContainer.innerHTML += `
         <div class="article">
-           <img class="article-img article-img-md" src=${roomItem.images[0].image_path} alt=""/>
+           <img class="article-img article-img-md" src=${roomItem.images[0]?.path} alt=""/>
            <div class="detils">
               <div class="head">
                  <div class="left-side" >
@@ -23,7 +23,7 @@ async function ShowdeletedRooms()  {
                     <span class="date" >${roomItem.floor} floors ${roomItem.sub_title_en}</span>
                  </div>
                  <div class="icons">
-                    <button class="edit" id=${roomItem.id}><img src="./assets/images/edit-red.svg" ></button>
+                    <button class="edit" id=${roomItem.id}><img src="./assets/images/radtrash.png" ></button>
                     <img class="restore" id=${roomItem.id} src="./assets/images/recovery-convert.svg" >
                  </div>
               </div>
@@ -73,34 +73,27 @@ async function ShowdeletedRooms()  {
     })
 
 
-    //go edit
-     const allEditBtns = document.querySelectorAll(".edit")
-     for (let i = 0; i < allEditBtns.length; i++) {
-      allEditBtns[i].addEventListener('click', () => {
-         let editedRoomId = allEditBtns[i].getAttribute('id')
-         window.location.href = "./editroom.html"
-         localStorage.setItem("editRoomBtnId", editedRoomId)
-      })
-     }
-   //  allEditBtns.forEach(editEle => {
-   //      editEle.addEventListener('click', () => {
-   //          let editId = editEle.getAttribute('id')
-   //          localStorage.setItem("editId", editId)
-   //           console.log(editId)
-   //           window.location.href = "./editroom.html"
-   //           let ggg = localStorage.getItem("editId")
-   //           console.log(ggg)
-   //      })
-   //  })
 
    //go restore
    const restorRooms = document.querySelectorAll('.icons .restore')
+   
    restorRooms.forEach(restorEle => {
       restorEle.addEventListener('click', () => {
          let roomId = restorEle.getAttribute('id')
          restoreRooms(roomId)
       })
    })
+
+   /* force delete */
+const alltrashroom = document.querySelectorAll(".edit");
+console.log(alltrashroom)
+alltrashroom.forEach(Elementtrashroom =>{
+    Elementtrashroom.addEventListener("click" , () =>{
+        let trashidroom = Elementtrashroom.getAttribute('id');
+        console.log(trashidroom)
+        forceDeleteroom(trashidroom); 
+    })
+}) 
 
 }
 
@@ -118,3 +111,14 @@ async function restoreRooms(id)  {
     .catch(error => console.log(error))
 }
 
+/* delete fun */
+async function forceDeleteroom(id){
+   let authToken = localStorage.getItem("token");
+   console.log(authToken)
+   await fetch(`https://mountain.lavetro-agency.com/api/dashboard/rooms/${id}` , {
+       method: 'DELETE',
+       headers: {AUTHORIZATION: `Bearer ${authToken}` }
+     })
+   .then(res => res.json())
+   .then(res => console.log(res))
+}

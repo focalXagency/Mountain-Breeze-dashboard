@@ -23,7 +23,7 @@ async function getRooms () {
             </div>
             <div class="icons">
                <button class="edit" id=${ele.id}><img src="./assets/images/edit-gray.svg"></button>
-               <img class="del-article" src="./assets/images/trach-gray.svg" >
+               <img class="del-article" id=${ele.id} src="./assets/images/trach-gray.svg" >
             </div>
           </div>
           <p>${ele.content.en}</p>
@@ -67,16 +67,17 @@ async function getRooms () {
     </div>
     `
               
-    const article = document.querySelector(".article")
-    let idArticle = article.getAttribute('id');
+/*     const article = document.querySelector(".article")
+    let idArticle = article.getAttribute('id'); */
     icons = document.querySelectorAll(".del-article");
 
     icons.forEach(ele => {
        ele.addEventListener('click', (event) => {
-            console.log(ele)
+         let iconId = ele.getAttribute('id')
             deletIconR.classList.add("show");
             deletBtnR.addEventListener('click', () => {
-                   deleteRoom(idArticle);
+               console.log(iconId)
+                   deleteRoom(iconId);
                    let child = event;
                    child.target.parentNode.parentNode.parentNode.parentNode.remove();
                    deletIconR.classList.remove("show");
@@ -168,7 +169,7 @@ async function getByRoomType(type) {
               </div>
               <div class="icons">
                  <button class="edit" id=${eleRoom.id}><img src="./assets/images/edit-gray.svg"></button>
-                 <img class="del-article" src="./assets/images/trach-gray.svg" >
+                 <img class="del-article" id=${eleRoom.id} src="./assets/images/trach-gray.svg" >
               </div>
             </div>
             <p>${eleRoom.content.en}</p>
@@ -212,16 +213,17 @@ async function getByRoomType(type) {
       </div>
       `
 
-      const article = document.querySelector(".article")
-      let idArticle = article.getAttribute('id');
+      //const article = document.querySelector(".article")
+      //let idArticle = article.getAttribute('id');
       icons = document.querySelectorAll(".del-article");
 
       icons.forEach(ele => {
          ele.addEventListener('click', (event) => {
-              console.log(ele)
+            let iconIdByTyperm = ele.getAttribute('id')
               deletIconR.classList.add("show");
               deletBtnR.addEventListener('click', () => {
-                     deleteRoom(idArticle);
+                     console.log(iconIdByTyperm);
+                     deleteRoom(iconIdByTyperm);
                      let child = event;
                      child.target.parentNode.parentNode.parentNode.parentNode.remove();
                      deletIconR.classList.remove("show");
@@ -262,7 +264,7 @@ async function getByGuestsNum(num) {
               </div>
               <div class="icons">
                  <button class="edit" id=${eleGuests.id}><img src="./assets/images/edit-gray.svg"></button>
-                 <img class="del-article" src="./assets/images/trach-gray.svg" >
+                 <img class="del-article" id=${eleGuests.id} src="./assets/images/trach-gray.svg" >
               </div>
             </div>
             <p>${eleGuests.content.en}</p>
@@ -306,16 +308,17 @@ async function getByGuestsNum(num) {
       </div>
       `
 
-      const article = document.querySelector(".article")
-      let idArticle = article.getAttribute('id');
+ /*      const article = document.querySelector(".article")
+      let idArticle = article.getAttribute('id'); */
       icons = document.querySelectorAll(".del-article");
 
       icons.forEach(ele => {
          ele.addEventListener('click', (event) => {
-              console.log(ele)
+             let idByGuests = ele.getAttribute('id')
               deletIconR.classList.add("show");
               deletBtnR.addEventListener('click', () => {
-                     deleteRoom(idArticle);
+               console.log(idByGuests)
+                     deleteRoom(idByGuests);
                      let child = event;
                      child.target.parentNode.parentNode.parentNode.parentNode.remove();
                      deletIconR.classList.remove("show");
@@ -356,7 +359,7 @@ async function getByMinPrice(num) {
               </div>
               <div class="icons">
                  <button class="edit" id=${eleMinPrice.id}><img src="./assets/images/edit-gray.svg"></button>
-                 <img class="del-article" src="./assets/images/trach-gray.svg" >
+                 <img class="del-article" id=${eleMinPrice.id} src="./assets/images/trach-gray.svg" >
               </div>
             </div>
             <p>${eleMinPrice.content.en}</p>
@@ -400,16 +403,17 @@ async function getByMinPrice(num) {
       </div>
       `
 
-      const article = document.querySelector(".article")
-      let idArticle = article.getAttribute('id');
+      // const article = document.querySelector(".article")
+      // let idArticle = article.getAttribute('id');
       icons = document.querySelectorAll(".del-article");
 
       icons.forEach(ele => {
          ele.addEventListener('click', (event) => {
-              console.log(ele)
+            let idByPrice = ele.getAttribute('id')
               deletIconR.classList.add("show");
               deletBtnR.addEventListener('click', () => {
-                     deleteRoom(idArticle);
+                     console.log(idByPrice)
+                     deleteRoom(idByPrice);
                      let child = event;
                      child.target.parentNode.parentNode.parentNode.parentNode.remove();
                      deletIconR.classList.remove("show");
