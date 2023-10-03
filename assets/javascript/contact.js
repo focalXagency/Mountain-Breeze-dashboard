@@ -113,7 +113,7 @@ async function getMassegs() {
   for (let i = 0; i < toSet.length; i++) {
     toSet[i].addEventListener('click', () => {
       toSet[i].classList.add('done');
-      let id = parseInt(chatItems[i - 1].getAttribute('id'));
+      let id = parseInt(parseInt(chatItems[i - 1].getAttribute('id')));
       console.log(id)
       deletedMsg.push(id);
     })
@@ -133,20 +133,15 @@ async function getMassegs() {
   })
   async function deleteMulti(deletedMsg) {
 
-    var myHeaders = new Headers();
-    myHeaders.append("Accept", "application/json");
-    let raw = {
+    let rawData = {
       ids: deletedMsg
     };
-    
     var requestOptions = {
       method: 'DELETE',
       headers: {
-        'Content-type': 'application/x-www-form-urlencoded',
-        Authorization: `Bearer Token${token}`
+        AUTHORIZATION: `Bearer Token${token}`
       },
-      body: raw,
-      redirect: 'follow'
+      body: JSON.stringify(rawData),
     };
     await fetch("https://mountain.lavetro-agency.com/api/dashboard/contact/multiRecords", requestOptions)
       .then(response => response.json())
