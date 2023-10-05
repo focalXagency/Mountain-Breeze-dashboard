@@ -183,6 +183,7 @@ add.addEventListener('click', async (event) => {
         })
                 .then(res => res.json())
                 .then(res => console.log(res))
+                .then(alert("the article created"))
                 .catch(error => console.log('error', error));
 }
 )

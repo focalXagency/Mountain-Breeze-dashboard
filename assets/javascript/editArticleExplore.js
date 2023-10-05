@@ -108,10 +108,9 @@ async function getUpdateArticle() {
 
     updateA.videos[0] !== undefined ? newVideo = updateA.videos[0].link : null;
 
-
     NewdescAr.setData(updateA.description.ar);
     NewdescEn.setData(updateA.description.en);
-    tags.value=updateA.tags[0].name;
+    updateA.tags[0]? tags.value=updateA.tags[0].name : null;
     updateA.videos[0] !== "" ? addVideo.value = updateA.videos[0].link : null;
 
     for (let i = 0; i < updateA.images.length; i++) {
@@ -195,7 +194,7 @@ subTitleAr.addEventListener("change", () => {
 let changenewVideo = "";
 addVideo.addEventListener("change", () => {
     changenewVideo = addVideo.value;
-    console.log(newVideo);
+    
 })
 
 let changenewDate = "";
@@ -222,37 +221,40 @@ UpdateBtn.addEventListener("click", async (event) => {
 
     var data = new URLSearchParams();
     var formdata = new FormData()
-    formdata.append('method' , 'put')
+    formdata.append('_method' , 'put')
     changeNewInputImg !== undefined ? formdata.append("article_cover", changeNewInputImg) : null;
     data.append("category", typeC);
-    changenewtitleEn !== ""? data.append("title_en", changenewtitleEn) : null;
-    changenewtitleAr !== "" ? data.append("title_ar", newtitleAr) : null;
-    changenewsubTitleEn !== "" ? data.append("sub_title_en", changenewsubTitleEn) : null;
-    changenewsubTitleAr !== "" ? data.append("sub_title_ar", changenewsubTitleAr) : null;
+    changenewtitleEn !== ""? formdata.append("title_en", changenewtitleEn) : null;
+    changenewtitleAr !== "" ? formdata.append("title_ar", newtitleAr) : null;
+    changenewsubTitleEn !== "" ? formdata.append("sub_title_en", changenewsubTitleEn) : null;
+    changenewsubTitleAr !== "" ? formdata.append("sub_title_ar", changenewsubTitleAr) : null;
     data.append("content_en", descEn);
     data.append("content_ar", descAr);
-    changenewDate !== "" ? data.append("date", changenewDate) : null;
-    data.append("videos[0]", addVideo.value)
+    changenewDate !== "" ? formdata.append("date", changenewDate) : null;
+    formdata.append("videos[0]", addVideo.value)
     if (images.length > 0 ){
         for (let i = 0; i < images.length; i++) {
             formdata.append(`images[${i}]`, images[i]);
             console.log(images[i]);
         }   
     }
+
     const id = localStorage.getItem("idArticleExplore");
     const nId = parseInt(id)
-    var myHeaders = new Headers();
-    myHeaders.append("Accept", "application/json");
-
+    console.log(formdata.get("_method"));
+    
     var requestOptions = {
         
-        method: 'PUT',
+        method: "post",
         headers: {
-            myHeaders,
+            "Content-Type": "multipart/form-data",
+            "Accept": "application/json",
             AUTHORIZATION: `Bearer ${token}`,
         },
-        params:data,
-        body: formdata
+        body: {         
+            formdata
+        },
+        
     };
 
     await fetch(`https://mountain.lavetro-agency.com/api/dashboard/explores/${nId}`, requestOptions)
@@ -260,5 +262,3 @@ UpdateBtn.addEventListener("click", async (event) => {
         .then(res => console.log(res))
         .catch(error => console.log('error', error));
 })
-
-

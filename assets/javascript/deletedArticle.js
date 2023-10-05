@@ -28,6 +28,7 @@ async function getDeletedArticle() {
                 <p class="hashtack"></p>                        
                 <div class="footer">
                    <div class="icons">
+                     <button class="edit-link" id=${ele.id}><img src="./assets/images/edit-red.svg" ></button>
                      <img class="del-article" id=${ele.id} src="./assets/images/recovery-convert.svg" >
                    </div>
                    <button class="arrowlink rm_redtrash" id=${ele.id}>
@@ -60,7 +61,6 @@ alltrash.forEach(Elementtrash =>{
         })
       })
     
-   
     
 }
 

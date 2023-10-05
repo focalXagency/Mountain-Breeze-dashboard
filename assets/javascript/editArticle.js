@@ -43,7 +43,7 @@ inputImage.onchange = function () {
 }
 console.log(inputImage);
 
-
+  
 let articleInfo = []
 
 let editCateory = document.querySelector('#category')
@@ -132,6 +132,7 @@ let addPhotoName
     newImages.push(addPhotos.files);
     //let img = URL.createObjectURL(addPhotos.files)
     //imagesGroup(img)
+
   })
 
   function imagesGroup(img) {
@@ -277,11 +278,9 @@ const tagsArr = ['#AAA', '#BBB']
             formdata.append(`images[${i}]`, imagesArr[i]);
           }
       }
-}
+    }
+    formdata.append('tags', tagsArr)
 
-    
-       formdata.append('tags', tagsArr)
-  
 
        fetch(`https://mountain.lavetro-agency.com/api/dashboard/articles/${editId}`,{
         method: 'PUT',
@@ -291,9 +290,10 @@ const tagsArr = ['#AAA', '#BBB']
            AUTHORIZATION: `Bearer ${authToken}`
        },
        body: formdata,
+
     })
     .then(res => res.json())
-    .then(res =>  console.log(res))
+    .then(res => console.log(res))
     .catch(error => console.log(error))
  })
    

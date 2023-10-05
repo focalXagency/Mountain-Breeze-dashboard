@@ -15,6 +15,7 @@ const slider = document.querySelector(".slider");
 const prevBtn = document.getElementById('prev');
 const nextBtn = document.getElementById('next');
 let exploreli;
+let idType;
 setLiE("Restaurant", exploreli);
 getArticles();
 setTypeToLocal()
@@ -30,7 +31,7 @@ for (let i = 0; i < filterItem.length; i++) {
         removeAll();
         lines[i].classList.add('active-line-filter');
         filterItem[i].classList.add('active-filter');
-        let idType = filterItem[i].getAttribute('id');
+        idType = filterItem[i].getAttribute('id');
         console.log(idType)
         setTypeToLocal(idType)
         console.log()
