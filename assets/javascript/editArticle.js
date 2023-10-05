@@ -11,7 +11,7 @@ let editId = localStorage.getItem("editArticleId");
  
 console.log(editId)
 
-let images = [];
+let imagesArr = [];
 
 
 //ckEditors
@@ -39,14 +39,10 @@ inputImage.onchange = function () {
   newImgEd.src = "";
   newImgEd.src = URL.createObjectURL(inputImage.files[0]);
   changeNewInputImg = inputImage.files[0];
-<<<<<<< HEAD
+
 }
 console.log(inputImage);
-=======
-  //console.log(changeNewInputImg);
-}
 
->>>>>>> 5c37dd7822ef48e0c924ccfcba0638e85989cf01
 
 let articleInfo = []
 
@@ -112,14 +108,14 @@ let addPhotoName
 
      //articleInfo.videos[0] !== "" ? newVideo = articleInfo.videos[0].link : null;
      editVideoInput.value !== "" ?   editVideoInput.value = articleInfo.videos[0].link : null
-
+     
      newDescEn.setData(articleInfo.content.en);
      newDescAr.setData(articleInfo.content.ar);
 
      for (let i = 0; i < articleInfo.images.length; i++) {
 
       if (articleInfo.images[i]) {
-          images.push(articleInfo.images[i].path)
+        imagesArr.push(articleInfo.images[i].path)
           let img = articleInfo.images[i].path
           imagesGroup(img);
          
@@ -132,15 +128,10 @@ let addPhotoName
 
   let newImages = [];
   addPhotos.addEventListener("change", () => {
-    images.length !== 0 ? newImages = images : null;
+    imagesArr.length !== 0 ? newImages = imagesArr : null;
     newImages.push(addPhotos.files);
-<<<<<<< HEAD
-    let img = URL.createObjectURL(addPhotos.files)
-    imagesGroup(img)
-=======
     //let img = URL.createObjectURL(addPhotos.files)
     //imagesGroup(img)
->>>>>>> 5c37dd7822ef48e0c924ccfcba0638e85989cf01
   })
 
   function imagesGroup(img) {
@@ -168,7 +159,7 @@ let addPhotoName
     for (let i = 0; i < deletImg.length; i++) {
         deletImg[i].addEventListener("click", () => {
           containerAddImg.removeChild(elemnets[i]);
-            images = images.slice(i + 1);
+          imagesArr = imagesArr.slice(i + 1);
         })
     }
 }
@@ -236,24 +227,7 @@ const tagsArr = ['#AAA', '#BBB']
        let newDescEnEdited = newDescEn.getData()
        let newDescArEdited = newDescAr.getData()
 
-<<<<<<< HEAD
-       const formdata = new FormData();
 
-       changeNewInputImg !== "" ? formdata.append("article_cover", changeNewInputImg) : formdata.append("article_cover", newInputImg);
-       //console.log('image is', changeNewInputImg)
-       
-       changeCategory !== "" ?  formdata.append('category', changeCategory) : formdata.append('category', editCateory.value)
-    
-       changenewtitleEn !== ""? formdata.append("title_en", changenewtitleEn) : formdata.append("title_en", editTitle.value) ;
-       
-       changenewtitleAr !== "" ? formdata.append("title_ar", changenewtitleAr) : formdata.append("title_ar", editTitleAr.value);
-    
-       changenewsubTitleEn !== "" ? formdata.append("sub_title_en", changenewsubTitleEn) : formdata.append("sub_title_en", editSubEn);
-      
-       changenewsubTitleAr !== "" ? formdata.append("sub_title_ar", changenewsubTitleAr) : formdata.append("sub_title_ar", editSubAr);
-       
-       changenewDate !== "" ? formdata.append("date", changenewDate) : formdata.append("date", newDate);
-=======
        let formdata = new FormData();
 
        formdata.append("_method", 'PUT')
@@ -279,8 +253,7 @@ const tagsArr = ['#AAA', '#BBB']
        
        changenewDate !== "" ? formdata.append("date", changenewDate) 
                             : formdata.append("date", newDate);
->>>>>>> 5c37dd7822ef48e0c924ccfcba0638e85989cf01
-       
+
        formdata.append("content_en", newDescEnEdited);
 
        formdata.append("content_ar", newDescArEdited);
@@ -289,6 +262,7 @@ const tagsArr = ['#AAA', '#BBB']
         formdata.append("videos[0]", changenewVideo);
        } else {
         formdata.append("videos[0]", editVideoInput.value);
+      
        }
      
       if (newImages.length !== 0) {
@@ -298,37 +272,25 @@ const tagsArr = ['#AAA', '#BBB']
             console.log(newImages[i])
           }
       }  else {
-      if (images.length !== 0) {
-          for (let i = 0; i < images.length; i++) {
-            formdata.append(`images[${i}]`, images[i]);
+      if (imagesArr.length !== 0) {
+          for (let i = 0; i < imagesArr.length; i++) {
+            formdata.append(`images[${i}]`, imagesArr[i]);
           }
       }
-<<<<<<< HEAD
+}
 
+    
        formdata.append('tags', tagsArr)
-    }
-
-       fetch(`https://mountain.lavetro-agency.com/api/dashboard/articles/${editId}`,{
-        method: 'PUT',
-        headers: { AUTHORIZATION: `Bearer ${authToken}` ,
-        "Accept" : " application/json",
-        "Content-Type": "multipart/form-data"
-      },
-        body: formdata,"_method": "PUT"
-=======
-    }
-
-    formdata.append('tags', tagsArr)
   
 
        fetch(`https://mountain.lavetro-agency.com/api/dashboard/articles/${editId}`,{
         method: 'PUT',
         headers: { 
+          "Accept" : " application/json",
           'Content-Type': 'multipart/form-data',
-          AUTHORIZATION: `Bearer ${authToken}`
+           AUTHORIZATION: `Bearer ${authToken}`
        },
        body: formdata,
->>>>>>> 5c37dd7822ef48e0c924ccfcba0638e85989cf01
     })
     .then(res => res.json())
     .then(res =>  console.log(res))

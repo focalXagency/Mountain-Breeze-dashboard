@@ -60,6 +60,7 @@ categorySelect.addEventListener('change', (event) => {
 //get Date value
 let date = new Date();
 let currdate;
+let inputDate = document.querySelector('#input-date');
 document.querySelector('#input-date').value = date;
 inputDate.addEventListener('input', () => {
     let dateArticle = new Date(inputDate.value);
