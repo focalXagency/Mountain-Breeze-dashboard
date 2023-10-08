@@ -6,7 +6,7 @@ var requestOptions = {
   method: 'GET',
   headers: {
     myHeaders,
-    Authorization: `Bearer Token${token}`
+    Authorization: `Bearer ${token}`
   },
   redirect: 'follow'
 };
@@ -133,17 +133,13 @@ async function getMassegs() {
   })
   async function deleteMulti(deletedMsg) {
 
-    let rawData = {
-      ids: deletedMsg
-    };
-    var requestOptions = {
+  var requestOptions = {
       method: 'DELETE',
       headers: {
-        AUTHORIZATION: `Bearer Token${token}`
+        AUTHORIZATION: `Bearer ${token}`
       },
-      body: JSON.stringify(rawData),
-    };
-    await fetch("https://mountain.lavetro-agency.com/api/dashboard/contact/multiRecords", requestOptions)
+       }; 
+        await fetch("https://mountain.lavetro-agency.com/api/dashboard/contact/multiRecords?ids=" + deletedMsg, requestOptions)
       .then(response => response.json())
       .then(result => console.log(result))
       .catch(error => console.log('error', error));

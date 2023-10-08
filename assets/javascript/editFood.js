@@ -154,7 +154,6 @@ async function updateFood(data) {
         method: 'post',
         headers: {
             myHeaders,
-            "Content-Type": "multipart/form-data",
             AUTHORIZATION: `Bearer ${token}`,
         },
         body: data,
