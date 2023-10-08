@@ -230,7 +230,7 @@ editRoomBtn.addEventListener("click", function (e) {
 
   changeNameAr !== ""
     ? formData.append("title_ar", changeNameAr)
-    : formData.append("title_en", editNameAr.value);
+    : formData.append("title_ar", editNameAr.value);
 
   changeSubTitleEn !== ""
     ? formData.append("sub_title_en", changeSubTitleEn)
@@ -257,7 +257,7 @@ editRoomBtn.addEventListener("click", function (e) {
     : formData.append("price", editRoomPrice.value);
 
   formData.append("content_en", newContentEn);
-  formData.append("content_en", newContentAr);
+  formData.append("content_ar", newContentAr);
   formData.append("_method", 'put');
   //changeRoomServ !== ""? formData.append("room_services", changeRoomServ) : formData.append("room_services",  editRoomSer.value) ;
 

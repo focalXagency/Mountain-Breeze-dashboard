@@ -9,11 +9,6 @@ const firstAddBtnImg = document.querySelector(".first-add-btn");
 
 let editId = localStorage.getItem("editArticleId");
  
-console.log(editId)
-
-let images = [];
-
-
 //ckEditors
 let newDescEn
 ClassicEditor
@@ -39,7 +34,7 @@ inputImage.onchange = function () {
   newImgEd.src = "";
   newImgEd.src = URL.createObjectURL(inputImage.files[0]);
   changeNewInputImg = inputImage.files[0];
-
+}
 let articleInfo = []
 
 let editCateory = document.querySelector('#category')
@@ -52,7 +47,7 @@ const editSubAr = document.querySelector('.subtitle-ar')
 
 const editTags = document.querySelector(".tags-en")
 
-const editVideoInput = document.querySelector(".video-link")
+// const editVideoInput = document.querySelector(".video-link")
 
 const datePublish = document.querySelector('#input-date')
 
@@ -78,41 +73,40 @@ let addPhotoName
     .then(res => res.json())
     .then(res => articleInfo = res.data)
     .catch(error => console.log(error))
-     console.log(articleInfo)
      
-     addPhotoName = articleInfo.article_cover
-     newImgEd.src = articleInfo.article_cover;
-     newImage = articleInfo.article_cover;
+     addPhotoName = articleInfo?.article_cover
+     newImgEd.src = articleInfo?.article_cover;
+     newImage = articleInfo?.article_cover;
      newInputImg = inputImage.vlaue;
 
-     editTitle.value = articleInfo.title.en;
-     newtitleEn = articleInfo.title.en;
+     editTitle.value = articleInfo?.title.en;
+     newtitleEn = articleInfo?.title.en;
 
-     editTitleAr.value = articleInfo.title.ar;
-     newtitleAr = articleInfo.title.ar;
+     editTitleAr.value = articleInfo?.title.ar;
+     newtitleAr = articleInfo?.title.ar;
 
-     editSubEn.value = articleInfo.sub_title.en;
-     newsubTitleEn = articleInfo.sub_title.en;
+     editSubEn.value = articleInfo?.sub_title.en;
+     newsubTitleEn = articleInfo?.sub_title.en;
 
-     editSubAr.value = articleInfo.sub_title.ar;
-     newsubTitleAr = articleInfo.sub_title.ar;
+     editSubAr.value = articleInfo?.sub_title.ar;
+     newsubTitleAr = articleInfo?.sub_title.ar;
 
-     editCateory.value = articleInfo.category
+     editCateory.value = articleInfo?.category
 
-     datePublish.value = articleInfo.date;
-     newDate = articleInfo.date;
+     datePublish.value = articleInfo?.date;
+     newDate = articleInfo?.date;
 
-     //articleInfo.videos[0] !== "" ? newVideo = articleInfo.videos[0].link : null;
-     editVideoInput.value !== "" ?   editVideoInput.value = articleInfo.videos[0].link : null
+     //articleInfo?.videos[0] !== "" ? newVideo = articleInfo?.videos[0].link : null;
+    //  editVideoInput.value !== "" ?   editVideoInput.value = articleInfo?.videos[0].link : null
 
-     newDescEn.setData(articleInfo.content.en);
-     newDescAr.setData(articleInfo.content.ar);
+     newDescEn.setData(articleInfo?.content.en);
+     newDescAr.setData(articleInfo?.content.ar);
 
-     for (let i = 0; i < articleInfo.images.length; i++) {
+     for (let i = 0; i < articleInfo?.images.length; i++) {
 
-      if (articleInfo.images[i]) {
-          images.push(articleInfo.images[i].path)
-          let img = articleInfo.images[i].path
+      if (articleInfo?.images[i]) {
+          images.push(articleInfo?.images[i].path)
+          let img = articleInfo?.images[i].path
           imagesGroup(img);
          
       } else {
@@ -190,10 +184,10 @@ editSubAr.addEventListener("change", () => {
     changenewsubTitleAr = editSubAr.value;
 })
 
-let changenewVideo = "";
-editVideoInput.addEventListener("change", () => {
-    newVideo = editVideoInput.value;
-})
+// let changenewVideo = "";
+// editVideoInput.addEventListener("change", () => {
+//     newVideo = editVideoInput.value;
+// })
 
 let changenewDate = "";
 datePublish.addEventListener('change', () => {
@@ -219,8 +213,8 @@ const tagsArr = ['#AAA', '#BBB']
        let authToken = localStorage.getItem("token");
        console.log(authToken)
 
-       let newDescEnEdited = newDescEn.getData()
-       let newDescArEdited = newDescAr.getData()
+       let newDescEnEdited = newDescEn?.getData()
+       let newDescArEdited = newDescAr?.getData()
 
        let formdata = new FormData();
 
@@ -245,12 +239,13 @@ const tagsArr = ['#AAA', '#BBB']
        formdata.append("content_en", newDescEnEdited);
 
        formdata.append("content_ar", newDescArEdited);
+       formdata.append("_method", 'put');
        
-       if (changenewVideo !== "") {
-        formdata.append("videos[0]", changenewVideo);
-       } else {
-        formdata.append("videos[0]", editVideoInput.value);
-       }
+      //  if (changenewVideo !== "") {
+      //   formdata.append("videos[0]", changenewVideo);
+      //  } else {
+      //   formdata.append("videos[0]", editVideoInput.value);
+      //  }
      
       if (newImages.length !== 0) {
           for (let i = 0; i < newImages.length; i++) {
@@ -266,13 +261,11 @@ const tagsArr = ['#AAA', '#BBB']
       }
     }
 
-       formdata.append('tags', tagsArr)
-    }
+       formdata.append('tags', tagsArr) 
 
        fetch(`https://mountain.lavetro-agency.com/api/dashboard/articles/${editId}`,{
-        method: 'PUT',
+        method: 'POST',
         headers: { 
-          'Content-Type': 'multipart/form-data',
           AUTHORIZATION: `Bearer ${authToken}`
        },
        body: formdata,

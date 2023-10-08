@@ -80,7 +80,7 @@ let newVideo;
 async function getUpdateArticle() {
     const id = localStorage.getItem("idArticleExplore");
     const nId = parseInt(id)
-    await fetch(`https://mountain.lavetro-agency.com/api/dashboard/explores/${nId}`, requestOptions)
+    await fetch(`http://127.0.0.1:8000/api/dashboard/explores/${nId}`, requestOptions)
         .then(res => res.json())
         .then(res => updateA = res.data)
         .catch(error => console.log('error', error));
@@ -241,23 +241,19 @@ UpdateBtn.addEventListener("click", async (event) => {
 
     const id = localStorage.getItem("idArticleExplore");
     const nId = parseInt(id)
-    console.log(formdata.get("_method"));
     
     var requestOptions = {
         
         method: "post",
         headers: {
-            "Content-Type": "multipart/form-data",
             "Accept": "application/json",
             AUTHORIZATION: `Bearer ${token}`,
         },
-        body: {         
-            formdata
-        },
+        body: formdata,
         
     };
 
-    await fetch(`https://mountain.lavetro-agency.com/api/dashboard/explores/${nId}`, requestOptions)
+    await fetch(`http://127.0.0.1:8000/api/dashboard/explores/${nId}`, requestOptions)
         .then(res => res.json())
         .then(res => console.log(res))
         .catch(error => console.log('error', error));

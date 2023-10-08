@@ -6,7 +6,7 @@ const deletBtn = document.querySelector(".div-popup-delet .popup-delet .delet-bt
 let articlesData = []
 
 async function getArticles() {
-    await fetch("https://mountain.lavetro-agency.com/api/dashboard/articles")
+    await fetch("http://127.0.0.1:8000/api/dashboard/articles")
     .then(res => res.json())
     .then(res => articlesData = res.data)
     .catch(error => console.log(error))
