@@ -68,7 +68,7 @@ function theChecker(exploreli = [], page) {
 async function getArticles(type = "Restaurant") {
     theChecker(exploreli, page)
     let skip = (page - 1) * prevPage;
-    await fetch(`http://127.0.0.1:8000/api/dashboard/explores?category=${type}`, requestOptions)
+    await fetch(`https://mountain.lavetro-agency.com/api/dashboard/explores?category=${type}`, requestOptions)
         .then((res) => res.json())
         .then((res) => (explore = res.data));
     console.log(explore);

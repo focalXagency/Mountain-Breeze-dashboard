@@ -1,27 +1,5 @@
-
-
-
-// const input = document.querySelector(".input-title");
-// const label = document.querySelector(".title-lable");
-// const tags = document.querySelector(".tags");
-// const labelTags = document.querySelector(".label-tags");
-// const addImg = document.querySelector(".add-img");
-// const coverLabel = document.querySelector(".cover")
-
-// input.addEventListener('click', () => {
-//     label.style = 'display:none'
-// })
-
-// tags.addEventListener('click', () => {
-//     labelTags.style = 'display:none'
-// })
-
-// addImg.addEventListener('click', () => {
-//     coverLabel.style = 'display:none'
-// })
 const labels = document.querySelectorAll(".title-lable");
-//console.log(labels)
-const inputs = document.querySelectorAll(".input-title");
+const inputs = document.querySelectorAll("#input-title");
 for (let i = 0 ; i < inputs.length ; i++) {
    inputs[i].onfocus = () => {
       labels[i].classList.add("active-label");
@@ -31,7 +9,7 @@ for (let i = 0 ; i < inputs.length ; i++) {
       labels[i].classList.remove("active-label")
    }
 }
-/* const labelsTags = document.querySelectorAll(".label-tags");
+const labelsTags = document.querySelectorAll(".label-tags");
 const inputsTags = document.querySelectorAll(".tags");
 
 for (let i = 0 ; i < inputsTags.length ; i++) {
@@ -45,4 +23,3 @@ for (let i = 0 ; i < inputsTags.length ; i++) {
       labelsTags[i].classList.remove("active-label")
    }
 }
- */

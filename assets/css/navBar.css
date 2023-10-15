@@ -94,7 +94,6 @@
 .logout-btn:hover {
     opacity: 5;
 }
-<<<<<<< HEAD
 .logout-btn {
     background-color: transparent;
     border: none;
@@ -116,8 +115,6 @@
 .logout-btn:hover {
     opacity: 5;
 }
-=======
->>>>>>> 5c37dd7822ef48e0c924ccfcba0638e85989cf01
 
 /* Responsive Navbar */
 @media (max-width: 1100px) {

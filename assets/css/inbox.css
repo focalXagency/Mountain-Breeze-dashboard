@@ -61,13 +61,12 @@
     padding: 1.5rem 0;
     min-height: 580px;
 }
-.inbox .hero-inbox .chats-box .single-chat-container {
-    border-bottom: 1px solid #004E6B33;
-}
+
 .inbox .hero-inbox .chats-box .single-chat {
     display: flex;
     padding: 1rem 0.5rem;
     cursor: pointer;
+    border-bottom: 1px solid #004E6B33;
 }
 .inbox .hero-inbox .chats-box .single-chat.active {
     border-left: 3px solid #004e6b;
@@ -208,11 +207,16 @@
     line-height: 18.29px;
     padding-bottom: 0.2rem;
 }
-.inbox .second-msg-inbox .msg-desc-inbox {
+.inbox .second-msg-inbox{
+  width: 100%;
+}
+.inbox .second-msg-inbox p {
+    width: 100%;
     font-size: 12px;
     font-weight: 400;
     line-height: 14.63px;
     color: #282828;
+    padding-right: 38px;
 }
 .inbox .third-msg-inbox {
     display: flex;

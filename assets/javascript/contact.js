@@ -8,7 +8,6 @@ var requestOptions = {
     myHeaders,
     Authorization: `Bearer ${token}`
   },
-  redirect: 'follow'
 };
 
 const chatsBox = document.querySelector(".chats-box");
@@ -28,6 +27,8 @@ async function getMassegs() {
     let newContent;
     if (ele.content.length > 34) {
       newContent = ele.content.slice(0, 28) + "..";
+    } else {
+      newContent = ele.content
     }
 
     msg += `<div class="single-chat-container">
@@ -87,7 +88,7 @@ async function getMassegs() {
 
                             <div class="second-msg-inbox">
                                 <h3 class="msg-title-inbox">${massegs[i].Subject}</h1>
-                                <p class="msg-desc-inbox">
+                                <p class="desc">
                                    ${massegs[i].content}
                                 </p> <!-- End msg-desc -->
                             </div> <!-- End second-msg-box -->
@@ -100,6 +101,10 @@ async function getMassegs() {
       deleteMsg.addEventListener('click', () => {
         let idMsg = parseInt(messageInbox.getAttribute('id'));
         removeMsg(idMsg);
+        noConver.style = 'display: block'
+        existConver.style = 'display: none';
+        span.style = 'display: none';
+        chatItems[i].remove()
       })
     })
 
@@ -109,11 +114,12 @@ async function getMassegs() {
   const toSet = document.querySelectorAll(".rectangle-span-inbox")
 
   let deletedMsg = [];
-
+  let selectedMsg = []
   for (let i = 0; i < toSet.length; i++) {
     toSet[i].addEventListener('click', () => {
       toSet[i].classList.add('done');
       let id = parseInt(parseInt(chatItems[i - 1].getAttribute('id')));
+      selectedMsg.push(chatItems[i - 1])
       console.log(id)
       deletedMsg.push(id);
     })
@@ -129,17 +135,27 @@ async function getMassegs() {
   console.log(all)
   all.addEventListener('click', () => {
     console.log(deletedMsg)
+    selectedMsg.map(ele => {
+      ele.remove()
+    })
+    noConver.style = 'display: block'
+    existConver.style = 'display: none';
+    span.style = 'display: none';
     deleteMulti(deletedMsg);
+    deletedMsg=[];
   })
   async function deleteMulti(deletedMsg) {
-
-  var requestOptions = {
+    var myHeaders = new Headers();
+    myHeaders.append("Accept", "application/json");
+    var requestOptions = {
       method: 'DELETE',
       headers: {
-        AUTHORIZATION: `Bearer ${token}`
+        myHeaders,
+        Authorization: `Bearer ${token}`
       },
-       }; 
-        await fetch("https://mountain.lavetro-agency.com/api/dashboard/contact/multiRecords?ids=" + deletedMsg, requestOptions)
+      body: {"ids":deletedMsg}
+    };
+    await fetch("https://mountain.lavetro-agency.com/api/dashboard/contact/multiRecords" , requestOptions)
       .then(response => response.json())
       .then(result => console.log(result))
       .catch(error => console.log('error', error));
@@ -155,7 +171,7 @@ async function removeMsg(id) {
     method: 'DELETE',
     headers: {
       myHeaders,
-      AUTHORIZATION: `Bearer ${token}`
+      Authorization: `Bearer ${token}`
     },
     redirect: 'follow'
   };
