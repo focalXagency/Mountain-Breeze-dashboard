@@ -1,6 +1,7 @@
 const roomId = localStorage.getItem("editRoomBtnId");
 const editRoomImages = document.querySelector(".new-add");
 const editRoomBtn = document.querySelector(".add-a");
+const containerAddRoomImg = document.querySelector(".container .container-add");
 // const editNameEn = document.querySelector('.room-name-en')
 // const editNameAr = document.querySelector('.room-name-ar')
 // const editSubTitle = document.querySelector(".subtitle-en");
@@ -50,6 +51,11 @@ let neweditNameAr;
 let newSubTitleEn;
 let newsubTitleAr;
 let newGuestsNum;
+let newBed
+let newRoomSer
+let newTv
+
+let roomImages = []
 
 getRoomInfo();
 
@@ -84,10 +90,27 @@ async function getRoomInfo() {
 
   editRoomPrice.value = roomInfo.price;
 
-  //roomInfo.room_services === '1' ? editRoomSer.checked === true : editRoomSer.checked === false
+  newBed = roomInfo.bed
+  roomInfo.bed === 1 ? editSelectBed.checked = true : editSelectBed.checked = false
+
+  newRoomSer = roomInfo.room_services
+  roomInfo.room_services === 1 ? editRoomSer.checked = true : editRoomSer.checked = false
 
   contentEn.setData(roomInfo.content.en);
   contentAr.setData(roomInfo.content.ar);
+
+  for (let i = 0; i < roomInfo?.images.length; i++) {
+
+    if (roomInfo?.images[i]) {
+        roomImages.push(roomInfo?.images[i].path)
+        let img = roomInfo?.images[i].path
+        imagesGroup(img);
+       
+    } else {
+        cancel.log("false")
+    }
+  }
+
 }
 
 function imagesGroup(img) {
@@ -105,8 +128,16 @@ function imagesGroup(img) {
   addedImage.src = img;
   addedPhoto.appendChild(addedImage);
   addedPhoto.appendChild(trash);
-  containerAddImg.appendChild(addedPhoto);
+  containerAddRoomImg.appendChild(addedPhoto);
 }
+
+//get all photos
+const roomAddPhotos = document.querySelector('#input-photo')
+let newRoomImgs = []
+roomAddPhotos.addEventListener('change', () => {
+  roomImages.length !== 0 ? newRoomImgs = roomImages : null;
+  newRoomImgs.push(roomAddPhotos.files);
+})
 
 //get room-name-en value
 let changeNameEn = "";
@@ -158,26 +189,26 @@ editRoomPrice.addEventListener("change", () => {
 });
 
 //get room-services value
-let changeRoomServ = "";
+let changeRoomServ
 editRoomSer.addEventListener("change", () => {
   if (editRoomSer.checked == true) {
-    changeRoomServ = "1";
+    changeRoomServ = 1;
     console.log(changeRoomServ);
   } else {
-    changeRoomServ = "0";
+    changeRoomServ = 0;
     console.log(changeRoomServ);
   }
 });
 
 //get room-tv value
-let editRoomTvVal = "0";
+let changeTv
 editRoomTv.addEventListener("change", () => {
   if (editRoomTv.checked == true) {
-    editRoomTvVal = "1";
-    // console.log(editRoomTvVal)
+    changeTv = 1;
+    console.log(changeTv)
   } else {
-    editRoomTvVal = "0";
-    // console.log(editRoomTvVal)
+    changeTv = 0;
+    console.log(changeTv)
   }
 });
 
@@ -189,15 +220,14 @@ editFloor.addEventListener("change", () => {
 });
 
 //get bed value
-let editSelectBedVal = 0;
-//console.log(editSelectBedVal)
+let changeBed
 editSelectBed.addEventListener("change", () => {
   if (editSelectBed.checked == true) {
-    editSelectBedVal = "1";
-    //console.log(editSelectBedVal)
+    changeBed = 1;
+    console.log(changeBed)
   } else {
-    editSelectBedVal = "0";
-    //console.log(editSelectBedVal)
+    changeBed = 0;
+    console.log(changeBed)
   }
 });
 
@@ -258,8 +288,34 @@ editRoomBtn.addEventListener("click", function (e) {
 
   formData.append("content_en", newContentEn);
   formData.append("content_ar", newContentAr);
-  formData.append("_method", 'put');
-  //changeRoomServ !== ""? formData.append("room_services", changeRoomServ) : formData.append("room_services",  editRoomSer.value) ;
+
+  changeBed !== undefined 
+    ? formData.append("bed", changeBed) 
+    : formData.append("bed",  newBed) ;
+
+    changeRoomServ !== undefined 
+    ? formData.append("room_services", changeRoomServ) 
+    : formData.append("room_services",  newRoomSer) ;
+
+    changeTv !== undefined 
+    ? formData.append("TV", changeTv) 
+    : formData.append("TV",  newTv) ;
+
+    if (newRoomImgs.length !== 0) {
+      for (let i = 0; i < newRoomImgs.length; i++) {
+        formData.append(`images[${i}]`, newRoomImgs[i]);
+        console.log(newRoomImgs[i])
+      }
+  }  else {
+  if (roomImages.length !== 0) {
+      for (let i = 0; i < roomImages.length; i++) {
+        formData.append(`images[${i}]`, roomImages[i]);
+      }
+  }
+}
+
+   formData.append("_method", 'put');
+ 
 
   fetch(`https://mountain.lavetro-agency.com/api/dashboard/rooms/${roomId}`, {
     method: "POST",

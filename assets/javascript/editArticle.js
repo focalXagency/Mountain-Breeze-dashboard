@@ -33,6 +33,7 @@ inputImage.onchange = function () {
   console.log("kkkk")
   newImgEd.src = "";
   newImgEd.src = URL.createObjectURL(inputImage.files[0]);
+  newImgEd.style.display = 'block'
   changeNewInputImg = inputImage.files[0];
 }
 let articleInfo = []
@@ -45,9 +46,9 @@ const editTitleAr = document.querySelector(".arabic-title .input-title")
 const editSubEn = document.querySelector('.subtitle-en')
 const editSubAr = document.querySelector('.subtitle-ar')
 
-const editTags = document.querySelector(".tags-en")
+const editTags = document.querySelector("#tags")
 
-// const editVideoInput = document.querySelector(".video-link")
+const editVideoInput = document.querySelector(".video-link")
 
 const datePublish = document.querySelector('#input-date')
 
@@ -73,7 +74,8 @@ let addPhotoName
     .then(res => res.json())
     .then(res => articleInfo = res.data)
     .catch(error => console.log(error))
-     
+     console.log(articleInfo)
+
      addPhotoName = articleInfo?.article_cover
      newImgEd.src = articleInfo?.article_cover;
      newImage = articleInfo?.article_cover;
@@ -93,11 +95,12 @@ let addPhotoName
 
      editCateory.value = articleInfo?.category
 
+     articleInfo.tags[0] ? editTags.value = articleInfo.tags[0].name : null
+
      datePublish.value = articleInfo?.date;
      newDate = articleInfo?.date;
 
-     //articleInfo?.videos[0] !== "" ? newVideo = articleInfo?.videos[0].link : null;
-    //  editVideoInput.value !== "" ?   editVideoInput.value = articleInfo?.videos[0].link : null
+     articleInfo.videos[0] !== undefined ? editVideoInput.value = articleInfo.videos[0].link : null;
 
      newDescEn.setData(articleInfo?.content.en);
      newDescAr.setData(articleInfo?.content.ar);
@@ -158,6 +161,11 @@ editCategory.addEventListener('change', () => {
   changeCategory = editCategory.options[editCategory.selectedIndex].text;
 })
 
+let changeTags = ""
+editTags.addEventListener('change', () => {
+  changeTags = editTags.options[editTags.selectedIndex].text
+  console.log(changeTags)
+})
 
   let changenewtitleAr = "";
   editTitleAr.addEventListener("change", () => {
@@ -184,10 +192,11 @@ editSubAr.addEventListener("change", () => {
     changenewsubTitleAr = editSubAr.value;
 })
 
-// let changenewVideo = "";
-// editVideoInput.addEventListener("change", () => {
-//     newVideo = editVideoInput.value;
-// })
+let changenewVideo = "";
+editVideoInput.addEventListener("change", () => {
+    changenewVideo = editVideoInput.value;
+})
+
 
 let changenewDate = "";
 datePublish.addEventListener('change', () => {
@@ -203,7 +212,7 @@ editCategory.addEventListener("change", () => {
   })
 
 
-const tagsArr = ['#AAA', '#BBB']
+//const tagsArr = ['#AAA', '#BBB']
 
 
   // post request
@@ -220,8 +229,7 @@ const tagsArr = ['#AAA', '#BBB']
 
        formdata.append("_method", 'PUT')
 
-       changeNewInputImg !== "" ? formdata.append("article_cover", changeNewInputImg) : formdata.append("article_cover", newInputImg);
-       //console.log('image is', changeNewInputImg)
+       changeNewInputImg !== undefined ? formdata.append("article_cover", changeNewInputImg) : null;
        
        changeCategory !== "" ?  formdata.append('category', changeCategory) : formdata.append('category', editCateory.value)
     
@@ -239,13 +247,14 @@ const tagsArr = ['#AAA', '#BBB']
        formdata.append("content_en", newDescEnEdited);
 
        formdata.append("content_ar", newDescArEdited);
+
+       changenewVideo !== "" ? formdata.append("videos[0]", changenewVideo)
+                             : formdata.append("videos[0]", editVideoInput.value)
+
+       changeTags !== "" ? formdata.append("tags[0]", changeTags)
+                        : formdata.append("tags[0]", editTags.value)
+
        formdata.append("_method", 'put');
-       
-      //  if (changenewVideo !== "") {
-      //   formdata.append("videos[0]", changenewVideo);
-      //  } else {
-      //   formdata.append("videos[0]", editVideoInput.value);
-      //  }
      
       if (newImages.length !== 0) {
           for (let i = 0; i < newImages.length; i++) {
@@ -260,8 +269,6 @@ const tagsArr = ['#AAA', '#BBB']
           }
       }
     }
-
-       formdata.append('tags', tagsArr) 
 
        fetch(`https://mountain.lavetro-agency.com/api/dashboard/articles/${editId}`,{
         method: 'POST',

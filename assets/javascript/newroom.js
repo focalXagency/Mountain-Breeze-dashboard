@@ -83,6 +83,16 @@ subTitleAr.onblur = () => {
   if (subTitleAr.value === "") subtitleLabelAr.classList.remove("active-label");
 };
 
+//move label of room type
+const typeLabel = document.querySelector(".type-labelrm")
+console.log(typeLabel)
+roomType.onfocus = () => {
+  typeLabel.classList.add("active-label");
+}
+roomType.onblur = () => {
+  if (roomType.value === "") typeLabel.classList.remove("active-label");
+}
+
 //move label of floor
 const floorLabel = document.querySelector(".lable-floor");
 floor.onfocus = () => {
@@ -124,14 +134,14 @@ selectType.addEventListener("change", () => {
 
 //get bed-type select value
 
-selectBedVal = "0";
+selectBedVal = 0;
 console.log(selectBedVal);
 selectBed.addEventListener("change", () => {
   if (selectBed.checked == true) {
-    selectBedVal = "1";
+    selectBedVal = 1;
     console.log(selectBedVal);
   } else {
-    selectBedVal = "0";
+    selectBedVal = 0;
     console.log(selectBedVal);
   }
 });
@@ -218,7 +228,11 @@ createRoomBtn.addEventListener("click", async function (e) {
   formData.append("price", roomPriceVal);
   formData.append("content_en", roomContentEn);
   formData.append("content_ar", roomContentAr);
-  formData.append("images[0]", roomImg);
+
+  Object.values(inputImages.files).forEach((item, index) => {
+    formData.append(`images[${index}]`, item);
+  });
+
   formData.append("bed", selectBedVal);
   formData.append("TV", tvVal);
   formData.append("floor", floorVal);

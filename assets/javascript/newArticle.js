@@ -1,7 +1,7 @@
 const inputImage = document.querySelector("#input-img");
 const inputTitle = document.querySelector("#input-title");
 const inputTitleAr = document.querySelector(".arabic-title .input-title");
-const tag = document.querySelector("#tags");
+const tagsArticle = document.querySelector('#tags')
 const multiplePhoto = document.querySelector("#input-photo");
 const addArticle = document.querySelector(".add-a");
 const addBtn = document.querySelector(".add-a");
@@ -14,11 +14,20 @@ const inputDate = document.querySelector("#input-date");
 //console.log(contentEn)
 
 //get article-cover value
+const newAddedImage = document.querySelector(".added-img");
+const editImage = document.querySelector(".edit");
+
+inputImage.onchange = function () {
+  newAddedImage.src =  URL.createObjectURL(inputImage.files[0]);
+  newAddedImage.style.display = 'block'
+  editImage.classList.add('show')
+}
+
 let inputImageVal;
 inputImage.addEventListener("input", () => {
   if (inputImage.files.length) {
     inputImageVal = inputImage.files[0];
-    /*   console.log(inputImageVal) */
+    console.log(inputImageVal) 
   }
 });
 
@@ -57,6 +66,7 @@ categorySelect.addEventListener("change", (event) => {
   console.log(selectVal);
 });
 
+
 //get Date value
 let date = new Date();
 let currdate;
@@ -94,7 +104,8 @@ multiplePhoto.addEventListener("change", function (event) {
   console.log(filelist);
 });
 
-const tagsArr = ["#AAA", "#BBB"];
+ console.log(tagsArticle.value)
+
 
 let descDataEn;
 ClassicEditor.create(document.querySelector("#desc"))
@@ -132,7 +143,7 @@ addBtn.addEventListener("click", function (e) {
   Object.values(multiplePhoto.files).forEach((item, index) => {
     formData.append(`images[${index}]`, item);
   });
-  formData.append("tags", tagsArr);
+  formData.append("tags[0]", tagsArticle.value);
   formData.append("sub_title_en", subtitleEnVal);
   formData.append("sub_title_ar", subtitleArVal);
 

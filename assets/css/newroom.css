@@ -96,15 +96,15 @@ label span{
     cursor: pointer;
     bottom: 30px;
 }
-.lable-price , .label-number , .label-type ,  .lable-name, .lable-floor {
+/* .lable-price , .label-number , .label-type ,  .lable-name, .lable-floor {
     position: absolute;
     font-size: 12px;
     bottom: 30px;
     left: -2px;
     color: black;
     cursor: pointer;
-}
-/* .lable-name.active-label,
+} */
+.lable-name.active-label,
 .label-type.active-label  ,  
 .label-number.active-label,
 .lable-price.active-label,
@@ -112,4 +112,4 @@ label span{
     font-size: 12px;
     bottom: 30px;
     left: -2px;
-} */
+}

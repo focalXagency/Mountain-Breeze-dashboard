@@ -78,7 +78,7 @@
                         <!-- <span class="left">/</span>
                         <span class="right">/</span> -->
                         <input id="input-date" type="date" value="date">
-                        <label class="date ed-label" for="input-date">Date:</label>
+                        <label class="date" for="input-date">Date:</label>
                     </div>
                 </div>
 
@@ -99,14 +99,16 @@
                 
                 <div class="container-tags">
                     <select class="tags" id="category">
-                                    <option  value="Select a Category" selected>Select a Category</option>
-                                    <option value="Restaurant">Restaurant</option>
-                                    <option value="Chalet">Chalet</option>
-                                    <option value="Activity">Activity</option>
-                                    <option value="Nature">Nature</option>
-                                    <option value="Pool">Pool</option>
-                                    <option value="Events">Events</option>
+                        <option></option>
+                        <option value="Restaurant">Restaurant</option>
+                        <option value="Chalet">Chalet</option>
+                        <option value="Activity">Activity</option>
+                        <option value="Nature">Nature</option>
+                        <option value="Pool">Pool</option>
+                        <option value="Resort Events">Resort Events</option>
+                        <option value="Sport Events">Sport Events</option>
                     </select>
+                    <label class="label-tags ed-label" for="tags">Select a Category<span>*</span></label>
                 </div>
                 <!-- <div class="container-tags">
                     <select class="tags tags-ar" >
@@ -117,6 +119,13 @@
                     
                     <select id="tags" class="tags"   >
                         <option></option>
+                        <option value="#Restaurant">Restaurant</option>
+                        <option value="#Chalet">Chalet</option>
+                        <option value="#Activity">Activity</option>
+                        <option value="#Nature">Nature</option>
+                        <option value="#Pool">Pool</option>
+                        <option value="#Resort Events">Resort Events</option>
+                        <option value="#Sport Events">Sport Events</option>
                     </select>
                     <label class="label-tags ed-label" for="tags">Tags<span>*</span></label>
                 </div>
@@ -126,9 +135,15 @@
                     <textarea id="desc" class="description" rows="5"></textarea>
                 </div>
                 <div>
-                    <label class="desc" for="desc">Description</label>
+                    <label class="desc" for="desc">المحتوى</label>
                     <textarea id="ardesc" class="description" rows="5"></textarea>
                 </div>
+
+                <div class="video-container">
+                    <input id="video" class="video-link" type="text" />
+                    <label class="link-label ed-label" for="video">Enter a youtube link</label>
+                </div>
+
                 <div class="add-photo-videos">
                     <div class="cont-add">
                         <div class="first-add-btn">

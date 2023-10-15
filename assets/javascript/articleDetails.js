@@ -28,7 +28,11 @@ async function getArticlesDetails() {
             <span class="month">${detailsData.date}</span>
         </div>
         <p class="description" >${detailsData.content.en}</p>
-        <div class="tagss" ></div>
+        <div class="tagss" >
+          ${detailsData.tags[0] ? ( `
+           <span>${detailsData.tags[0].name}</span> 
+           `) : "" } 
+        </div>
 
         <div class="container" >
            <span>Photos</span>
@@ -39,20 +43,6 @@ async function getArticlesDetails() {
 
         </div>
         `
-
-        
-            const tagsContainer = document.querySelector('.tagss')
-            let tags = ['tags1', 'tags2']
-            for (let i = 0; i < tags.length; i++) {
-              tagsContainer.innerHTML +=`
-              <span>#${tags[i]}</span>
-              `
-              if (i !== tags.length-1) {
-                tagsContainer.innerHTML += `
-                <span>,</span>
-                `
-              }
-            }
 
             const imagesContainer = document.querySelector('.container-add');
                         let lengtharr = detailsData.images.length

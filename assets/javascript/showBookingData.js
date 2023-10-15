@@ -75,8 +75,13 @@ const roomType = document.querySelector('.room-type')
 //console.log(roomTypeVal)
 roomType.addEventListener('change', (e) => {
     let roomTypeVal= roomType.options[roomType.selectedIndex].text;
-    deleteAllData()
-    bookingRoomType(roomTypeVal)
+    if (roomTypeVal === 'Room Type') {
+        deleteAllData()
+        getBookingData();
+    } else{
+        deleteAllData()
+        bookingRoomType(roomTypeVal)
+    }
 })
 
 //filter by guests number
@@ -86,6 +91,15 @@ guestsNumInput.addEventListener('change', () => {
     guestsNumVal = guestsNumInput.value
     deleteAllData()
     bookingGuestsNum(guestsNumVal)
+})
+
+//filter by created-date
+const createdDate = document.querySelector('#myDatePicker2')
+let dateValue
+createdDate.addEventListener('input', () => {
+    dateValue = createdDate.value
+    deleteAllData()
+    bookingByDate(dateValue)
 })
 
 // get booking data depends on Room Type
@@ -226,6 +240,76 @@ async function bookingGuestsNum(num) {
                     <span class="title" >Descrabtion</span>
                     <p>
                         ${guestsItem.content}
+                    </p>
+            </div>
+        </div>
+        `
+   })
+
+
+}
+
+// get booking data depends on created date
+let dataByDate = []
+
+async function bookingByDate(selectedDate) {
+    let authToken = localStorage.getItem("token");
+    console.log(authToken)
+    await fetch(`https://mountain.lavetro-agency.com/api/dashboard/books?date=${selectedDate}` , {
+        method: 'GET',
+        headers: {
+            "Content-Type": "application/json",
+            AUTHORIZATION: `Bearer ${authToken}` }
+       })
+    .then(res =>  res.json())
+    .then(res => dataByDate = res.data)
+    .catch(error => console.log(error))
+    console.log(dataByDate)
+
+    dataByDate.forEach(dataByDateItem => {
+        bookingContainer.innerHTML += `
+        <div class="article">
+           <div class="head">
+                <h1 class="article-name" >${dataByDateItem.Full_Name}</h1>
+                <span class="date" >July 17, 2023</span>
+            </div>
+            <div class="info">
+               <div class="personal-detils">
+                     <div class="phone" >
+                        <span>phone : </span>
+                        <span class="black" id="phone" >${dataByDateItem.Phone}</span>
+                     </div>
+                    <div class="email" >
+                        <span>E-mail : </span>
+                        <span class="black" id="email" >${dataByDateItem.Email}</span>
+                    </div>
+                </div>
+                <div class="personal-detils">
+                    <div class="check-in-date">
+                       <span>Check-in date : </span>
+                       <span class="black" id="check-in-date" >${dataByDateItem.Check_in_date}</span>
+                    </div>
+                    <div class="check-out-date" >
+                      <span>Check-out date : </span>
+                      <span class="black" id="check-out-date" >${dataByDateItem.Check_out_date}</span>
+                   </div>
+                </div>
+                <div class="personal-detils">
+                   <div class="room-type" >
+                     <span>Room Type : </span>
+                     <span  class="black" id="room-type" >${dataByDateItem.Room_Type}</span>
+                   </div>
+                   <div class="guests-number" >
+                     <span>guests Number : </span>
+                     <span class="black" id="guests-number" >${dataByDateItem.guests_number}</span>
+                  </div>
+                </div>
+
+            </div>
+            <div class="descrabtion">
+                    <span class="title" >Descrabtion</span>
+                    <p>
+                        ${dataByDateItem.content}
                     </p>
             </div>
         </div>

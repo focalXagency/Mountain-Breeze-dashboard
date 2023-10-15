@@ -22,7 +22,9 @@ async function getArticles() {
                               <span class="date" >${ele.date}</span>
                            </div>
                            <p class="descrabtion">${ele.content.en}</p>
-                           <p class="hashtack"></p>                        
+                           ${ele.tags[0] ? ( `
+                           <p class="hashtack">${ele.tags[0].name}</p> 
+                           `) : "" }                       
                            <div class="footer">
                               <div class="icons">
                                    <button class="edit-link" id=${ele.id}><img src="./assets/images/edit.svg" ></button>
@@ -35,18 +37,6 @@ async function getArticles() {
                          </div>
                     </div>` 
                      
-                    const hashEle = document.querySelector(".article .hashtack")
-                    let tagsLeng = ele.tags.length
-                     for (let i = 0; i < tagsLeng; i++) {
-                      hashEle.innerHTML +=`
-                      <span>#${ele.tags[i]}</span>
-                      `
-                      if (i !== tags.length-1) {
-                        hashEle.innerHTML += `
-                        <span>,</span>
-                        `
-                      }
-                    }
 
                     //delete button
                     // const article = document.querySelector(".article")
